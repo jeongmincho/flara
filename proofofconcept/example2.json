@@ -1,0 +1,856 @@
+{
+  "_declaration": {"_attributes": {"version": "1.0", "encoding": "UTF-8"}},
+  "GoodreadsResponse": {
+    "Request": {
+      "authentication": {"_text": "true"},
+      "key": {"_cdata": "Plfc3fiqTxmZaAvMPXulw"},
+      "method": {"_cdata": "search_search"}
+    },
+    "search": {
+      "query": {"_cdata": "Ender's Game"},
+      "results-start": {"_text": "1"},
+      "results-end": {"_text": "20"},
+      "total-results": {"_text": "704"},
+      "source": {"_text": "Goodreads"},
+      "query-time-seconds": {"_text": "0.28"},
+      "results": {
+        "work": [
+          {
+            "id": {"_attributes": {"type": "integer"}, "_text": "2422333"},
+            "books_count": {"_attributes": {"type": "integer"}, "_text": "13"},
+            "ratings_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "1021884"
+            },
+            "text_reviews_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "41275"
+            },
+            "original_publication_year": {
+              "_attributes": {"type": "integer"},
+              "_text": "1985"
+            },
+            "original_publication_month": {
+              "_attributes": {"type": "integer", "nil": "true"}
+            },
+            "original_publication_day": {
+              "_attributes": {"type": "integer", "nil": "true"}
+            },
+            "average_rating": {"_text": "4.30"},
+            "best_book": {
+              "_attributes": {"type": "Book"},
+              "id": {"_attributes": {"type": "integer"}, "_text": "375802"},
+              "title": {"_text": "Ender's Game (Ender's Saga, #1)"},
+              "author": {
+                "id": {"_attributes": {"type": "integer"}, "_text": "589"},
+                "name": {"_text": "Orson Scott Card"}
+              },
+              "image_url": {
+                "_text":
+                  "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1408303130l/375802._SY160_.jpg"
+              },
+              "small_image_url": {
+                "_text":
+                  "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1408303130l/375802._SY75_.jpg"
+              }
+            }
+          },
+          {
+            "id": {"_attributes": {"type": "integer"}, "_text": "55447683"},
+            "books_count": {"_attributes": {"type": "integer"}, "_text": "41"},
+            "ratings_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "28655"
+            },
+            "text_reviews_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "1880"
+            },
+            "original_publication_year": {
+              "_attributes": {"type": "integer"},
+              "_text": "2017"
+            },
+            "original_publication_month": {
+              "_attributes": {"type": "integer"},
+              "_text": "11"
+            },
+            "original_publication_day": {
+              "_attributes": {"type": "integer"},
+              "_text": "14"
+            },
+            "average_rating": {"_text": "4.14"},
+            "best_book": {
+              "_attributes": {"type": "Book"},
+              "id": {"_attributes": {"type": "integer"}, "_text": "34368113"},
+              "title": {"_text": "End Game (Will Robie, #5)"},
+              "author": {
+                "id": {"_attributes": {"type": "integer"}, "_text": "9291"},
+                "name": {"_text": "David Baldacci"}
+              },
+              "image_url": {
+                "_text":
+                  "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1495976812l/34368113._SX98_.jpg"
+              },
+              "small_image_url": {
+                "_text":
+                  "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1495976812l/34368113._SY75_.jpg"
+              }
+            }
+          },
+          {
+            "id": {"_attributes": {"type": "integer"}, "_text": "938064"},
+            "books_count": {"_attributes": {"type": "integer"}, "_text": "1"},
+            "ratings_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "80891"
+            },
+            "text_reviews_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "822"
+            },
+            "original_publication_year": {
+              "_attributes": {"type": "integer"},
+              "_text": "1984"
+            },
+            "original_publication_month": {
+              "_attributes": {"type": "integer"},
+              "_text": "12"
+            },
+            "original_publication_day": {
+              "_attributes": {"type": "integer", "nil": "true"}
+            },
+            "average_rating": {"_text": "4.18"},
+            "best_book": {
+              "_attributes": {"type": "Book"},
+              "id": {"_attributes": {"type": "integer"}, "_text": "44687"},
+              "title": {"_text": "Enchanters' End Game (The Belgariad, #5)"},
+              "author": {
+                "id": {"_attributes": {"type": "integer"}, "_text": "8732"},
+                "name": {"_text": "David Eddings"}
+              },
+              "image_url": {
+                "_text":
+                  "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1217735909l/44687._SX98_.jpg"
+              },
+              "small_image_url": {
+                "_text":
+                  "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1217735909l/44687._SY75_.jpg"
+              }
+            }
+          },
+          {
+            "id": {"_attributes": {"type": "integer"}, "_text": "42437887"},
+            "books_count": {"_attributes": {"type": "integer"}, "_text": "7"},
+            "ratings_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "5322"
+            },
+            "text_reviews_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "653"
+            },
+            "original_publication_year": {
+              "_attributes": {"type": "integer"},
+              "_text": "2015"
+            },
+            "original_publication_month": {
+              "_attributes": {"type": "integer"},
+              "_text": "9"
+            },
+            "original_publication_day": {
+              "_attributes": {"type": "integer"},
+              "_text": "8"
+            },
+            "average_rating": {"_text": "4.10"},
+            "best_book": {
+              "_attributes": {"type": "Book"},
+              "id": {"_attributes": {"type": "integer"}, "_text": "22874150"},
+              "title": {"_text": "The End Game"},
+              "author": {
+                "id": {"_attributes": {"type": "integer"}, "_text": "6876994"},
+                "name": {"_text": "Kate  McCarthy"}
+              },
+              "image_url": {
+                "_text":
+                  "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1423089153l/22874150._SX98_.jpg"
+              },
+              "small_image_url": {
+                "_text":
+                  "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1423089153l/22874150._SY75_.jpg"
+              }
+            }
+          },
+          {
+            "id": {"_attributes": {"type": "integer"}, "_text": "44223038"},
+            "books_count": {"_attributes": {"type": "integer"}, "_text": "3"},
+            "ratings_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "5796"
+            },
+            "text_reviews_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "443"
+            },
+            "original_publication_year": {
+              "_attributes": {"type": "integer"},
+              "_text": "2015"
+            },
+            "original_publication_month": {
+              "_attributes": {"type": "integer"},
+              "_text": "9"
+            },
+            "original_publication_day": {
+              "_attributes": {"type": "integer"},
+              "_text": "15"
+            },
+            "average_rating": {"_text": "4.26"},
+            "best_book": {
+              "_attributes": {"type": "Book"},
+              "id": {"_attributes": {"type": "integer"}, "_text": "24611928"},
+              "title": {"_text": "The End Game (A Brit in the FBI, #3)"},
+              "author": {
+                "id": {"_attributes": {"type": "integer"}, "_text": "1239"},
+                "name": {"_text": "Catherine Coulter"}
+              },
+              "image_url": {
+                "_text":
+                  "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1425319746l/24611928._SX98_.jpg"
+              },
+              "small_image_url": {
+                "_text":
+                  "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1425319746l/24611928._SX50_.jpg"
+              }
+            }
+          },
+          {
+            "id": {"_attributes": {"type": "integer"}, "_text": "11571577"},
+            "books_count": {"_attributes": {"type": "integer"}, "_text": "1"},
+            "ratings_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "1109"
+            },
+            "text_reviews_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "46"
+            },
+            "original_publication_year": {
+              "_attributes": {"type": "integer"},
+              "_text": "2010"
+            },
+            "original_publication_month": {
+              "_attributes": {"type": "integer"},
+              "_text": "4"
+            },
+            "original_publication_day": {
+              "_attributes": {"type": "integer"},
+              "_text": "30"
+            },
+            "average_rating": {"_text": "4.13"},
+            "best_book": {
+              "_attributes": {"type": "Book"},
+              "id": {"_attributes": {"type": "integer"}, "_text": "8782597"},
+              "title": {"_text": "Ender's Game"},
+              "author": {
+                "id": {"_attributes": {"type": "integer"}, "_text": "2940867"},
+                "name": {"_text": "Frederic P.  Miller"}
+              },
+              "image_url": {
+                "_text":
+                  "https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png"
+              },
+              "small_image_url": {
+                "_text":
+                  "https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png"
+              }
+            }
+          },
+          {
+            "id": {"_attributes": {"type": "integer"}, "_text": "6581562"},
+            "books_count": {"_attributes": {"type": "integer"}, "_text": "5"},
+            "ratings_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "33757"
+            },
+            "text_reviews_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "227"
+            },
+            "original_publication_year": {
+              "_attributes": {"type": "integer"},
+              "_text": "2009"
+            },
+            "original_publication_month": {
+              "_attributes": {"type": "integer", "nil": "true"}
+            },
+            "original_publication_day": {
+              "_attributes": {"type": "integer", "nil": "true"}
+            },
+            "average_rating": {"_text": "4.38"},
+            "best_book": {
+              "_attributes": {"type": "Book"},
+              "id": {"_attributes": {"type": "integer"}, "_text": "6393082"},
+              "title": {
+                "_text": "Ender's Game, Volume 1: Battle School (Ender's Saga)"
+              },
+              "author": {
+                "id": {"_attributes": {"type": "integer"}, "_text": "38491"},
+                "name": {"_text": "Christopher Yost"}
+              },
+              "image_url": {
+                "_text":
+                  "https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png"
+              },
+              "small_image_url": {
+                "_text":
+                  "https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png"
+              }
+            }
+          },
+          {
+            "id": {"_attributes": {"type": "integer"}, "_text": "12530"},
+            "books_count": {"_attributes": {"type": "integer"}, "_text": "3"},
+            "ratings_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "1853"
+            },
+            "text_reviews_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "60"
+            },
+            "original_publication_year": {
+              "_attributes": {"type": "integer"},
+              "_text": "2002"
+            },
+            "original_publication_month": {
+              "_attributes": {"type": "integer"},
+              "_text": "9"
+            },
+            "original_publication_day": {
+              "_attributes": {"type": "integer"},
+              "_text": "16"
+            },
+            "average_rating": {"_text": "4.49"},
+            "best_book": {
+              "_attributes": {"type": "Book"},
+              "id": {"_attributes": {"type": "integer"}, "_text": "9735"},
+              "title": {
+                "_text":
+                  "Ender's Game Boxed Set: Ender's Game, Ender's Shadow, Shadow of the Hegemon"
+              },
+              "author": {
+                "id": {"_attributes": {"type": "integer"}, "_text": "589"},
+                "name": {"_text": "Orson Scott Card"}
+              },
+              "image_url": {
+                "_text":
+                  "https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png"
+              },
+              "small_image_url": {
+                "_text":
+                  "https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png"
+              }
+            }
+          },
+          {
+            "id": {"_attributes": {"type": "integer"}, "_text": "46873310"},
+            "books_count": {"_attributes": {"type": "integer"}, "_text": "6"},
+            "ratings_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "418"
+            },
+            "text_reviews_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "38"
+            },
+            "original_publication_year": {
+              "_attributes": {"type": "integer"},
+              "_text": "2015"
+            },
+            "original_publication_month": {
+              "_attributes": {"type": "integer"},
+              "_text": "9"
+            },
+            "original_publication_day": {
+              "_attributes": {"type": "integer"},
+              "_text": "26"
+            },
+            "average_rating": {"_text": "4.05"},
+            "best_book": {
+              "_attributes": {"type": "Book"},
+              "id": {"_attributes": {"type": "integer"}, "_text": "31868870"},
+              "title": {"_text": "End Game"},
+              "author": {
+                "id": {"_attributes": {"type": "integer"}, "_text": "7473922"},
+                "name": {"_text": "Ginger Booth"}
+              },
+              "image_url": {
+                "_text":
+                  "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1473280564l/31868870._SX98_.jpg"
+              },
+              "small_image_url": {
+                "_text":
+                  "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1473280564l/31868870._SY75_.jpg"
+              }
+            }
+          },
+          {
+            "id": {"_attributes": {"type": "integer"}, "_text": "7272274"},
+            "books_count": {"_attributes": {"type": "integer"}, "_text": "3"},
+            "ratings_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "13647"
+            },
+            "text_reviews_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "55"
+            },
+            "original_publication_year": {
+              "_attributes": {"type": "integer"},
+              "_text": "2010"
+            },
+            "original_publication_month": {
+              "_attributes": {"type": "integer"},
+              "_text": "3"
+            },
+            "original_publication_day": {
+              "_attributes": {"type": "integer"},
+              "_text": "24"
+            },
+            "average_rating": {"_text": "4.61"},
+            "best_book": {
+              "_attributes": {"type": "Book"},
+              "id": {"_attributes": {"type": "integer"}, "_text": "7025086"},
+              "title": {"_text": "Ender's Game, Volume 2: Command School"},
+              "author": {
+                "id": {"_attributes": {"type": "integer"}, "_text": "38491"},
+                "name": {"_text": "Christopher Yost"}
+              },
+              "image_url": {
+                "_text":
+                  "https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png"
+              },
+              "small_image_url": {
+                "_text":
+                  "https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png"
+              }
+            }
+          },
+          {
+            "id": {"_attributes": {"type": "integer"}, "_text": "45665816"},
+            "books_count": {"_attributes": {"type": "integer"}, "_text": "14"},
+            "ratings_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "745"
+            },
+            "text_reviews_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "54"
+            },
+            "original_publication_year": {
+              "_attributes": {"type": "integer"},
+              "_text": "2014"
+            },
+            "original_publication_month": {
+              "_attributes": {"type": "integer"},
+              "_text": "11"
+            },
+            "original_publication_day": {
+              "_attributes": {"type": "integer"},
+              "_text": "6"
+            },
+            "average_rating": {"_text": "3.88"},
+            "best_book": {
+              "_attributes": {"type": "Book"},
+              "id": {"_attributes": {"type": "integer"}, "_text": "25809834"},
+              "title": {"_text": "The End Game (Templar, #5)"},
+              "author": {
+                "id": {"_attributes": {"type": "integer"}, "_text": "26011"},
+                "name": {"_text": "Raymond Khoury"}
+              },
+              "image_url": {
+                "_text":
+                  "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1451140269l/25809834._SX98_.jpg"
+              },
+              "small_image_url": {
+                "_text":
+                  "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1451140269l/25809834._SY75_.jpg"
+              }
+            }
+          },
+          {
+            "id": {"_attributes": {"type": "integer"}, "_text": "51609213"},
+            "books_count": {"_attributes": {"type": "integer"}, "_text": "7"},
+            "ratings_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "1141"
+            },
+            "text_reviews_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "272"
+            },
+            "original_publication_year": {
+              "_attributes": {"type": "integer"},
+              "_text": "2018"
+            },
+            "original_publication_month": {
+              "_attributes": {"type": "integer"},
+              "_text": "1"
+            },
+            "original_publication_day": {
+              "_attributes": {"type": "integer"},
+              "_text": "2"
+            },
+            "average_rating": {"_text": "4.22"},
+            "best_book": {
+              "_attributes": {"type": "Book"},
+              "id": {"_attributes": {"type": "integer"}, "_text": "30985221"},
+              "title": {"_text": "End Game (Dirty Money, #4)"},
+              "author": {
+                "id": {"_attributes": {"type": "integer"}, "_text": "73977"},
+                "name": {"_text": "Lisa Renee Jones"}
+              },
+              "image_url": {
+                "_text":
+                  "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1497740135l/30985221._SX98_.jpg"
+              },
+              "small_image_url": {
+                "_text":
+                  "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1497740135l/30985221._SX50_.jpg"
+              }
+            }
+          },
+          {
+            "id": {"_attributes": {"type": "integer"}, "_text": "26343184"},
+            "books_count": {"_attributes": {"type": "integer"}, "_text": "8"},
+            "ratings_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "1664"
+            },
+            "text_reviews_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "97"
+            },
+            "original_publication_year": {
+              "_attributes": {"type": "integer"},
+              "_text": "2014"
+            },
+            "original_publication_month": {
+              "_attributes": {"type": "integer"},
+              "_text": "6"
+            },
+            "original_publication_day": {
+              "_attributes": {"type": "integer"},
+              "_text": "24"
+            },
+            "average_rating": {"_text": "4.19"},
+            "best_book": {
+              "_attributes": {"type": "Book"},
+              "id": {"_attributes": {"type": "integer"}, "_text": "18596481"},
+              "title": {"_text": "End Game (Jonathan Grave #6)"},
+              "author": {
+                "id": {"_attributes": {"type": "integer"}, "_text": "181831"},
+                "name": {"_text": "John Gilstrap"}
+              },
+              "image_url": {
+                "_text":
+                  "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1389598387l/18596481._SY160_.jpg"
+              },
+              "small_image_url": {
+                "_text":
+                  "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1389598387l/18596481._SY75_.jpg"
+              }
+            }
+          },
+          {
+            "id": {"_attributes": {"type": "integer"}, "_text": "56238306"},
+            "books_count": {"_attributes": {"type": "integer"}, "_text": "4"},
+            "ratings_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "1874"
+            },
+            "text_reviews_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "77"
+            },
+            "original_publication_year": {
+              "_attributes": {"type": "integer", "nil": "true"}
+            },
+            "original_publication_month": {
+              "_attributes": {"type": "integer", "nil": "true"}
+            },
+            "original_publication_day": {
+              "_attributes": {"type": "integer", "nil": "true"}
+            },
+            "average_rating": {"_text": "4.31"},
+            "best_book": {
+              "_attributes": {"type": "Book"},
+              "id": {"_attributes": {"type": "integer"}, "_text": "34963329"},
+              "title": {"_text": "End Game (Jack Noble #12)"},
+              "author": {
+                "id": {"_attributes": {"type": "integer"}, "_text": "6151659"},
+                "name": {"_text": "L.T. Ryan"}
+              },
+              "image_url": {
+                "_text":
+                  "https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png"
+              },
+              "small_image_url": {
+                "_text":
+                  "https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png"
+              }
+            }
+          },
+          {
+            "id": {"_attributes": {"type": "integer"}, "_text": "56991591"},
+            "books_count": {"_attributes": {"type": "integer"}, "_text": "5"},
+            "ratings_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "1079"
+            },
+            "text_reviews_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "60"
+            },
+            "original_publication_year": {
+              "_attributes": {"type": "integer"},
+              "_text": "2017"
+            },
+            "original_publication_month": {
+              "_attributes": {"type": "integer"},
+              "_text": "7"
+            },
+            "original_publication_day": {
+              "_attributes": {"type": "integer"},
+              "_text": "7"
+            },
+            "average_rating": {"_text": "4.25"},
+            "best_book": {
+              "_attributes": {"type": "Book"},
+              "id": {"_attributes": {"type": "integer"}, "_text": "35563236"},
+              "title": {"_text": "End Game (Langthorne #4)"},
+              "author": {
+                "id": {"_attributes": {"type": "integer"}, "_text": "6422267"},
+                "name": {"_text": "Charlie Gallagher"}
+              },
+              "image_url": {
+                "_text":
+                  "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1500842571l/35563236._SX98_.jpg"
+              },
+              "small_image_url": {
+                "_text":
+                  "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1500842571l/35563236._SY75_.jpg"
+              }
+            }
+          },
+          {
+            "id": {"_attributes": {"type": "integer"}, "_text": "53830455"},
+            "books_count": {"_attributes": {"type": "integer"}, "_text": "4"},
+            "ratings_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "1982"
+            },
+            "text_reviews_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "141"
+            },
+            "original_publication_year": {
+              "_attributes": {"type": "integer"},
+              "_text": "2016"
+            },
+            "original_publication_month": {
+              "_attributes": {"type": "integer"},
+              "_text": "11"
+            },
+            "original_publication_day": {
+              "_attributes": {"type": "integer"},
+              "_text": "27"
+            },
+            "average_rating": {"_text": "4.42"},
+            "best_book": {
+              "_attributes": {"type": "Book"},
+              "id": {"_attributes": {"type": "integer"}, "_text": "33144572"},
+              "title": {"_text": "End Game (Fallen Empire, #8)"},
+              "author": {
+                "id": {"_attributes": {"type": "integer"}, "_text": "4512224"},
+                "name": {"_text": "Lindsay Buroker"}
+              },
+              "image_url": {
+                "_text":
+                  "https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png"
+              },
+              "small_image_url": {
+                "_text":
+                  "https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png"
+              }
+            }
+          },
+          {
+            "id": {"_attributes": {"type": "integer"}, "_text": "61846440"},
+            "books_count": {"_attributes": {"type": "integer"}, "_text": "2"},
+            "ratings_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "1097"
+            },
+            "text_reviews_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "233"
+            },
+            "original_publication_year": {
+              "_attributes": {"type": "integer"},
+              "_text": "2018"
+            },
+            "original_publication_month": {
+              "_attributes": {"type": "integer"},
+              "_text": "5"
+            },
+            "original_publication_day": {
+              "_attributes": {"type": "integer"},
+              "_text": "23"
+            },
+            "average_rating": {"_text": "4.41"},
+            "best_book": {
+              "_attributes": {"type": "Book"},
+              "id": {"_attributes": {"type": "integer"}, "_text": "39947220"},
+              "title": {"_text": "End Game (Bellevue Bullies, #4)"},
+              "author": {
+                "id": {"_attributes": {"type": "integer"}, "_text": "5255580"},
+                "name": {"_text": "Toni Aleo"}
+              },
+              "image_url": {
+                "_text":
+                  "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1526291653l/39947220._SX98_.jpg"
+              },
+              "small_image_url": {
+                "_text":
+                  "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1526291653l/39947220._SY75_.jpg"
+              }
+            }
+          },
+          {
+            "id": {"_attributes": {"type": "integer"}, "_text": "66029652"},
+            "books_count": {"_attributes": {"type": "integer"}, "_text": "2"},
+            "ratings_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "969"
+            },
+            "text_reviews_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "127"
+            },
+            "original_publication_year": {
+              "_attributes": {"type": "integer", "nil": "true"}
+            },
+            "original_publication_month": {
+              "_attributes": {"type": "integer", "nil": "true"}
+            },
+            "original_publication_day": {
+              "_attributes": {"type": "integer", "nil": "true"}
+            },
+            "average_rating": {"_text": "4.04"},
+            "best_book": {
+              "_attributes": {"type": "Book"},
+              "id": {"_attributes": {"type": "integer"}, "_text": "42372731"},
+              "title": {"_text": "The End Game: The Game Duet"},
+              "author": {
+                "id": {"_attributes": {"type": "integer"}, "_text": "15996299"},
+                "name": {"_text": "Mickey Miller"}
+              },
+              "image_url": {
+                "_text":
+                  "https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png"
+              },
+              "small_image_url": {
+                "_text":
+                  "https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png"
+              }
+            }
+          },
+          {
+            "id": {"_attributes": {"type": "integer"}, "_text": "17050695"},
+            "books_count": {"_attributes": {"type": "integer"}, "_text": "3"},
+            "ratings_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "881"
+            },
+            "text_reviews_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "67"
+            },
+            "original_publication_year": {
+              "_attributes": {"type": "integer"},
+              "_text": "2010"
+            },
+            "original_publication_month": {
+              "_attributes": {"type": "integer"},
+              "_text": "3"
+            },
+            "original_publication_day": {
+              "_attributes": {"type": "integer"},
+              "_text": "10"
+            },
+            "average_rating": {"_text": "4.23"},
+            "best_book": {
+              "_attributes": {"type": "Book"},
+              "id": {"_attributes": {"type": "integer"}, "_text": "12082688"},
+              "title": {"_text": "Ender's Game Ultimate Collection"},
+              "author": {
+                "id": {"_attributes": {"type": "integer"}, "_text": "38491"},
+                "name": {"_text": "Christopher Yost"}
+              },
+              "image_url": {
+                "_text":
+                  "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1372911791l/12082688._SX98_.jpg"
+              },
+              "small_image_url": {
+                "_text":
+                  "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1372911791l/12082688._SY75_.jpg"
+              }
+            }
+          },
+          {
+            "id": {"_attributes": {"type": "integer"}, "_text": "62571166"},
+            "books_count": {"_attributes": {"type": "integer"}, "_text": "3"},
+            "ratings_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "1176"
+            },
+            "text_reviews_count": {
+              "_attributes": {"type": "integer"},
+              "_text": "151"
+            },
+            "original_publication_year": {
+              "_attributes": {"type": "integer"},
+              "_text": "2018"
+            },
+            "original_publication_month": {
+              "_attributes": {"type": "integer"},
+              "_text": "8"
+            },
+            "original_publication_day": {
+              "_attributes": {"type": "integer"},
+              "_text": "1"
+            },
+            "average_rating": {"_text": "4.08"},
+            "best_book": {
+              "_attributes": {"type": "Book"},
+              "id": {"_attributes": {"type": "integer"}, "_text": "40281801"},
+              "title": {"_text": "End Game (Dawson Family, #2)"},
+              "author": {
+                "id": {"_attributes": {"type": "integer"}, "_text": "1635425"},
+                "name": {"_text": "Emily Goodwin"}
+              },
+              "image_url": {
+                "_text":
+                  "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1533204256l/40281801._SX98_.jpg"
+              },
+              "small_image_url": {
+                "_text":
+                  "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1533204256l/40281801._SY75_.jpg"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

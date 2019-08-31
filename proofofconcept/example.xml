@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GoodreadsResponse>
+    <Request>
+        <authentication>true</authentication>
+        <key>
+            <![CDATA[Plfc3fiqTxmZaAvMPXulw]]>
+        </key>
+        <method>
+            <![CDATA[search_search]]>
+        </method>
+    </Request>
+    <search>
+        <query>
+            <![CDATA[Ender's Game]]>
+        </query>
+        <results-start>1</results-start>
+        <results-end>20</results-end>
+        <total-results>704</total-results>
+        <source>Goodreads</source>
+        <query-time-seconds>0.28</query-time-seconds>
+        <results>
+            <work>
+                <id type="integer">2422333</id>
+                <books_count type="integer">13</books_count>
+                <ratings_count type="integer">1021884</ratings_count>
+                <text_reviews_count type="integer">41275</text_reviews_count>
+                <original_publication_year type="integer">1985</original_publication_year>
+                <original_publication_month type="integer" nil="true"/>
+                <original_publication_day type="integer" nil="true"/>
+                <average_rating>4.30</average_rating>
+                <best_book type="Book">
+                    <id type="integer">375802</id>
+                    <title>Ender's Game (Ender's Saga, #1)</title>
+                    <author>
+                        <id type="integer">589</id>
+                        <name>Orson Scott Card</name>
+                    </author>
+                    <image_url>https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1408303130l/375802._SY160_.jpg</image_url>
+                    <small_image_url>https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1408303130l/375802._SY75_.jpg</small_image_url>
+                </best_book>
+            </work>
+            <work>
+                <id type="integer">55447683</id>
+                <books_count type="integer">41</books_count>
+                <ratings_count type="integer">28655</ratings_count>
+                <text_reviews_count type="integer">1880</text_reviews_count>
+                <original_publication_year type="integer">2017</original_publication_year>
+                <original_publication_month type="integer">11</original_publication_month>
+                <original_publication_day type="integer">14</original_publication_day>
+                <average_rating>4.14</average_rating>
+                <best_book type="Book">
+                    <id type="integer">34368113</id>
+                    <title>End Game (Will Robie, #5)</title>
+                    <author>
+                        <id type="integer">9291</id>
+                        <name>David Baldacci</name>
+                    </author>
+                    <image_url>https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1495976812l/34368113._SX98_.jpg</image_url>
+                    <small_image_url>https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1495976812l/34368113._SY75_.jpg</small_image_url>
+                </best_book>
+            </work>
+            <work>
+                <id type="integer">938064</id>
+                <books_count type="integer">1</books_count>
+                <ratings_count type="integer">80891</ratings_count>
+                <text_reviews_count type="integer">822</text_reviews_count>
+                <original_publication_year type="integer">1984</original_publication_year>
+                <original_publication_month type="integer">12</original_publication_month>
+                <original_publication_day type="integer" nil="true"/>
+                <average_rating>4.18</average_rating>
+                <best_book type="Book">
+                    <id type="integer">44687</id>
+                    <title>Enchanters' End Game (The Belgariad, #5)</title>
+                    <author>
+                        <id type="integer">8732</id>
+                        <name>David Eddings</name>
+                    </author>
+                    <image_url>https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1217735909l/44687._SX98_.jpg</image_url>
+                    <small_image_url>https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1217735909l/44687._SY75_.jpg</small_image_url>
+                </best_book>
+            </work>
+            <work>
+                <id type="integer">42437887</id>
+                <books_count type="integer">7</books_count>
+                <ratings_count type="integer">5322</ratings_count>
+                <text_reviews_count type="integer">653</text_reviews_count>
+                <original_publication_year type="integer">2015</original_publication_year>
+                <original_publication_month type="integer">9</original_publication_month>
+                <original_publication_day type="integer">8</original_publication_day>
+                <average_rating>4.10</average_rating>
+                <best_book type="Book">
+                    <id type="integer">22874150</id>
+                    <title>The End Game</title>
+                    <author>
+                        <id type="integer">6876994</id>
+                        <name>Kate  McCarthy</name>
+                    </author>
+                    <image_url>https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1423089153l/22874150._SX98_.jpg</image_url>
+                    <small_image_url>https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1423089153l/22874150._SY75_.jpg</small_image_url>
+                </best_book>
+            </work>
+            <work>
+                <id type="integer">44223038</id>
+                <books_count type="integer">3</books_count>
+                <ratings_count type="integer">5796</ratings_count>
+                <text_reviews_count type="integer">443</text_reviews_count>
+                <original_publication_year type="integer">2015</original_publication_year>
+                <original_publication_month type="integer">9</original_publication_month>
+                <original_publication_day type="integer">15</original_publication_day>
+                <average_rating>4.26</average_rating>
+                <best_book type="Book">
+                    <id type="integer">24611928</id>
+                    <title>The End Game (A Brit in the FBI, #3)</title>
+                    <author>
+                        <id type="integer">1239</id>
+                        <name>Catherine Coulter</name>
+                    </author>
+                    <image_url>https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1425319746l/24611928._SX98_.jpg</image_url>
+                    <small_image_url>https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1425319746l/24611928._SX50_.jpg</small_image_url>
+                </best_book>
+            </work>
+            <work>
+                <id type="integer">11571577</id>
+                <books_count type="integer">1</books_count>
+                <ratings_count type="integer">1109</ratings_count>
+                <text_reviews_count type="integer">46</text_reviews_count>
+                <original_publication_year type="integer">2010</original_publication_year>
+                <original_publication_month type="integer">4</original_publication_month>
+                <original_publication_day type="integer">30</original_publication_day>
+                <average_rating>4.13</average_rating>
+                <best_book type="Book">
+                    <id type="integer">8782597</id>
+                    <title>Ender's Game</title>
+                    <author>
+                        <id type="integer">2940867</id>
+                        <name>Frederic P.  Miller</name>
+                    </author>
+                    <image_url>https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png</image_url>
+                    <small_image_url>https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png</small_image_url>
+                </best_book>
+            </work>
+            <work>
+                <id type="integer">6581562</id>
+                <books_count type="integer">5</books_count>
+                <ratings_count type="integer">33757</ratings_count>
+                <text_reviews_count type="integer">227</text_reviews_count>
+                <original_publication_year type="integer">2009</original_publication_year>
+                <original_publication_month type="integer" nil="true"/>
+                <original_publication_day type="integer" nil="true"/>
+                <average_rating>4.38</average_rating>
+                <best_book type="Book">
+                    <id type="integer">6393082</id>
+                    <title>Ender's Game, Volume 1: Battle School (Ender's Saga)</title>
+                    <author>
+                        <id type="integer">38491</id>
+                        <name>Christopher Yost</name>
+                    </author>
+                    <image_url>https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png</image_url>
+                    <small_image_url>https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png</small_image_url>
+                </best_book>
+            </work>
+            <work>
+                <id type="integer">12530</id>
+                <books_count type="integer">3</books_count>
+                <ratings_count type="integer">1853</ratings_count>
+                <text_reviews_count type="integer">60</text_reviews_count>
+                <original_publication_year type="integer">2002</original_publication_year>
+                <original_publication_month type="integer">9</original_publication_month>
+                <original_publication_day type="integer">16</original_publication_day>
+                <average_rating>4.49</average_rating>
+                <best_book type="Book">
+                    <id type="integer">9735</id>
+                    <title>Ender's Game Boxed Set: Ender's Game, Ender's Shadow, Shadow of the Hegemon</title>
+                    <author>
+                        <id type="integer">589</id>
+                        <name>Orson Scott Card</name>
+                    </author>
+                    <image_url>https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png</image_url>
+                    <small_image_url>https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png</small_image_url>
+                </best_book>
+            </work>
+            <work>
+                <id type="integer">46873310</id>
+                <books_count type="integer">6</books_count>
+                <ratings_count type="integer">418</ratings_count>
+                <text_reviews_count type="integer">38</text_reviews_count>
+                <original_publication_year type="integer">2015</original_publication_year>
+                <original_publication_month type="integer">9</original_publication_month>
+                <original_publication_day type="integer">26</original_publication_day>
+                <average_rating>4.05</average_rating>
+                <best_book type="Book">
+                    <id type="integer">31868870</id>
+                    <title>End Game</title>
+                    <author>
+                        <id type="integer">7473922</id>
+                        <name>Ginger Booth</name>
+                    </author>
+                    <image_url>https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1473280564l/31868870._SX98_.jpg</image_url>
+                    <small_image_url>https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1473280564l/31868870._SY75_.jpg</small_image_url>
+                </best_book>
+            </work>
+            <work>
+                <id type="integer">7272274</id>
+                <books_count type="integer">3</books_count>
+                <ratings_count type="integer">13647</ratings_count>
+                <text_reviews_count type="integer">55</text_reviews_count>
+                <original_publication_year type="integer">2010</original_publication_year>
+                <original_publication_month type="integer">3</original_publication_month>
+                <original_publication_day type="integer">24</original_publication_day>
+                <average_rating>4.61</average_rating>
+                <best_book type="Book">
+                    <id type="integer">7025086</id>
+                    <title>Ender's Game, Volume 2: Command School</title>
+                    <author>
+                        <id type="integer">38491</id>
+                        <name>Christopher Yost</name>
+                    </author>
+                    <image_url>https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png</image_url>
+                    <small_image_url>https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png</small_image_url>
+                </best_book>
+            </work>
+            <work>
+                <id type="integer">45665816</id>
+                <books_count type="integer">14</books_count>
+                <ratings_count type="integer">745</ratings_count>
+                <text_reviews_count type="integer">54</text_reviews_count>
+                <original_publication_year type="integer">2014</original_publication_year>
+                <original_publication_month type="integer">11</original_publication_month>
+                <original_publication_day type="integer">6</original_publication_day>
+                <average_rating>3.88</average_rating>
+                <best_book type="Book">
+                    <id type="integer">25809834</id>
+                    <title>The End Game (Templar, #5)</title>
+                    <author>
+                        <id type="integer">26011</id>
+                        <name>Raymond Khoury</name>
+                    </author>
+                    <image_url>https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1451140269l/25809834._SX98_.jpg</image_url>
+                    <small_image_url>https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1451140269l/25809834._SY75_.jpg</small_image_url>
+                </best_book>
+            </work>
+            <work>
+                <id type="integer">51609213</id>
+                <books_count type="integer">7</books_count>
+                <ratings_count type="integer">1141</ratings_count>
+                <text_reviews_count type="integer">272</text_reviews_count>
+                <original_publication_year type="integer">2018</original_publication_year>
+                <original_publication_month type="integer">1</original_publication_month>
+                <original_publication_day type="integer">2</original_publication_day>
+                <average_rating>4.22</average_rating>
+                <best_book type="Book">
+                    <id type="integer">30985221</id>
+                    <title>End Game (Dirty Money, #4)</title>
+                    <author>
+                        <id type="integer">73977</id>
+                        <name>Lisa Renee Jones</name>
+                    </author>
+                    <image_url>https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1497740135l/30985221._SX98_.jpg</image_url>
+                    <small_image_url>https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1497740135l/30985221._SX50_.jpg</small_image_url>
+                </best_book>
+            </work>
+            <work>
+                <id type="integer">26343184</id>
+                <books_count type="integer">8</books_count>
+                <ratings_count type="integer">1664</ratings_count>
+                <text_reviews_count type="integer">97</text_reviews_count>
+                <original_publication_year type="integer">2014</original_publication_year>
+                <original_publication_month type="integer">6</original_publication_month>
+                <original_publication_day type="integer">24</original_publication_day>
+                <average_rating>4.19</average_rating>
+                <best_book type="Book">
+                    <id type="integer">18596481</id>
+                    <title>End Game (Jonathan Grave #6)</title>
+                    <author>
+                        <id type="integer">181831</id>
+                        <name>John Gilstrap</name>
+                    </author>
+                    <image_url>https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1389598387l/18596481._SY160_.jpg</image_url>
+                    <small_image_url>https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1389598387l/18596481._SY75_.jpg</small_image_url>
+                </best_book>
+            </work>
+            <work>
+                <id type="integer">56238306</id>
+                <books_count type="integer">4</books_count>
+                <ratings_count type="integer">1874</ratings_count>
+                <text_reviews_count type="integer">77</text_reviews_count>
+                <original_publication_year type="integer" nil="true"/>
+                <original_publication_month type="integer" nil="true"/>
+                <original_publication_day type="integer" nil="true"/>
+                <average_rating>4.31</average_rating>
+                <best_book type="Book">
+                    <id type="integer">34963329</id>
+                    <title>End Game (Jack Noble #12)</title>
+                    <author>
+                        <id type="integer">6151659</id>
+                        <name>L.T. Ryan</name>
+                    </author>
+                    <image_url>https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png</image_url>
+                    <small_image_url>https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png</small_image_url>
+                </best_book>
+            </work>
+            <work>
+                <id type="integer">56991591</id>
+                <books_count type="integer">5</books_count>
+                <ratings_count type="integer">1079</ratings_count>
+                <text_reviews_count type="integer">60</text_reviews_count>
+                <original_publication_year type="integer">2017</original_publication_year>
+                <original_publication_month type="integer">7</original_publication_month>
+                <original_publication_day type="integer">7</original_publication_day>
+                <average_rating>4.25</average_rating>
+                <best_book type="Book">
+                    <id type="integer">35563236</id>
+                    <title>End Game (Langthorne #4)</title>
+                    <author>
+                        <id type="integer">6422267</id>
+                        <name>Charlie Gallagher</name>
+                    </author>
+                    <image_url>https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1500842571l/35563236._SX98_.jpg</image_url>
+                    <small_image_url>https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1500842571l/35563236._SY75_.jpg</small_image_url>
+                </best_book>
+            </work>
+            <work>
+                <id type="integer">53830455</id>
+                <books_count type="integer">4</books_count>
+                <ratings_count type="integer">1982</ratings_count>
+                <text_reviews_count type="integer">141</text_reviews_count>
+                <original_publication_year type="integer">2016</original_publication_year>
+                <original_publication_month type="integer">11</original_publication_month>
+                <original_publication_day type="integer">27</original_publication_day>
+                <average_rating>4.42</average_rating>
+                <best_book type="Book">
+                    <id type="integer">33144572</id>
+                    <title>End Game (Fallen Empire, #8)</title>
+                    <author>
+                        <id type="integer">4512224</id>
+                        <name>Lindsay Buroker</name>
+                    </author>
+                    <image_url>https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png</image_url>
+                    <small_image_url>https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png</small_image_url>
+                </best_book>
+            </work>
+            <work>
+                <id type="integer">61846440</id>
+                <books_count type="integer">2</books_count>
+                <ratings_count type="integer">1097</ratings_count>
+                <text_reviews_count type="integer">233</text_reviews_count>
+                <original_publication_year type="integer">2018</original_publication_year>
+                <original_publication_month type="integer">5</original_publication_month>
+                <original_publication_day type="integer">23</original_publication_day>
+                <average_rating>4.41</average_rating>
+                <best_book type="Book">
+                    <id type="integer">39947220</id>
+                    <title>End Game (Bellevue Bullies, #4)</title>
+                    <author>
+                        <id type="integer">5255580</id>
+                        <name>Toni Aleo</name>
+                    </author>
+                    <image_url>https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1526291653l/39947220._SX98_.jpg</image_url>
+                    <small_image_url>https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1526291653l/39947220._SY75_.jpg</small_image_url>
+                </best_book>
+            </work>
+            <work>
+                <id type="integer">66029652</id>
+                <books_count type="integer">2</books_count>
+                <ratings_count type="integer">969</ratings_count>
+                <text_reviews_count type="integer">127</text_reviews_count>
+                <original_publication_year type="integer" nil="true"/>
+                <original_publication_month type="integer" nil="true"/>
+                <original_publication_day type="integer" nil="true"/>
+                <average_rating>4.04</average_rating>
+                <best_book type="Book">
+                    <id type="integer">42372731</id>
+                    <title>The End Game: The Game Duet</title>
+                    <author>
+                        <id type="integer">15996299</id>
+                        <name>Mickey Miller</name>
+                    </author>
+                    <image_url>https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png</image_url>
+                    <small_image_url>https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png</small_image_url>
+                </best_book>
+            </work>
+            <work>
+                <id type="integer">17050695</id>
+                <books_count type="integer">3</books_count>
+                <ratings_count type="integer">881</ratings_count>
+                <text_reviews_count type="integer">67</text_reviews_count>
+                <original_publication_year type="integer">2010</original_publication_year>
+                <original_publication_month type="integer">3</original_publication_month>
+                <original_publication_day type="integer">10</original_publication_day>
+                <average_rating>4.23</average_rating>
+                <best_book type="Book">
+                    <id type="integer">12082688</id>
+                    <title>Ender's Game Ultimate Collection</title>
+                    <author>
+                        <id type="integer">38491</id>
+                        <name>Christopher Yost</name>
+                    </author>
+                    <image_url>https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1372911791l/12082688._SX98_.jpg</image_url>
+                    <small_image_url>https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1372911791l/12082688._SY75_.jpg</small_image_url>
+                </best_book>
+            </work>
+            <work>
+                <id type="integer">62571166</id>
+                <books_count type="integer">3</books_count>
+                <ratings_count type="integer">1176</ratings_count>
+                <text_reviews_count type="integer">151</text_reviews_count>
+                <original_publication_year type="integer">2018</original_publication_year>
+                <original_publication_month type="integer">8</original_publication_month>
+                <original_publication_day type="integer">1</original_publication_day>
+                <average_rating>4.08</average_rating>
+                <best_book type="Book">
+                    <id type="integer">40281801</id>
+                    <title>End Game (Dawson Family, #2)</title>
+                    <author>
+                        <id type="integer">1635425</id>
+                        <name>Emily Goodwin</name>
+                    </author>
+                    <image_url>https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1533204256l/40281801._SX98_.jpg</image_url>
+                    <small_image_url>https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1533204256l/40281801._SY75_.jpg</small_image_url>
+                </best_book>
+            </work>
+        </results>
+    </search>
+</GoodreadsResponse>

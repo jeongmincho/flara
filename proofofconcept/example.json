@@ -1,0 +1,2398 @@
+{
+  "declaration": {"attributes": {"version": "1.0", "encoding": "UTF-8"}},
+  "elements": [
+    {
+      "type": "element",
+      "name": "GoodreadsResponse",
+      "elements": [
+        {
+          "type": "element",
+          "name": "Request",
+          "elements": [
+            {
+              "type": "element",
+              "name": "authentication",
+              "elements": [{"type": "text", "text": "true"}]
+            },
+            {
+              "type": "element",
+              "name": "key",
+              "elements": [{"type": "cdata", "cdata": "Plfc3fiqTxmZaAvMPXulw"}]
+            },
+            {
+              "type": "element",
+              "name": "method",
+              "elements": [{"type": "cdata", "cdata": "search_search"}]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "name": "search",
+          "elements": [
+            {
+              "type": "element",
+              "name": "query",
+              "elements": [{"type": "cdata", "cdata": "Ender's Game"}]
+            },
+            {
+              "type": "element",
+              "name": "results-start",
+              "elements": [{"type": "text", "text": "1"}]
+            },
+            {
+              "type": "element",
+              "name": "results-end",
+              "elements": [{"type": "text", "text": "20"}]
+            },
+            {
+              "type": "element",
+              "name": "total-results",
+              "elements": [{"type": "text", "text": "704"}]
+            },
+            {
+              "type": "element",
+              "name": "source",
+              "elements": [{"type": "text", "text": "Goodreads"}]
+            },
+            {
+              "type": "element",
+              "name": "query-time-seconds",
+              "elements": [{"type": "text", "text": "0.28"}]
+            },
+            {
+              "type": "element",
+              "name": "results",
+              "elements": [
+                {
+                  "type": "element",
+                  "name": "work",
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "id",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "2422333"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "books_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "13"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "ratings_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "1021884"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "text_reviews_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "41275"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_year",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "1985"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_month",
+                      "attributes": {"type": "integer", "nil": "true"},
+                      "elements": []
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_day",
+                      "attributes": {"type": "integer", "nil": "true"},
+                      "elements": []
+                    },
+                    {
+                      "type": "element",
+                      "name": "average_rating",
+                      "elements": [{"type": "text", "text": "4.30"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "best_book",
+                      "attributes": {"type": "Book"},
+                      "elements": [
+                        {
+                          "type": "element",
+                          "name": "id",
+                          "attributes": {"type": "integer"},
+                          "elements": [{"type": "text", "text": "375802"}]
+                        },
+                        {
+                          "type": "element",
+                          "name": "title",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text": "Ender's Game (Ender's Saga, #1)"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "author",
+                          "elements": [
+                            {
+                              "type": "element",
+                              "name": "id",
+                              "attributes": {"type": "integer"},
+                              "elements": [{"type": "text", "text": "589"}]
+                            },
+                            {
+                              "type": "element",
+                              "name": "name",
+                              "elements": [
+                                {"type": "text", "text": "Orson Scott Card"}
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1408303130l/375802._SY160_.jpg"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "small_image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1408303130l/375802._SY75_.jpg"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "work",
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "id",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "55447683"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "books_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "41"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "ratings_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "28655"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "text_reviews_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "1880"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_year",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "2017"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_month",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "11"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_day",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "14"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "average_rating",
+                      "elements": [{"type": "text", "text": "4.14"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "best_book",
+                      "attributes": {"type": "Book"},
+                      "elements": [
+                        {
+                          "type": "element",
+                          "name": "id",
+                          "attributes": {"type": "integer"},
+                          "elements": [{"type": "text", "text": "34368113"}]
+                        },
+                        {
+                          "type": "element",
+                          "name": "title",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text": "End Game (Will Robie, #5)"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "author",
+                          "elements": [
+                            {
+                              "type": "element",
+                              "name": "id",
+                              "attributes": {"type": "integer"},
+                              "elements": [{"type": "text", "text": "9291"}]
+                            },
+                            {
+                              "type": "element",
+                              "name": "name",
+                              "elements": [
+                                {"type": "text", "text": "David Baldacci"}
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1495976812l/34368113._SX98_.jpg"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "small_image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1495976812l/34368113._SY75_.jpg"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "work",
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "id",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "938064"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "books_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "1"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "ratings_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "80891"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "text_reviews_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "822"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_year",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "1984"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_month",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "12"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_day",
+                      "attributes": {"type": "integer", "nil": "true"},
+                      "elements": []
+                    },
+                    {
+                      "type": "element",
+                      "name": "average_rating",
+                      "elements": [{"type": "text", "text": "4.18"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "best_book",
+                      "attributes": {"type": "Book"},
+                      "elements": [
+                        {
+                          "type": "element",
+                          "name": "id",
+                          "attributes": {"type": "integer"},
+                          "elements": [{"type": "text", "text": "44687"}]
+                        },
+                        {
+                          "type": "element",
+                          "name": "title",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text": "Enchanters' End Game (The Belgariad, #5)"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "author",
+                          "elements": [
+                            {
+                              "type": "element",
+                              "name": "id",
+                              "attributes": {"type": "integer"},
+                              "elements": [{"type": "text", "text": "8732"}]
+                            },
+                            {
+                              "type": "element",
+                              "name": "name",
+                              "elements": [
+                                {"type": "text", "text": "David Eddings"}
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1217735909l/44687._SX98_.jpg"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "small_image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1217735909l/44687._SY75_.jpg"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "work",
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "id",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "42437887"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "books_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "7"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "ratings_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "5322"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "text_reviews_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "653"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_year",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "2015"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_month",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "9"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_day",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "8"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "average_rating",
+                      "elements": [{"type": "text", "text": "4.10"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "best_book",
+                      "attributes": {"type": "Book"},
+                      "elements": [
+                        {
+                          "type": "element",
+                          "name": "id",
+                          "attributes": {"type": "integer"},
+                          "elements": [{"type": "text", "text": "22874150"}]
+                        },
+                        {
+                          "type": "element",
+                          "name": "title",
+                          "elements": [{"type": "text", "text": "The End Game"}]
+                        },
+                        {
+                          "type": "element",
+                          "name": "author",
+                          "elements": [
+                            {
+                              "type": "element",
+                              "name": "id",
+                              "attributes": {"type": "integer"},
+                              "elements": [{"type": "text", "text": "6876994"}]
+                            },
+                            {
+                              "type": "element",
+                              "name": "name",
+                              "elements": [
+                                {"type": "text", "text": "Kate  McCarthy"}
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1423089153l/22874150._SX98_.jpg"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "small_image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1423089153l/22874150._SY75_.jpg"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "work",
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "id",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "44223038"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "books_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "3"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "ratings_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "5796"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "text_reviews_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "443"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_year",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "2015"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_month",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "9"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_day",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "15"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "average_rating",
+                      "elements": [{"type": "text", "text": "4.26"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "best_book",
+                      "attributes": {"type": "Book"},
+                      "elements": [
+                        {
+                          "type": "element",
+                          "name": "id",
+                          "attributes": {"type": "integer"},
+                          "elements": [{"type": "text", "text": "24611928"}]
+                        },
+                        {
+                          "type": "element",
+                          "name": "title",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text": "The End Game (A Brit in the FBI, #3)"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "author",
+                          "elements": [
+                            {
+                              "type": "element",
+                              "name": "id",
+                              "attributes": {"type": "integer"},
+                              "elements": [{"type": "text", "text": "1239"}]
+                            },
+                            {
+                              "type": "element",
+                              "name": "name",
+                              "elements": [
+                                {"type": "text", "text": "Catherine Coulter"}
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1425319746l/24611928._SX98_.jpg"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "small_image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1425319746l/24611928._SX50_.jpg"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "work",
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "id",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "11571577"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "books_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "1"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "ratings_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "1109"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "text_reviews_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "46"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_year",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "2010"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_month",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "4"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_day",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "30"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "average_rating",
+                      "elements": [{"type": "text", "text": "4.13"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "best_book",
+                      "attributes": {"type": "Book"},
+                      "elements": [
+                        {
+                          "type": "element",
+                          "name": "id",
+                          "attributes": {"type": "integer"},
+                          "elements": [{"type": "text", "text": "8782597"}]
+                        },
+                        {
+                          "type": "element",
+                          "name": "title",
+                          "elements": [{"type": "text", "text": "Ender's Game"}]
+                        },
+                        {
+                          "type": "element",
+                          "name": "author",
+                          "elements": [
+                            {
+                              "type": "element",
+                              "name": "id",
+                              "attributes": {"type": "integer"},
+                              "elements": [{"type": "text", "text": "2940867"}]
+                            },
+                            {
+                              "type": "element",
+                              "name": "name",
+                              "elements": [
+                                {"type": "text", "text": "Frederic P.  Miller"}
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "small_image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "work",
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "id",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "6581562"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "books_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "5"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "ratings_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "33757"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "text_reviews_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "227"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_year",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "2009"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_month",
+                      "attributes": {"type": "integer", "nil": "true"},
+                      "elements": []
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_day",
+                      "attributes": {"type": "integer", "nil": "true"},
+                      "elements": []
+                    },
+                    {
+                      "type": "element",
+                      "name": "average_rating",
+                      "elements": [{"type": "text", "text": "4.38"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "best_book",
+                      "attributes": {"type": "Book"},
+                      "elements": [
+                        {
+                          "type": "element",
+                          "name": "id",
+                          "attributes": {"type": "integer"},
+                          "elements": [{"type": "text", "text": "6393082"}]
+                        },
+                        {
+                          "type": "element",
+                          "name": "title",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "Ender's Game, Volume 1: Battle School (Ender's Saga)"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "author",
+                          "elements": [
+                            {
+                              "type": "element",
+                              "name": "id",
+                              "attributes": {"type": "integer"},
+                              "elements": [{"type": "text", "text": "38491"}]
+                            },
+                            {
+                              "type": "element",
+                              "name": "name",
+                              "elements": [
+                                {"type": "text", "text": "Christopher Yost"}
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "small_image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "work",
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "id",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "12530"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "books_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "3"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "ratings_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "1853"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "text_reviews_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "60"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_year",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "2002"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_month",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "9"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_day",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "16"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "average_rating",
+                      "elements": [{"type": "text", "text": "4.49"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "best_book",
+                      "attributes": {"type": "Book"},
+                      "elements": [
+                        {
+                          "type": "element",
+                          "name": "id",
+                          "attributes": {"type": "integer"},
+                          "elements": [{"type": "text", "text": "9735"}]
+                        },
+                        {
+                          "type": "element",
+                          "name": "title",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "Ender's Game Boxed Set: Ender's Game, Ender's Shadow, Shadow of the Hegemon"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "author",
+                          "elements": [
+                            {
+                              "type": "element",
+                              "name": "id",
+                              "attributes": {"type": "integer"},
+                              "elements": [{"type": "text", "text": "589"}]
+                            },
+                            {
+                              "type": "element",
+                              "name": "name",
+                              "elements": [
+                                {"type": "text", "text": "Orson Scott Card"}
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "small_image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "work",
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "id",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "46873310"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "books_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "6"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "ratings_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "418"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "text_reviews_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "38"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_year",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "2015"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_month",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "9"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_day",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "26"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "average_rating",
+                      "elements": [{"type": "text", "text": "4.05"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "best_book",
+                      "attributes": {"type": "Book"},
+                      "elements": [
+                        {
+                          "type": "element",
+                          "name": "id",
+                          "attributes": {"type": "integer"},
+                          "elements": [{"type": "text", "text": "31868870"}]
+                        },
+                        {
+                          "type": "element",
+                          "name": "title",
+                          "elements": [{"type": "text", "text": "End Game"}]
+                        },
+                        {
+                          "type": "element",
+                          "name": "author",
+                          "elements": [
+                            {
+                              "type": "element",
+                              "name": "id",
+                              "attributes": {"type": "integer"},
+                              "elements": [{"type": "text", "text": "7473922"}]
+                            },
+                            {
+                              "type": "element",
+                              "name": "name",
+                              "elements": [
+                                {"type": "text", "text": "Ginger Booth"}
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1473280564l/31868870._SX98_.jpg"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "small_image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1473280564l/31868870._SY75_.jpg"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "work",
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "id",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "7272274"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "books_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "3"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "ratings_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "13647"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "text_reviews_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "55"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_year",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "2010"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_month",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "3"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_day",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "24"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "average_rating",
+                      "elements": [{"type": "text", "text": "4.61"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "best_book",
+                      "attributes": {"type": "Book"},
+                      "elements": [
+                        {
+                          "type": "element",
+                          "name": "id",
+                          "attributes": {"type": "integer"},
+                          "elements": [{"type": "text", "text": "7025086"}]
+                        },
+                        {
+                          "type": "element",
+                          "name": "title",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text": "Ender's Game, Volume 2: Command School"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "author",
+                          "elements": [
+                            {
+                              "type": "element",
+                              "name": "id",
+                              "attributes": {"type": "integer"},
+                              "elements": [{"type": "text", "text": "38491"}]
+                            },
+                            {
+                              "type": "element",
+                              "name": "name",
+                              "elements": [
+                                {"type": "text", "text": "Christopher Yost"}
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "small_image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "work",
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "id",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "45665816"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "books_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "14"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "ratings_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "745"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "text_reviews_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "54"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_year",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "2014"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_month",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "11"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_day",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "6"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "average_rating",
+                      "elements": [{"type": "text", "text": "3.88"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "best_book",
+                      "attributes": {"type": "Book"},
+                      "elements": [
+                        {
+                          "type": "element",
+                          "name": "id",
+                          "attributes": {"type": "integer"},
+                          "elements": [{"type": "text", "text": "25809834"}]
+                        },
+                        {
+                          "type": "element",
+                          "name": "title",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text": "The End Game (Templar, #5)"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "author",
+                          "elements": [
+                            {
+                              "type": "element",
+                              "name": "id",
+                              "attributes": {"type": "integer"},
+                              "elements": [{"type": "text", "text": "26011"}]
+                            },
+                            {
+                              "type": "element",
+                              "name": "name",
+                              "elements": [
+                                {"type": "text", "text": "Raymond Khoury"}
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1451140269l/25809834._SX98_.jpg"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "small_image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1451140269l/25809834._SY75_.jpg"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "work",
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "id",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "51609213"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "books_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "7"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "ratings_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "1141"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "text_reviews_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "272"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_year",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "2018"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_month",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "1"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_day",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "2"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "average_rating",
+                      "elements": [{"type": "text", "text": "4.22"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "best_book",
+                      "attributes": {"type": "Book"},
+                      "elements": [
+                        {
+                          "type": "element",
+                          "name": "id",
+                          "attributes": {"type": "integer"},
+                          "elements": [{"type": "text", "text": "30985221"}]
+                        },
+                        {
+                          "type": "element",
+                          "name": "title",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text": "End Game (Dirty Money, #4)"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "author",
+                          "elements": [
+                            {
+                              "type": "element",
+                              "name": "id",
+                              "attributes": {"type": "integer"},
+                              "elements": [{"type": "text", "text": "73977"}]
+                            },
+                            {
+                              "type": "element",
+                              "name": "name",
+                              "elements": [
+                                {"type": "text", "text": "Lisa Renee Jones"}
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1497740135l/30985221._SX98_.jpg"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "small_image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1497740135l/30985221._SX50_.jpg"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "work",
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "id",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "26343184"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "books_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "8"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "ratings_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "1664"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "text_reviews_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "97"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_year",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "2014"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_month",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "6"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_day",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "24"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "average_rating",
+                      "elements": [{"type": "text", "text": "4.19"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "best_book",
+                      "attributes": {"type": "Book"},
+                      "elements": [
+                        {
+                          "type": "element",
+                          "name": "id",
+                          "attributes": {"type": "integer"},
+                          "elements": [{"type": "text", "text": "18596481"}]
+                        },
+                        {
+                          "type": "element",
+                          "name": "title",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text": "End Game (Jonathan Grave #6)"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "author",
+                          "elements": [
+                            {
+                              "type": "element",
+                              "name": "id",
+                              "attributes": {"type": "integer"},
+                              "elements": [{"type": "text", "text": "181831"}]
+                            },
+                            {
+                              "type": "element",
+                              "name": "name",
+                              "elements": [
+                                {"type": "text", "text": "John Gilstrap"}
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1389598387l/18596481._SY160_.jpg"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "small_image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1389598387l/18596481._SY75_.jpg"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "work",
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "id",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "56238306"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "books_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "4"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "ratings_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "1874"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "text_reviews_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "77"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_year",
+                      "attributes": {"type": "integer", "nil": "true"},
+                      "elements": []
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_month",
+                      "attributes": {"type": "integer", "nil": "true"},
+                      "elements": []
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_day",
+                      "attributes": {"type": "integer", "nil": "true"},
+                      "elements": []
+                    },
+                    {
+                      "type": "element",
+                      "name": "average_rating",
+                      "elements": [{"type": "text", "text": "4.31"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "best_book",
+                      "attributes": {"type": "Book"},
+                      "elements": [
+                        {
+                          "type": "element",
+                          "name": "id",
+                          "attributes": {"type": "integer"},
+                          "elements": [{"type": "text", "text": "34963329"}]
+                        },
+                        {
+                          "type": "element",
+                          "name": "title",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text": "End Game (Jack Noble #12)"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "author",
+                          "elements": [
+                            {
+                              "type": "element",
+                              "name": "id",
+                              "attributes": {"type": "integer"},
+                              "elements": [{"type": "text", "text": "6151659"}]
+                            },
+                            {
+                              "type": "element",
+                              "name": "name",
+                              "elements": [
+                                {"type": "text", "text": "L.T. Ryan"}
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "small_image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "work",
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "id",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "56991591"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "books_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "5"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "ratings_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "1079"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "text_reviews_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "60"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_year",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "2017"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_month",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "7"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_day",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "7"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "average_rating",
+                      "elements": [{"type": "text", "text": "4.25"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "best_book",
+                      "attributes": {"type": "Book"},
+                      "elements": [
+                        {
+                          "type": "element",
+                          "name": "id",
+                          "attributes": {"type": "integer"},
+                          "elements": [{"type": "text", "text": "35563236"}]
+                        },
+                        {
+                          "type": "element",
+                          "name": "title",
+                          "elements": [
+                            {"type": "text", "text": "End Game (Langthorne #4)"}
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "author",
+                          "elements": [
+                            {
+                              "type": "element",
+                              "name": "id",
+                              "attributes": {"type": "integer"},
+                              "elements": [{"type": "text", "text": "6422267"}]
+                            },
+                            {
+                              "type": "element",
+                              "name": "name",
+                              "elements": [
+                                {"type": "text", "text": "Charlie Gallagher"}
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1500842571l/35563236._SX98_.jpg"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "small_image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1500842571l/35563236._SY75_.jpg"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "work",
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "id",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "53830455"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "books_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "4"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "ratings_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "1982"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "text_reviews_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "141"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_year",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "2016"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_month",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "11"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_day",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "27"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "average_rating",
+                      "elements": [{"type": "text", "text": "4.42"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "best_book",
+                      "attributes": {"type": "Book"},
+                      "elements": [
+                        {
+                          "type": "element",
+                          "name": "id",
+                          "attributes": {"type": "integer"},
+                          "elements": [{"type": "text", "text": "33144572"}]
+                        },
+                        {
+                          "type": "element",
+                          "name": "title",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text": "End Game (Fallen Empire, #8)"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "author",
+                          "elements": [
+                            {
+                              "type": "element",
+                              "name": "id",
+                              "attributes": {"type": "integer"},
+                              "elements": [{"type": "text", "text": "4512224"}]
+                            },
+                            {
+                              "type": "element",
+                              "name": "name",
+                              "elements": [
+                                {"type": "text", "text": "Lindsay Buroker"}
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "small_image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "work",
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "id",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "61846440"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "books_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "2"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "ratings_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "1097"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "text_reviews_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "233"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_year",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "2018"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_month",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "5"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_day",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "23"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "average_rating",
+                      "elements": [{"type": "text", "text": "4.41"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "best_book",
+                      "attributes": {"type": "Book"},
+                      "elements": [
+                        {
+                          "type": "element",
+                          "name": "id",
+                          "attributes": {"type": "integer"},
+                          "elements": [{"type": "text", "text": "39947220"}]
+                        },
+                        {
+                          "type": "element",
+                          "name": "title",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text": "End Game (Bellevue Bullies, #4)"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "author",
+                          "elements": [
+                            {
+                              "type": "element",
+                              "name": "id",
+                              "attributes": {"type": "integer"},
+                              "elements": [{"type": "text", "text": "5255580"}]
+                            },
+                            {
+                              "type": "element",
+                              "name": "name",
+                              "elements": [
+                                {"type": "text", "text": "Toni Aleo"}
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1526291653l/39947220._SX98_.jpg"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "small_image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1526291653l/39947220._SY75_.jpg"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "work",
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "id",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "66029652"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "books_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "2"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "ratings_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "969"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "text_reviews_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "127"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_year",
+                      "attributes": {"type": "integer", "nil": "true"},
+                      "elements": []
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_month",
+                      "attributes": {"type": "integer", "nil": "true"},
+                      "elements": []
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_day",
+                      "attributes": {"type": "integer", "nil": "true"},
+                      "elements": []
+                    },
+                    {
+                      "type": "element",
+                      "name": "average_rating",
+                      "elements": [{"type": "text", "text": "4.04"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "best_book",
+                      "attributes": {"type": "Book"},
+                      "elements": [
+                        {
+                          "type": "element",
+                          "name": "id",
+                          "attributes": {"type": "integer"},
+                          "elements": [{"type": "text", "text": "42372731"}]
+                        },
+                        {
+                          "type": "element",
+                          "name": "title",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text": "The End Game: The Game Duet"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "author",
+                          "elements": [
+                            {
+                              "type": "element",
+                              "name": "id",
+                              "attributes": {"type": "integer"},
+                              "elements": [{"type": "text", "text": "15996299"}]
+                            },
+                            {
+                              "type": "element",
+                              "name": "name",
+                              "elements": [
+                                {"type": "text", "text": "Mickey Miller"}
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "small_image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "work",
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "id",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "17050695"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "books_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "3"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "ratings_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "881"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "text_reviews_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "67"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_year",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "2010"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_month",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "3"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_day",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "10"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "average_rating",
+                      "elements": [{"type": "text", "text": "4.23"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "best_book",
+                      "attributes": {"type": "Book"},
+                      "elements": [
+                        {
+                          "type": "element",
+                          "name": "id",
+                          "attributes": {"type": "integer"},
+                          "elements": [{"type": "text", "text": "12082688"}]
+                        },
+                        {
+                          "type": "element",
+                          "name": "title",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text": "Ender's Game Ultimate Collection"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "author",
+                          "elements": [
+                            {
+                              "type": "element",
+                              "name": "id",
+                              "attributes": {"type": "integer"},
+                              "elements": [{"type": "text", "text": "38491"}]
+                            },
+                            {
+                              "type": "element",
+                              "name": "name",
+                              "elements": [
+                                {"type": "text", "text": "Christopher Yost"}
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1372911791l/12082688._SX98_.jpg"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "small_image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1372911791l/12082688._SY75_.jpg"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "work",
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "id",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "62571166"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "books_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "3"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "ratings_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "1176"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "text_reviews_count",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "151"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_year",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "2018"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_month",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "8"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "original_publication_day",
+                      "attributes": {"type": "integer"},
+                      "elements": [{"type": "text", "text": "1"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "average_rating",
+                      "elements": [{"type": "text", "text": "4.08"}]
+                    },
+                    {
+                      "type": "element",
+                      "name": "best_book",
+                      "attributes": {"type": "Book"},
+                      "elements": [
+                        {
+                          "type": "element",
+                          "name": "id",
+                          "attributes": {"type": "integer"},
+                          "elements": [{"type": "text", "text": "40281801"}]
+                        },
+                        {
+                          "type": "element",
+                          "name": "title",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text": "End Game (Dawson Family, #2)"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "author",
+                          "elements": [
+                            {
+                              "type": "element",
+                              "name": "id",
+                              "attributes": {"type": "integer"},
+                              "elements": [{"type": "text", "text": "1635425"}]
+                            },
+                            {
+                              "type": "element",
+                              "name": "name",
+                              "elements": [
+                                {"type": "text", "text": "EmilyGoodwin"}
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1533204256l/40281801._SX98_.jpg"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "element",
+                          "name": "small_image_url",
+                          "elements": [
+                            {
+                              "type": "text",
+                              "text":
+                                "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1533204256l/40281801._SY75_.jpg"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
