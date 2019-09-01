@@ -76,7 +76,7 @@ class BookList extends React.Component {
                 <Card className={classes.card}>
                   <Link
                     className={classes.linkStyle}
-                    to={`/singlemenu/id=${book.id}`}
+                    to={`/singlebook/id=${book.id}`}
                   >
                     <CardHeader
                       title={book.name}

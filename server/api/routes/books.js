@@ -5,6 +5,7 @@ module.exports = router
 router.get('/', async (req, res, next) => {
   try {
     let bookList
+    console.log(req.query)
     if (!req.query.id) {
       // cater towards pagination queries
       const {limit, offset} = req.query

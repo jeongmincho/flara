@@ -29,6 +29,7 @@ export const clearBookList = () => {
 /* ============= THUNKS ============= */
 
 export const populateBookListThunk = BookQuery => {
+  console.log(BookQuery)
   return async dispatch => {
     try {
       // if (isPagination) {

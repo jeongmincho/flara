@@ -3,7 +3,8 @@ import {connect} from 'react-redux'
 import {withRouter, Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import {Login, Signup, UserHome} from './components'
-import BookList from './components/booklist'
+import BookList from './components/BookList'
+import BookSingle from './components/BookSingle'
 import {me} from './store'
 
 /**
@@ -27,6 +28,7 @@ class Routes extends Component {
             {/* Routes placed here are only available after logging in */}
             <Route path="/home" component={UserHome} />
             <Route path="/books/:query" component={BookList} />
+            <Route path="/singlebook/:query" component={BookSingle} />
           </Switch>
         )}
         {/* Displays our Login component as a fallback */}
@@ -42,7 +44,7 @@ class Routes extends Component {
 const mapState = state => {
   return {
     // Being 'logged in' for our purposes will be defined has having a state.user that has a truthy id.
-    // Otherwise, state.user will be an empty object, and state.user.id will be falsey
+    // Otherwise, state.user will be an empty object, and state.userAuth.id will be falsey
     isLoggedIn: !!state.userAuth.id
   }
 }
