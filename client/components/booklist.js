@@ -41,7 +41,7 @@ class BookList extends React.Component {
     this.handleNewPage = this.handleNewPage.bind(this)
   }
   componentDidMount() {
-    // this.props.countBookListThunk()
+    this.props.countBookListThunk()
     const query = this.props.match.params.query
     this.props.populateBookListThunk(query)
   }
@@ -61,12 +61,11 @@ class BookList extends React.Component {
   }
 
   render() {
-    console.log(this.props.match.params.query)
     const {classes} = this.props
     const displayBooks = []
-    this.props.BookList &&
-      Object.keys(this.props.BookList).forEach(bookId =>
-        displayBooks.push(this.props.BookList[bookId])
+    this.props.bookList &&
+      Object.keys(this.props.bookList).forEach(bookId =>
+        displayBooks.push(this.props.bookList[bookId])
       )
     return (
       <div className="all-menu-items">

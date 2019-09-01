@@ -29,7 +29,7 @@ router.get('/', async (req, res, next) => {
 
 router.get('/count', async (req, res, next) => {
   try {
-    const bookCount = await Book.count()
+    const bookCount = await Product.count()
     res.json(bookCount)
   } catch (err) {
     next(err)
