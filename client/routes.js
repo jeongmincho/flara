@@ -5,6 +5,8 @@ import PropTypes from 'prop-types'
 import {Login, Signup, UserHome} from './components'
 import BookList from './components/BookList'
 import BookSingle from './components/BookSingle'
+import Cart from './components/Cart'
+
 import {me} from './store'
 
 /**
@@ -27,6 +29,8 @@ class Routes extends Component {
           <Switch>
             {/* Routes placed here are only available after logging in */}
             <Route path="/home" component={UserHome} />
+            <Route path="/cart" component={Cart} />
+
             <Route path="/books/:query" component={BookList} />
             <Route path="/singlebook/:query" component={BookSingle} />
           </Switch>

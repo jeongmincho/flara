@@ -7,14 +7,14 @@ import bookCount from './reducers/bookCountReducer'
 import userAuth from './reducers/userAuthReducer'
 // import userCartID from './reducers/userCartReducer2'
 // import userOrderList from './reducers/userOrderListReducer'
-// import userCart from './reducers/userCartReducer'
+import userCart from './reducers/userCartReducer'
 
 const reducer = combineReducers({
   bookList,
   bookCount,
-  userAuth
+  userAuth,
+  userCart
   // userOrderList,
-  // userCart,
   // userCartID
 })
 const middleware = composeWithDevTools(

@@ -3,11 +3,11 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {logout} from '../store'
-// import {getLoggedInUserCartThunk} from '../store/reducers/userCartReducer'
+import {getLoggedInUserCartThunk} from '../store/reducers/userCartReducer'
 import {Breadcrumbs, Button, withStyles, Badge} from '@material-ui/core'
 import {
   Home,
-  // ShoppingCart,
+  ShoppingCart,
   Person,
   RestaurantMenu,
   PersonAdd,
@@ -25,7 +25,7 @@ const styles = theme => ({
 
 class Navbar extends React.Component {
   componentDidMount() {
-    // this.props.isLoggedIn && this.props.getLoggedInUserCart()
+    this.props.isLoggedIn && this.props.getLoggedInUserCart()
   }
 
   render() {
@@ -75,12 +75,12 @@ class Navbar extends React.Component {
                     <RestaurantMenu className={classes.icon} />
                     Books
                   </Button>
-                  {/* <Button
+                  <Button
                     component={materialRouter}
                     to="/cart"
                     style={linkStyle}
-                  > */}
-                  {/* <Badge
+                  >
+                    <Badge
                       badgeContent={
                         this.props.userCart &&
                         (this.props.userCart.meals &&
@@ -92,8 +92,8 @@ class Navbar extends React.Component {
                       {' '}
                       <ShoppingCart className={classes.icon} />{' '}
                     </Badge>{' '}
-                    Cart{' '} */}
-                  {/* </Button> */}
+                    Cart{' '}
+                  </Button>
                 </Breadcrumbs>
               </div>
             ) : (
@@ -153,8 +153,8 @@ const mapDispatchToProps = dispatch => {
   return {
     handleClick() {
       dispatch(logout())
-    }
-    // getLoggedInUserCart: () => dispatch(getLoggedInUserCartThunk())
+    },
+    getLoggedInUserCart: () => dispatch(getLoggedInUserCartThunk())
   }
 }
 
