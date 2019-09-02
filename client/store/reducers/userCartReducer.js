@@ -3,8 +3,8 @@ import {normalize, schema} from 'normalizr'
 
 /* ============= CART REDUCER ============= */
 
-/* this reducer handles all actions regarding the meal(s)
-stored in the redux store when user requests for meal(s) data */
+/* this reducer handles all actions regarding the product(s)
+stored in the redux store when user requests for product(s) data */
 
 /* ============= ACTION TYPES ============= */
 
@@ -23,19 +23,19 @@ export const getLoggedInUserCart = cart => {
   }
 }
 
-export const addMealToCart = (cart, meal, mealOrder) => {
+export const addProductToCart = (cart, product, productOrder) => {
   return {
     type: ADD_MEAL_TO_CART,
     cart,
-    meal,
-    mealOrder
+    product,
+    productOrder
   }
 }
 
-export const removeMealFromCart = mealId => {
+export const removeProductFromCart = productId => {
   return {
     type: REMOVE_MEAL_FROM_CART,
-    mealId
+    productId
   }
 }
 
@@ -45,10 +45,10 @@ export const checkoutCart = () => {
   }
 }
 
-export const editMealQuantity = (mealId, quantity) => {
+export const editProductQuantity = (productId, quantity) => {
   return {
     type: EDIT_MEAL_QUANTITY,
-    mealId,
+    productId,
     quantity
   }
 }
@@ -66,35 +66,34 @@ export const getLoggedInUserCartThunk = () => {
   }
 }
 
-export const addMealToCartThunk = (quantity, mealId, userId) => {
+export const addProductToCartThunk = (quantity, productId) => {
   return async dispatch => {
     try {
-      const newMealOrder = {
+      const newProductOrder = {
         quantity,
-        mealId,
-        userId
+        productId
       }
-      const {data} = await axios.post(`/api/cart`, newMealOrder)
-      dispatch(addMealToCart(data.cart, data.addedMeal, data.addedMealOrder))
-      history.push('/addedToCart')
+      const {data} = await axios.post(`/api/cart`, newProductOrder)
+      dispatch(
+        addProductToCart(data.cart, data.addedProduct, data.addedProductOrder)
+      )
     } catch (error) {
       console.log(error)
     }
   }
 }
 
-export const deleteMealFromCartThunk = (userId, mealId, orderId) => {
+export const deleteProductFromCartThunk = (productId, orderId) => {
   return async dispatch => {
     try {
       const deleteInfo = {
-        mealId,
-        orderId,
-        userId
+        productId,
+        orderId
       }
       await axios.delete(`/api/cart`, {
         data: deleteInfo
       })
-      dispatch(removeMealFromCart(mealId))
+      dispatch(removeProductFromCart(productId))
     } catch (error) {
       console.log(error)
     }
@@ -118,16 +117,16 @@ export const checkoutCartThunk = (userId, orderId, totalPrice) => {
   }
 }
 
-export const editMealCartThunk = (userId, mealId, orderId, quantity) => {
+export const editProductCartThunk = (userId, productId, orderId, quantity) => {
   return async dispatch => {
     try {
       await axios.put('/api/cart/edit', {
-        mealId,
+        productId,
         orderId,
         quantity,
         userId
       })
-      dispatch(editMealQuantity(mealId, quantity))
+      dispatch(editProductQuantity(productId, quantity))
     } catch (error) {
       console.log(error)
     }
@@ -136,9 +135,9 @@ export const editMealCartThunk = (userId, mealId, orderId, quantity) => {
 
 const userCart = {}
 
-// create schema for mealList on store
-const mealSchema = new schema.Entity('mealList')
-const mealListSchema = [mealSchema]
+// create schema for productList on store
+const productSchema = new schema.Entity('productList')
+const productListSchema = [productSchema]
 
 export default function(state = userCart, action) {
   switch (action.type) {
@@ -147,34 +146,38 @@ export default function(state = userCart, action) {
       return action.cart
 
     case ADD_MEAL_TO_CART: {
-      const newmeal = {...action.meal, mealOrder: action.mealOrder}
+      const newproduct = {...action.product, productOrder: action.productOrder}
       if (!state) {
-        const newmeals = [newmeal]
-        return {...action.cart, meals: newmeals}
+        const newproducts = [newproduct]
+        return {...action.cart, products: newproducts}
       } else {
-        const newmeals = [...state.meals, newmeal]
-        return {...state, meals: newmeals}
+        const newproducts = [...state.products, newproduct]
+        return {...state, products: newproducts}
       }
     }
     case REMOVE_MEAL_FROM_CART: {
-      const newmeals = state.meals.filter(meal => meal.id !== action.mealId)
-      return {...state, meals: newmeals}
+      const newproducts = state.products.filter(
+        product => product.id !== action.productId
+      )
+      return {...state, products: newproducts}
     }
     case CHECKOUT_CART: {
       return null
     }
     case EDIT_MEAL_QUANTITY: {
       const cart = {...state}
-      cart.meals = [...state.meals]
-      let mealIdx = null
-      cart.meals.forEach((meal, idx) => {
-        if (meal.id === action.mealId) {
-          mealIdx = idx
+      cart.products = [...state.products]
+      let productIdx = null
+      cart.products.forEach((product, idx) => {
+        if (product.id === action.productId) {
+          productIdx = idx
         }
       })
-      cart.meals[mealIdx] = {...cart.meals[mealIdx]}
-      cart.meals[mealIdx].mealOrder = {...cart.meals[mealIdx].mealOrder}
-      cart.meals[mealIdx].mealOrder.quantity = action.quantity
+      cart.products[productIdx] = {...cart.products[productIdx]}
+      cart.products[productIdx].productOrder = {
+        ...cart.products[productIdx].productOrder
+      }
+      cart.products[productIdx].productOrder.quantity = action.quantity
       return cart
     }
     default:

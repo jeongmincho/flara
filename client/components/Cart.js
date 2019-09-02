@@ -36,7 +36,7 @@ class Cart extends React.Component {
   }
 
   handleDeleteProduct(productId, orderId) {
-    this.props.deleteProductFromCart(this.props.user.id, productId, orderId)
+    this.props.deleteProductFromCart(productId, orderId)
   }
 
   handleEditProduct(productId, orderId, quantity) {
@@ -144,8 +144,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getLoggedInUserCart: userId => dispatch(getLoggedInUserCartThunk(userId)),
-    deleteProductFromCart: (userId, productId, orderId) =>
-      dispatch(deleteProductFromCartThunk(userId, productId, orderId)),
+    deleteProductFromCart: (productId, orderId) =>
+      dispatch(deleteProductFromCartThunk(productId, orderId)),
     checkoutCart: (userId, orderId, totalPrice) =>
       dispatch(checkoutCartThunk(userId, orderId, totalPrice)),
     editBtnCart: (userId, productId, orderId, quantity) =>

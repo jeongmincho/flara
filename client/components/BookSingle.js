@@ -3,11 +3,10 @@ import {
   populateBookListThunk,
   clearBookList
 } from '../store/reducers/bookListReducer'
-// import {
-//   getLoggedInUserCartThunk,
-//   addBookToCartThunk
-// } from '../store/reducers/userCartReducer'
-// import {getCartOrderIDThunk} from '../store/reducers/userCartReducer2'
+import {
+  getLoggedInUserCartThunk,
+  addProductToCartThunk
+} from '../store/reducers/userCartReducer'
 import {connect} from 'react-redux'
 import {Grid, Paper, Typography, withStyles} from '@material-ui/core'
 
@@ -34,19 +33,14 @@ class singleBook extends React.Component {
     })
   }
 
-  handleSubmit() {
-    // this.props.addToCart(
-    //   this.state.quantity,
-    //   this.props.match.params.id,
-    //   this.props.userId
-    // )
+  handleSubmit(productId) {
+    this.props.addToCart(this.state.quantity, productId)
   }
 
   componentDidMount() {
     const query = this.props.match.params.query
     this.props.populateBookListThunk(query)
-    // this.props.getCartOrderIDThunk()
-    // this.props.getLoggedInUserCart()
+    this.props.getLoggedInUserCart()
   }
 
   componentWillUnmount() {
@@ -98,14 +92,16 @@ class singleBook extends React.Component {
 
                   <button
                     type="submit"
-                    onClick={this.handleSubmit}
-                    // disabled={
-                    //   this.props.userCart &&
-                    //   (this.props.userCart.books &&
-                    //     this.props.userCart.books.some(
-                    //       cartItem => cartItem.id === book.id
-                    //     ))
-                    // }
+                    onClick={() => {
+                      this.handleSubmit(book.id)
+                    }}
+                    disabled={
+                      this.props.userCart &&
+                      (this.props.userCart.books &&
+                        this.props.userCart.books.some(
+                          cartItem => cartItem.id === book.id
+                        ))
+                    }
                   >
                     Add to Cart
                   </button>
@@ -132,12 +128,11 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    // getLoggedInUserCart: () => dispatch(getLoggedInUserCartThunk()),
-    // addToCart: (quantity, bookId, userId) =>
-    //   dispatch(addBookToCartThunk(quantity, bookId, userId)),
+    getLoggedInUserCart: () => dispatch(getLoggedInUserCartThunk()),
+    addToCart: (quantity, bookId) =>
+      dispatch(addProductToCartThunk(quantity, bookId)),
     populateBookListThunk: query => dispatch(populateBookListThunk(query)),
     clearBookList: () => dispatch(clearBookList())
-    // getCartOrderIDThunk: () => dispatch(getCartOrderIDThunk())
   }
 }
 
