@@ -54,7 +54,7 @@ class Navbar extends React.Component {
                   </Button>
                   <Button
                     component={materialRouter}
-                    to="/accountDetails"
+                    to="/orderHistory"
                     style={linkStyle}
                   >
                     {' '}

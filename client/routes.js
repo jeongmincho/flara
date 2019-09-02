@@ -6,7 +6,7 @@ import {Login, Signup, UserHome} from './components'
 import BookList from './components/BookList'
 import BookSingle from './components/BookSingle'
 import Cart from './components/Cart'
-
+import OrderHistory from './components/OrderHistory'
 import {me} from './store'
 
 /**
@@ -33,6 +33,7 @@ class Routes extends Component {
 
             <Route path="/books/:query" component={BookList} />
             <Route path="/singlebook/:query" component={BookSingle} />
+            <Route path="/orderHistory" component={OrderHistory} />
           </Switch>
         )}
         {/* Displays our Login component as a fallback */}

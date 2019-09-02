@@ -8,12 +8,14 @@ import userAuth from './reducers/userAuthReducer'
 // import userCartID from './reducers/userCartReducer2'
 // import userOrderList from './reducers/userOrderListReducer'
 import userCart from './reducers/userCartReducer'
+import orderHistory from './orderHistoryReducer'
 
 const reducer = combineReducers({
   bookList,
   bookCount,
   userAuth,
-  userCart
+  userCart,
+  orderHistory
   // userOrderList,
   // userCartID
 })
