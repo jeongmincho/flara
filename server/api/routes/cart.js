@@ -102,18 +102,18 @@ router.delete('/', async (req, res, next) => {
   }
 })
 
-// router.put('/edit', authorizeMyCart, async (req, res, next) => {
-//   try {
-//     const data = await ProductOrder.findOne({
-//       where: {
-//         productId: req.body.productId,
-//         orderId: req.body.orderId
-//       }
-//     })
-//     data.quantity = req.body.quantity
-//     await data.save()
-//     res.sendStatus(201)
-//   } catch (error) {
-//     next(error)
-//   }
-// })
+router.put('/edit', async (req, res, next) => {
+  try {
+    const data = await ProductOrder.findOne({
+      where: {
+        productId: req.body.productId,
+        orderId: req.body.orderId
+      }
+    })
+    data.quantity = req.body.quantity
+    await data.save()
+    res.sendStatus(201)
+  } catch (error) {
+    next(error)
+  }
+})

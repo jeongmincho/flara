@@ -18,6 +18,7 @@ import {
   ListItemAvatar,
   Avatar
 } from '@material-ui/core'
+import EditBtn from './EditButton'
 
 class Cart extends React.Component {
   constructor() {
@@ -32,7 +33,7 @@ class Cart extends React.Component {
   }
 
   handleCheckoutCart(orderId, totalPrice) {
-    this.props.checkoutCart(this.props.user.id, orderId, totalPrice)
+    this.props.checkoutCart(orderId, totalPrice)
   }
 
   handleDeleteProduct(productId, orderId) {
@@ -97,13 +98,13 @@ class Cart extends React.Component {
                           }}
                         >
                           <ListItemText primary={product.title} />
-                          {/* <EditBtn
+                          <EditBtn
                             quantity={quantity}
                             price={product.price}
                             handleEdit={this.handleEditProduct}
                             productId={product.id}
                             orderId={this.props.cart.id}
-                          /> */}
+                          />
                         </div>
                       </ListItem>
                       <Divider variant="inset" component="li" />
@@ -146,8 +147,8 @@ const mapDispatchToProps = dispatch => {
     getLoggedInUserCart: userId => dispatch(getLoggedInUserCartThunk(userId)),
     deleteProductFromCart: (productId, orderId) =>
       dispatch(deleteProductFromCartThunk(productId, orderId)),
-    checkoutCart: (userId, orderId, totalPrice) =>
-      dispatch(checkoutCartThunk(userId, orderId, totalPrice)),
+    checkoutCart: (orderId, totalPrice) =>
+      dispatch(checkoutCartThunk(orderId, totalPrice)),
     editBtnCart: (userId, productId, orderId, quantity) =>
       dispatch(editProductCartThunk(userId, productId, orderId, quantity))
   }

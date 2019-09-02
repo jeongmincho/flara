@@ -2,6 +2,7 @@ const books = [
   {
     title: 'A Brief History of Time',
     author: ['Stephen Hawking'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1333578746l/3869.jpg',
     rating: '4.16',
@@ -19,6 +20,7 @@ const books = [
       'Michele DiPietro',
       'Marie K. Norman'
     ],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1397922058l/7036409.jpg',
     rating: '4.11',
@@ -28,6 +30,7 @@ const books = [
   {
     title: 'Flow: The Psychology of Optimal Experience',
     author: ['Mihaly Csikszentmihalyi'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1432253110l/66354._SY475_.jpg',
     rating: '4.11',
@@ -37,6 +40,7 @@ const books = [
   {
     title: 'Peak: Secrets from the New Science of Expertise',
     author: ['K. Anders Ericsson', 'Robert Pool'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1445050174l/26312997._SY475_.jpg',
     rating: '4.29',
@@ -46,6 +50,7 @@ const books = [
   {
     title: 'The First 20 Hours: How to Learn Anything...Fast',
     author: ['Josh Kaufman'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1364771935l/16158493.jpg',
     rating: '3.47',
@@ -56,6 +61,7 @@ const books = [
     title:
       'Fluent in 3 Months: How Anyone at Any Age Can Learn to Speak Any Language from Anywhere in the World',
     author: ['Benny Lewis'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1398786029l/18085519.jpg',
     rating: '3.67',
@@ -65,6 +71,7 @@ const books = [
   {
     title: 'How to Win Friends and Influence People',
     author: ['Dale Carnegie'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1442726934l/4865._SY475_.jpg',
     rating: '4.18',
@@ -74,6 +81,7 @@ const books = [
   {
     title: 'How to Become a Straight-A Student',
     author: ['Cal Newport'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1361208630l/253203.jpg',
     rating: '4.18',
@@ -84,6 +92,7 @@ const books = [
     title:
       'Brain Rules: 12 Principles for Surviving and Thriving at Work, Home, and School',
     author: ['John Medina'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1328763686l/2251306.jpg',
     rating: '4.02',
@@ -93,6 +102,7 @@ const books = [
   {
     title: 'The Art of Learning: A Journey in the Pursuit of Excellence',
     author: ['Josh Waitzkin'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348688766l/857333.jpg',
     rating: '4.09',
@@ -102,6 +112,7 @@ const books = [
   {
     title: 'Make It Stick: The Science of Successful Learning',
     author: ['Peter C. Brown', 'Henry L. Roediger III', 'Mark A. McDaniel'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1436742344l/18770267._SY475_.jpg',
     rating: '4.22',
@@ -111,6 +122,7 @@ const books = [
   {
     title: 'Guns, Germs, and Steel: The Fates of Human Societies',
     author: ['Jared Diamond'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1453215833l/1842._SY475_.jpg',
     rating: '4.02',
@@ -120,6 +132,7 @@ const books = [
   {
     title: 'Mindset: The New Psychology of Success',
     author: ['Carol S. Dweck'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1436227012l/40745._SY475_.jpg',
     rating: '4.07',
@@ -130,6 +143,7 @@ const books = [
     title:
       'The 7 Habits of Highly Effective People: Powerful Lessons in Personal Change',
     author: ['Stephen R. Covey', 'Jim Collins'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1421842784l/36072.jpg',
     rating: '4.09',
@@ -139,6 +153,7 @@ const books = [
   {
     title: 'Astrophysics for People in a Hurry',
     author: ['Neil deGrasse Tyson'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1562761669l/32191710._SY475_.jpg',
     rating: '4.10',
@@ -149,6 +164,7 @@ const books = [
     title:
       'The Talent Code: Unlocking the Secret of Skill in Sports, Art, Music, Math, and Just About Everything Else',
     author: ['Daniel Coyle', 'John Farrell'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1404579448l/5771014.jpg',
     rating: '4.07',
@@ -159,6 +175,7 @@ const books = [
     title:
       'Freakonomics: A Rogue Economist Explores the Hidden Side of Everything',
     author: ['Steven D. Levitt', 'Stephen J. Dubner'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1550917827l/1202._SX318_.jpg',
     rating: '3.96',
@@ -168,6 +185,7 @@ const books = [
   {
     title: 'The 5 Elements of Effective Thinking',
     author: ['Edward B. Burger', 'Michael Starbird'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1391026061l/14891980.jpg',
     rating: '4.08',
@@ -178,6 +196,7 @@ const books = [
     title:
       'Mindshift: Break Through Obstacles to Learning and Discover Your Hidden Potential',
     author: ['Barbara Oakley'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1474483048l/31558644.jpg',
     rating: '3.90',
@@ -187,6 +206,7 @@ const books = [
   {
     title: 'A Short History of Nearly Everything',
     author: ['Bill Bryson'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1433086293l/21._SY475_.jpg',
     rating: '4.20',
@@ -196,6 +216,7 @@ const books = [
   {
     title: "Quiet: The Power of Introverts in a World That Can't Stop Talking",
     author: ['Susan Cain'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1328562861l/8520610.jpg',
     rating: '4.06',
@@ -206,6 +227,7 @@ const books = [
     title:
       'The 4-Hour Chef: The Simple Path to Cooking Like a Pro, Learning Anything, and Living the Good Life',
     author: ['Timothy Ferriss'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1349156708l/13129810.jpg',
     rating: '3.95',
@@ -216,6 +238,7 @@ const books = [
     title:
       'Moonwalking with Einstein: The Art and Science of Remembering Everything',
     author: ['Joshua Foer'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347705105l/6346975.jpg',
     rating: '3.87',
@@ -225,6 +248,7 @@ const books = [
   {
     title: 'Design for How People Learn',
     author: ['Julie Dirksen'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348841989l/13127519.jpg',
     rating: '4.15',
@@ -234,6 +258,7 @@ const books = [
   {
     title: 'The Little Book of Talent: 52 Tips for Improving Your Skills',
     author: ['Daniel Coyle'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1344368701l/13330702.jpg',
     rating: '4.10',
@@ -243,6 +268,7 @@ const books = [
   {
     title: 'Influence: The Psychology of Persuasion',
     author: ['Robert B. Cialdini'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1391026083l/28815.jpg',
     rating: '4.18',
@@ -252,6 +278,7 @@ const books = [
   {
     title: 'Outliers: The Story of Success',
     author: ['Malcolm Gladwell'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1344266315l/3228917.jpg',
     rating: '4.14',
@@ -261,6 +288,7 @@ const books = [
   {
     title: 'Made to Stick: Why Some Ideas Survive and Others Die',
     author: ['Chip Heath', 'Dan Heath'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1402600211l/69242.jpg',
     rating: '3.95',
@@ -271,6 +299,7 @@ const books = [
     title:
       'How We Learn: The Surprising Truth About When, Where, and Why It Happens',
     author: ['Benedict Carey'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1394997057l/19288640.jpg',
     rating: '3.92',
@@ -280,6 +309,7 @@ const books = [
   {
     title: 'The Power of Habit: Why We Do What We Do in Life and Business',
     author: ['Charles Duhigg'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1545854312l/12609433._SY475_.jpg',
     rating: '4.08',
@@ -290,6 +320,7 @@ const books = [
     title:
       'A Mind for Numbers: How to Excel at Math and Science (Even If You Flunked Algebra)',
     author: ['Barbara Oakley'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1387148777l/18693655.jpg',
     rating: '4.25',
@@ -299,6 +330,7 @@ const books = [
   {
     title: 'The Tipping Point: How Little Things Can Make a Big Difference',
     author: ['Malcolm Gladwell'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1473396980l/2612._SY475_.jpg',
     rating: '3.96',
@@ -308,6 +340,7 @@ const books = [
   {
     title: 'Fluent Forever: How to Learn Any Language Fast and Never Forget It',
     author: ['Gabriel Wyner'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1387702551l/19661852.jpg',
     rating: '4.23',
@@ -317,6 +350,7 @@ const books = [
   {
     title: 'Predictably Irrational: The Hidden Forces That Shape Our Decisions',
     author: ['Dan Ariely'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1255573980l/1713426.jpg',
     rating: '4.12',
@@ -327,6 +361,7 @@ const books = [
     title:
       'Talent is Overrated: What Really Separates World-Class Performers from Everybody Else',
     author: ['Geoff Colvin'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1440778775l/4485966._SY475_.jpg',
     rating: '3.96',
@@ -336,6 +371,7 @@ const books = [
   {
     title: 'The Art of War',
     author: ['Sun Tzu', 'Thomas Cleary'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1453417993l/10534._SY475_.jpg',
     rating: '3.97',
@@ -345,6 +381,7 @@ const books = [
   {
     title: 'Grit',
     author: ['Angela Duckworth'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1457889762l/27213329.jpg',
     rating: '4.07',
@@ -355,6 +392,7 @@ const books = [
     title:
       'The Fifth Discipline: The Art & Practice of The Learning Organization',
     author: ['Peter M. Senge'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1386925460l/255127.jpg',
     rating: '3.90',
@@ -364,6 +402,7 @@ const books = [
   {
     title: 'Blink: The Power of Thinking Without Thinking',
     author: ['Malcolm Gladwell'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1440763417l/40102._SX318_.jpg',
     rating: '3.92',
@@ -374,6 +413,7 @@ const books = [
     title:
       'Unlimited Memory: How to Use Advanced Learning Strategies to Learn Faster, Remember More and be More Productive (Mental Mastery Book 1)',
     author: ['Kevin Horsley'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1428170961l/20958539.jpg',
     rating: '4.02',
@@ -383,6 +423,7 @@ const books = [
   {
     title: 'The Element: How Finding Your Passion Changes Everything',
     author: ['Ken Robinson', 'Lou Aronica'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347351470l/4224060.jpg',
     rating: '3.89',
@@ -392,6 +433,7 @@ const books = [
   {
     title: 'Drive: The Surprising Truth About What Motivates Us',
     author: ['Daniel H. Pink'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348931599l/6452796.jpg',
     rating: '3.94',
@@ -401,6 +443,7 @@ const books = [
   {
     title: 'Thinking, Fast and Slow',
     author: ['Daniel Kahneman'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1317793965l/11468377.jpg',
     rating: '4.13',
@@ -411,6 +454,7 @@ const books = [
     title:
       "So Good They Can't Ignore You: Why Skills Trump Passion in the Quest for Work You Love",
     author: ['Cal Newport'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1360564614l/13525945.jpg',
     rating: '4.11',
@@ -420,6 +464,7 @@ const books = [
   {
     title: 'Mastery',
     author: ['Robert Greene'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348274726l/13589182.jpg',
     rating: '4.29',
@@ -429,6 +474,7 @@ const books = [
   {
     title: 'Sapiens: A Brief History of Humankind',
     author: ['Yuval Noah Harari'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1420585954l/23692271.jpg',
     rating: '4.45',
@@ -438,6 +484,7 @@ const books = [
   {
     title: 'Deep Work: Rules for Focused Success in a Distracted World',
     author: ['Cal Newport'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1447957962l/25744928._SY475_.jpg',
     rating: '4.20',
@@ -452,6 +499,7 @@ const books = [
       'William J. Winslade',
       'Isle Lasch'
     ],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1535419394l/4069._SY475_.jpg',
     rating: '4.36',
@@ -461,6 +509,7 @@ const books = [
   {
     title: 'How to Read a Book: The Classic Guide to Intelligent Reading',
     author: ['Mortimer J. Adler', 'Charles Van Doren'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1310993739l/567610.jpg',
     rating: '4.00',
@@ -470,6 +519,7 @@ const books = [
   {
     title: 'Pragmatic Thinking and Learning: Refactor Your Wetware',
     author: ['Andy Hunt'],
+    price: 10,
     imageUrl:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1390692774l/3063393.jpg',
     rating: '4.13',
