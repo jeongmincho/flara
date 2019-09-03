@@ -5,7 +5,8 @@ import {
 } from '../store/reducers/bookListReducer'
 import {
   getLoggedInUserCartThunk,
-  addProductToCartThunk
+  addProductToCartThunk,
+  addProductToGuestCartThunk
 } from '../store/reducers/userCartReducer'
 import {connect} from 'react-redux'
 import {Grid, Paper, Typography, withStyles} from '@material-ui/core'
@@ -20,7 +21,7 @@ class singleBook extends React.Component {
   constructor() {
     super()
     this.state = {
-      quantity: 1
+      quantity: '1'
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
@@ -34,7 +35,9 @@ class singleBook extends React.Component {
   }
 
   handleSubmit(productId) {
-    this.props.addToCart(this.state.quantity, productId)
+    this.props.isLoggedIn
+      ? this.props.addToCart(this.state.quantity, productId)
+      : this.props.addToGuestCart(this.state.quantity, productId)
   }
 
   componentDidMount() {
@@ -76,39 +79,35 @@ class singleBook extends React.Component {
               <br />
               <Typography>${book.price}</Typography>
 
-              {this.props.isLoggedIn ? (
-                <div>
-                  <select onChange={this.handleChange}>
-                    {Array(5)
-                      .fill(1)
-                      .map((val, i) => {
-                        return (
-                          <option value={val + i} key={val + i}>
-                            {val + i}
-                          </option>
-                        )
-                      })}
-                  </select>
+              <div>
+                <select onChange={this.handleChange}>
+                  {Array(5)
+                    .fill(1)
+                    .map((val, i) => {
+                      return (
+                        <option value={val + i} key={val + i}>
+                          {val + i}
+                        </option>
+                      )
+                    })}
+                </select>
 
-                  <button
-                    type="submit"
-                    onClick={() => {
-                      this.handleSubmit(book.id)
-                    }}
-                    disabled={
-                      this.props.userCart &&
-                      (this.props.userCart.books &&
-                        this.props.userCart.books.some(
-                          cartItem => cartItem.id === book.id
-                        ))
-                    }
-                  >
-                    Add to Cart
-                  </button>
-                </div>
-              ) : (
-                <p>Please log in to add to cart!</p>
-              )}
+                <button
+                  type="submit"
+                  onClick={() => {
+                    this.handleSubmit(book.id)
+                  }}
+                  disabled={
+                    this.props.userCart &&
+                    (this.props.userCart.books &&
+                      this.props.userCart.books.some(
+                        cartItem => cartItem.id === book.id
+                      ))
+                  }
+                >
+                  Add to Cart
+                </button>
+              </div>
             </Grid>
           </Grid>
         </Paper>
@@ -131,6 +130,8 @@ const mapDispatchToProps = dispatch => {
     getLoggedInUserCart: () => dispatch(getLoggedInUserCartThunk()),
     addToCart: (quantity, bookId) =>
       dispatch(addProductToCartThunk(quantity, bookId)),
+    addToGuestCart: (quantity, bookId) =>
+      dispatch(addProductToGuestCartThunk(quantity, bookId)),
     populateBookListThunk: query => dispatch(populateBookListThunk(query)),
     clearBookList: () => dispatch(clearBookList())
   }

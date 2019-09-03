@@ -120,12 +120,31 @@ class Navbar extends React.Component {
                   </Button>
                   <Button
                     component={materialRouter}
-                    to="/menu/limit=10&offset=0"
+                    to="/books/limit=10&offset=0"
                     style={linkStyle}
                   >
                     {' '}
                     <RestaurantMenu className={classes.icon} />
                     Books
+                  </Button>
+                  <Button
+                    component={materialRouter}
+                    to="/cart"
+                    style={linkStyle}
+                  >
+                    <Badge
+                      badgeContent={
+                        this.props.userCart &&
+                        (this.props.userCart.meals &&
+                          this.props.userCart.meals.length)
+                      }
+                      color="primary"
+                      className={classes.cart}
+                    >
+                      {' '}
+                      <ShoppingCart className={classes.icon} />{' '}
+                    </Badge>{' '}
+                    Cart{' '}
                   </Button>
                 </Breadcrumbs>
               </div>
@@ -144,8 +163,8 @@ class Navbar extends React.Component {
 const mapStateToProps = state => {
   return {
     isLoggedIn: !!state.userAuth.id,
-    userId: state.userAuth.id
-    // userCart: state.userCart
+    userId: state.userAuth.id,
+    userCart: state.userCart
   }
 }
 

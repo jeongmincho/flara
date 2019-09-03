@@ -8,13 +8,22 @@ stored in the redux store when user requests for product(s) data */
 
 /* ============= ACTION TYPES ============= */
 
+const GET_GUEST_USER_CART = 'GET_GUEST_USER_CART'
 const GET_LOGGED_IN_USER_CART = 'GET_LOGGED_IN_USER_CART'
-const ADD_MEAL_TO_CART = 'ADD_MEAL_TO_CART'
+const ADD_PRODUCT_TO_CART = 'ADD_PRODUCT_TO_CART'
+const ADD_PRODUCT_TO_GUEST_CART = 'ADD_PRODUCT_TO_GUEST_CART'
 const REMOVE_MEAL_FROM_CART = 'REMOVE_MEAL_FROM_CART'
 const CHECKOUT_CART = 'CHECKOUT_CART'
 const EDIT_MEAL_QUANTITY = 'EDIT_MEAL_QUANTITY'
 
 /* ============= ACTION CREATORS ============= */
+
+export const getGuestUserCart = cart => {
+  return {
+    type: GET_GUEST_USER_CART,
+    cart
+  }
+}
 
 export const getLoggedInUserCart = cart => {
   return {
@@ -25,10 +34,17 @@ export const getLoggedInUserCart = cart => {
 
 export const addProductToCart = (cart, product, productOrder) => {
   return {
-    type: ADD_MEAL_TO_CART,
+    type: ADD_PRODUCT_TO_CART,
     cart,
     product,
     productOrder
+  }
+}
+
+export const addProductToGuestCart = cartProducts => {
+  return {
+    type: ADD_PRODUCT_TO_GUEST_CART,
+    cartProducts
   }
 }
 
@@ -55,6 +71,18 @@ export const editProductQuantity = (productId, quantity) => {
 
 /* ============= THUNKS ============= */
 
+export const getGuestUserCartThunk = () => {
+  return async dispatch => {
+    try {
+      const existingCart = JSON.parse(localStorage.getItem('cart'))
+      console.log(existingCart)
+      dispatch(getGuestUserCart(existingCart))
+    } catch (error) {
+      console.log(error)
+    }
+  }
+}
+
 export const getLoggedInUserCartThunk = () => {
   return async dispatch => {
     try {
@@ -77,6 +105,23 @@ export const addProductToCartThunk = (quantity, productId) => {
       dispatch(
         addProductToCart(data.cart, data.addedProduct, data.addedProductOrder)
       )
+    } catch (error) {
+      console.log(error)
+    }
+  }
+}
+
+export const addProductToGuestCartThunk = (quantity, productId) => {
+  return async dispatch => {
+    try {
+      const existingCart = localStorage.getItem('cart')
+      const cartProducts = []
+      existingCart && cartProducts.push(...JSON.parse(existingCart))
+      const newProductOrder = {id: productId, quantity}
+      cartProducts.push(newProductOrder)
+      localStorage.setItem('cart', JSON.stringify(cartProducts))
+      dispatch(addProductToGuestCart(cartProducts))
+      console.log(localStorage.getItem('cart'))
     } catch (error) {
       console.log(error)
     }
@@ -135,16 +180,23 @@ export const editProductCartThunk = (userId, productId, orderId, quantity) => {
 const userCart = {}
 
 // create schema for productList on store
-const productSchema = new schema.Entity('productList')
-const productListSchema = [productSchema]
+const productOrders = new schema.Entity('cartProducts')
+const productListSchema = [productOrders]
+const cart = new schema.Entity('cart')
+const cartSchema = [cart]
 
 export default function(state = userCart, action) {
   switch (action.type) {
+    case GET_GUEST_USER_CART:
+      const {entities} = normalize(action.cart, cartSchema)
+      console.log(entities.cart)
+      return entities.cart
+
     case GET_LOGGED_IN_USER_CART:
       console.log(action.cart)
       return action.cart
 
-    case ADD_MEAL_TO_CART: {
+    case ADD_PRODUCT_TO_CART: {
       const newproduct = {...action.product, productOrder: action.productOrder}
       if (!state) {
         const newproducts = [newproduct]
@@ -154,6 +206,23 @@ export default function(state = userCart, action) {
         return {...state, products: newproducts}
       }
     }
+
+    case ADD_PRODUCT_TO_GUEST_CART: {
+      // const newproduct = {...action.product, productOrder: action.productOrder}
+      // if (!state) {
+      //   const newproducts = [newproduct]
+      //   return {...action.cart, products: newproducts}
+      // } else {
+      //   const newproducts = [...state.products, newproduct]
+      //   return {...state, products: newproducts}
+      // }
+      const {entities} = normalize(action.cartProducts, productListSchema)
+      // console.log('entities.cartProducts: ', entities.cartProducts)
+      // console.log('entities.keys: ', entities.keys())
+      // console.log('entities.entries: ', entities.entries())
+      return entities.cartProducts
+    }
+
     case REMOVE_MEAL_FROM_CART: {
       const newproducts = state.products.filter(
         product => product.id !== action.productId
