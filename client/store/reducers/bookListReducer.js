@@ -68,6 +68,7 @@ export default function(state = initialBookList, action) {
       const {entities} = normalize(action.BookList, BookListSchema)
       return entities.BookList
     }
+
     case CLEAR_BOOK_LIST:
       return initialBookList
     default:

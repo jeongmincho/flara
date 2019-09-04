@@ -12,7 +12,8 @@ const GET_GUEST_USER_CART = 'GET_GUEST_USER_CART'
 const GET_LOGGED_IN_USER_CART = 'GET_LOGGED_IN_USER_CART'
 const ADD_PRODUCT_TO_CART = 'ADD_PRODUCT_TO_CART'
 const ADD_PRODUCT_TO_GUEST_CART = 'ADD_PRODUCT_TO_GUEST_CART'
-const REMOVE_MEAL_FROM_CART = 'REMOVE_MEAL_FROM_CART'
+const DELETE_MEAL_FROM_CART = 'DELETE_MEAL_FROM_CART'
+const DELETE_PRODUCT_FROM_GUEST_CART = 'DELETE_PRODUCT_FROM_GUEST_CART'
 const CHECKOUT_CART = 'CHECKOUT_CART'
 const EDIT_MEAL_QUANTITY = 'EDIT_MEAL_QUANTITY'
 
@@ -48,10 +49,17 @@ export const addProductToGuestCart = cartProducts => {
   }
 }
 
-export const removeProductFromCart = productId => {
+export const deleteProductFromCart = productId => {
   return {
-    type: REMOVE_MEAL_FROM_CART,
+    type: DELETE_MEAL_FROM_CART,
     productId
+  }
+}
+
+export const deleteProductFromGuestCart = cartProducts => {
+  return {
+    type: DELETE_PRODUCT_FROM_GUEST_CART,
+    cartProducts
   }
 }
 
@@ -138,7 +146,28 @@ export const deleteProductFromCartThunk = (productId, orderId) => {
       await axios.delete(`/api/cart`, {
         data: deleteInfo
       })
-      dispatch(removeProductFromCart(productId))
+      dispatch(deleteProductFromCart(productId))
+    } catch (error) {
+      console.log(error)
+    }
+  }
+}
+// 1. delete from booklist. delete from usercart. delete from localstorage.
+// automatically repopulate booklist, delete from usercart, delete from local storage
+export const deleteProductFromGuestCartThunk = productId => {
+  return async dispatch => {
+    try {
+      const existingCart = localStorage.getItem('cart')
+      const cartProducts = []
+      existingCart && cartProducts.push(...JSON.parse(existingCart))
+      // console.log('before filter: ', cartProducts)
+      const newCartProducts = cartProducts.filter(
+        product => product.id !== productId
+      )
+      // console.log('after filter: ', newCartProducts)
+      localStorage.setItem('cart', JSON.stringify(newCartProducts))
+      dispatch(deleteProductFromGuestCart(newCartProducts))
+      // console.log(localStorage.getItem('cart'))
     } catch (error) {
       console.log(error)
     }
@@ -190,7 +219,7 @@ export default function(state = userCart, action) {
     case GET_GUEST_USER_CART:
       const {entities} = normalize(action.cart, cartSchema)
       // console.log(entities.cart)
-      return entities.cart
+      return entities.cart ? entities.cart : {}
 
     case GET_LOGGED_IN_USER_CART:
       // console.log(action.cart)
@@ -208,27 +237,22 @@ export default function(state = userCart, action) {
     }
 
     case ADD_PRODUCT_TO_GUEST_CART: {
-      // const newproduct = {...action.product, productOrder: action.productOrder}
-      // if (!state) {
-      //   const newproducts = [newproduct]
-      //   return {...action.cart, products: newproducts}
-      // } else {
-      //   const newproducts = [...state.products, newproduct]
-      //   return {...state, products: newproducts}
-      // }
       const {entities} = normalize(action.cartProducts, productListSchema)
-      // console.log('entities.cartProducts: ', entities.cartProducts)
-      // console.log('entities.keys: ', entities.keys())
-      // console.log('entities.entries: ', entities.entries())
       return entities.cartProducts
     }
 
-    case REMOVE_MEAL_FROM_CART: {
+    case DELETE_MEAL_FROM_CART: {
       const newproducts = state.products.filter(
         product => product.id !== action.productId
       )
       return {...state, products: newproducts}
     }
+
+    case DELETE_PRODUCT_FROM_GUEST_CART: {
+      const {entities} = normalize(action.cartProducts, productListSchema)
+      return entities.cartProducts ? entities.cartProducts : {}
+    }
+
     case CHECKOUT_CART: {
       return null
     }

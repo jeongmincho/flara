@@ -1,13 +1,18 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import history from '../history'
 import {
   getLoggedInUserCartThunk,
   deleteProductFromCartThunk,
+  deleteProductFromGuestCartThunk,
   checkoutCartThunk,
   editProductCartThunk,
   getGuestUserCartThunk
 } from '../store/reducers/userCartReducer'
-import {populateBookListThunk} from '../store/reducers/bookListReducer'
+import {
+  populateBookListThunk,
+  clearBookList
+} from '../store/reducers/bookListReducer'
 import {populateProductOrdersThunk} from '../store/reducers/userProductOrdersReducer'
 import {Link} from 'react-router-dom'
 import {DeleteForever} from '@material-ui/icons'
@@ -42,21 +47,22 @@ class Cart extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (this.props.userCart !== prevProps.userCart) {
-      Object.keys(this.props.userCart).length &&
-        this.props.populateBookList(
-          Object.keys(this.props.userCart)
-            .map(id => `id=${id}`)
-            .join('&')
-        )
+      Object.keys(this.props.userCart).length
+        ? this.props.populateBookList(
+            Object.keys(this.props.userCart)
+              .map(id => `id=${id}`)
+              .join('&')
+          )
+        : this.props.clearBookList()
     }
   }
 
-  handleCheckoutCart(orderId, totalPrice) {
-    this.props.checkoutCart(orderId, totalPrice)
+  handleCheckoutCart() {
+    history.push('/signup')
   }
 
-  handleDeleteProduct(productId, orderId) {
-    this.props.deleteProductFromCart(productId, orderId)
+  handleDeleteProduct(bookId) {
+    this.props.deleteProductFromGuestCart(bookId)
   }
 
   handleEditProduct(productId, orderId, quantity) {
@@ -85,7 +91,7 @@ class Cart extends React.Component {
                 {Object.keys(this.props.bookList).map(key => {
                   const book = this.props.bookList[key]
                   const bookOrder = this.props.userCart[book.id]
-                  totalPrice += book.price * bookOrder.quantity
+                  bookOrder && (totalPrice += book.price * bookOrder.quantity)
                   return (
                     <div
                       key={book.id}
@@ -98,12 +104,9 @@ class Cart extends React.Component {
                         <ListItemAvatar>
                           <Avatar>
                             <Fab
-                            // onClick={() => {
-                            //   this.handleDeleteProduct(
-                            //     book.id,
-                            //     this.props.cart.id
-                            //   )
-                            // }}
+                              onClick={() => {
+                                this.handleDeleteProduct(book.id)
+                              }}
                             >
                               {' '}
                               <DeleteForever />{' '}
@@ -118,7 +121,9 @@ class Cart extends React.Component {
                           }}
                         >
                           <ListItemText primary={book.title} />
-                          <ListItemText primary={bookOrder.quantity} />
+                          <ListItemText
+                            primary={bookOrder && bookOrder.quantity}
+                          />
                           {/* <EditBtn
                             quantity={this.props.userCart[book.id].quantity}
                             price={book.price}
@@ -188,9 +193,9 @@ class Cart extends React.Component {
               <br />
               <Button
                 type="button"
-                // onClick={() => {
-                //   this.handleCheckoutCart(this.props.cart.id, totalPrice)
-                // }}
+                onClick={() => {
+                  this.handleCheckoutCart()
+                }}
                 color="primary"
                 variant="contained"
               >
@@ -217,10 +222,11 @@ const mapDispatchToProps = dispatch => {
   return {
     getGuestUserCart: () => dispatch(getGuestUserCartThunk()),
     populateProductOrders: () => dispatch(populateProductOrdersThunk()),
-    populateBookList: query => dispatch(populateBookListThunk(query))
+    populateBookList: query => dispatch(populateBookListThunk(query)),
     // getLoggedInUserCart: () => dispatch(getLoggedInUserCartThunk())
-    // deleteProductFromCart: (productId, orderId) =>
-    //   dispatch(deleteProductFromCartThunk(productId, orderId)),
+    deleteProductFromGuestCart: productId =>
+      dispatch(deleteProductFromGuestCartThunk(productId)),
+    clearBookList: () => dispatch(clearBookList())
     // checkoutCart: (orderId, totalPrice) =>
     //   dispatch(checkoutCartThunk(orderId, totalPrice)),
     // editBtnCart: (userId, productId, orderId, quantity) =>
