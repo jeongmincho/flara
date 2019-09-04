@@ -3,7 +3,10 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {logout} from '../store'
-import {getLoggedInUserCartThunk} from '../store/reducers/userCartReducer'
+import {
+  getLoggedInUserCartThunk,
+  getGuestUserCartThunk
+} from '../store/reducers/userCartReducer'
 import {Breadcrumbs, Button, withStyles, Badge} from '@material-ui/core'
 import {
   Home,
@@ -25,7 +28,9 @@ const styles = theme => ({
 
 class Navbar extends React.Component {
   componentDidMount() {
-    this.props.isLoggedIn && this.props.getLoggedInUserCart()
+    this.props.isLoggedIn
+      ? this.props.getLoggedInUserCart()
+      : this.props.getGuestUserCart()
   }
 
   render() {
@@ -135,8 +140,7 @@ class Navbar extends React.Component {
                     <Badge
                       badgeContent={
                         this.props.userCart &&
-                        (this.props.userCart.meals &&
-                          this.props.userCart.meals.length)
+                        Object.keys(this.props.userCart).length
                       }
                       color="primary"
                       className={classes.cart}
@@ -173,7 +177,8 @@ const mapDispatchToProps = dispatch => {
     handleClick() {
       dispatch(logout())
     },
-    getLoggedInUserCart: () => dispatch(getLoggedInUserCartThunk())
+    getLoggedInUserCart: () => dispatch(getLoggedInUserCartThunk()),
+    getGuestUserCart: () => dispatch(getGuestUserCartThunk())
   }
 }
 

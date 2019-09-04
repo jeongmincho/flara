@@ -63,9 +63,10 @@ export const populateProductOrders = cart => {
 
 /* ============= THUNKS ============= */
 
-export const populateProductOrdersThunk = () => {
+export const populateProductOrdersThunk = arg => {
   return async dispatch => {
     try {
+      console.log(arg)
       const {data} = await axios.get(`/api/books/`)
       dispatch(populateProductOrders(data))
     } catch (error) {

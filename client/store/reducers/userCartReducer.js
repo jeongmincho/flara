@@ -75,7 +75,7 @@ export const getGuestUserCartThunk = () => {
   return async dispatch => {
     try {
       const existingCart = JSON.parse(localStorage.getItem('cart'))
-      console.log(existingCart)
+      // console.log(existingCart)
       dispatch(getGuestUserCart(existingCart))
     } catch (error) {
       console.log(error)
@@ -121,7 +121,7 @@ export const addProductToGuestCartThunk = (quantity, productId) => {
       cartProducts.push(newProductOrder)
       localStorage.setItem('cart', JSON.stringify(cartProducts))
       dispatch(addProductToGuestCart(cartProducts))
-      console.log(localStorage.getItem('cart'))
+      // console.log(localStorage.getItem('cart'))
     } catch (error) {
       console.log(error)
     }
@@ -189,11 +189,11 @@ export default function(state = userCart, action) {
   switch (action.type) {
     case GET_GUEST_USER_CART:
       const {entities} = normalize(action.cart, cartSchema)
-      console.log(entities.cart)
+      // console.log(entities.cart)
       return entities.cart
 
     case GET_LOGGED_IN_USER_CART:
-      console.log(action.cart)
+      // console.log(action.cart)
       return action.cart
 
     case ADD_PRODUCT_TO_CART: {

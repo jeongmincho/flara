@@ -6,7 +6,8 @@ import {
 import {
   getLoggedInUserCartThunk,
   addProductToCartThunk,
-  addProductToGuestCartThunk
+  addProductToGuestCartThunk,
+  getGuestUserCartThunk
 } from '../store/reducers/userCartReducer'
 import {connect} from 'react-redux'
 import {Grid, Paper, Typography, withStyles} from '@material-ui/core'
@@ -43,7 +44,9 @@ class singleBook extends React.Component {
   componentDidMount() {
     const query = this.props.match.params.query
     this.props.populateBookListThunk(query)
-    this.props.getLoggedInUserCart()
+    this.props.isLoggedIn
+      ? this.props.getLoggedInUserCart()
+      : this.props.getGuestUserCart()
   }
 
   componentWillUnmount() {
@@ -133,7 +136,8 @@ const mapDispatchToProps = dispatch => {
     addToGuestCart: (quantity, bookId) =>
       dispatch(addProductToGuestCartThunk(quantity, bookId)),
     populateBookListThunk: query => dispatch(populateBookListThunk(query)),
-    clearBookList: () => dispatch(clearBookList())
+    clearBookList: () => dispatch(clearBookList()),
+    getGuestUserCart: () => dispatch(getGuestUserCartThunk())
   }
 }
 

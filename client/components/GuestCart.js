@@ -7,7 +7,8 @@ import {
   editProductCartThunk,
   getGuestUserCartThunk
 } from '../store/reducers/userCartReducer'
-import {populateProductOrders} from '../store/reducers/userProductOrdersReducer'
+import {populateBookListThunk} from '../store/reducers/bookListReducer'
+import {populateProductOrdersThunk} from '../store/reducers/userProductOrdersReducer'
 import {Link} from 'react-router-dom'
 import {DeleteForever} from '@material-ui/icons'
 import {
@@ -31,10 +32,23 @@ class Cart extends React.Component {
   }
 
   componentDidMount() {
-    // this.props.getLoggedInUserCart(this.props.user.id)
-    // console.log(this.props.userCart)
-    this.props.getGuestUserCart()
-    // this.props.populateProductOrders(this.props.userCart.keys())
+    Object.keys(this.props.userCart).length &&
+      this.props.populateBookList(
+        Object.keys(this.props.userCart)
+          .map(id => `id=${id}`)
+          .join('&')
+      )
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.userCart !== prevProps.userCart) {
+      Object.keys(this.props.userCart).length &&
+        this.props.populateBookList(
+          Object.keys(this.props.userCart)
+            .map(id => `id=${id}`)
+            .join('&')
+        )
+    }
   }
 
   handleCheckoutCart(orderId, totalPrice) {
@@ -55,8 +69,8 @@ class Cart extends React.Component {
     return (
       <div>
         <h2>Shopping Cart</h2>
-        {/* {this.props.cart ? (
-          this.props.cart.products.length === 0 ? (
+        {this.props.bookList ? (
+          Object.keys(this.props.bookList).length === 0 ? (
             <div>
               <div>Your DevBites Cart is empty.</div>
               <Link to="menu">
@@ -68,12 +82,13 @@ class Cart extends React.Component {
           ) : (
             <div>
               <List>
-                {this.props.cart.products.map(product => {
-                  const {quantity} = product.productOrder
-                  totalPrice += product.price * quantity
+                {Object.keys(this.props.bookList).map(key => {
+                  const book = this.props.bookList[key]
+                  const bookOrder = this.props.userCart[book.id]
+                  totalPrice += book.price * bookOrder.quantity
                   return (
                     <div
-                      key={product.id}
+                      key={book.id}
                       style={{
                         display: 'flex',
                         alignItems: 'center'
@@ -83,12 +98,12 @@ class Cart extends React.Component {
                         <ListItemAvatar>
                           <Avatar>
                             <Fab
-                              onClick={() => {
-                                this.handleDeleteProduct(
-                                  product.id,
-                                  this.props.cart.id
-                                )
-                              }}
+                            // onClick={() => {
+                            //   this.handleDeleteProduct(
+                            //     book.id,
+                            //     this.props.cart.id
+                            //   )
+                            // }}
                             >
                               {' '}
                               <DeleteForever />{' '}
@@ -102,29 +117,80 @@ class Cart extends React.Component {
                             width: '20rem'
                           }}
                         >
-                          <ListItemText primary={product.title} />
-                          <EditBtn
-                            quantity={quantity}
-                            price={product.price}
+                          <ListItemText primary={book.title} />
+                          <ListItemText primary={bookOrder.quantity} />
+                          {/* <EditBtn
+                            quantity={this.props.userCart[book.id].quantity}
+                            price={book.price}
                             handleEdit={this.handleEditProduct}
-                            productId={product.id}
+                            productId={book.id}
                             orderId={this.props.cart.id}
-                          />
+                          /> */}
                         </div>
                       </ListItem>
                       <Divider variant="inset" component="li" />
                     </div>
                   )
-                })}
+                })
+
+                //   this.props.bookList.map(book => {
+                //   totalPrice +=
+                //     book.price * this.props.userCart[book.id].quantity
+                //   return (
+                //     <div
+                //       key={book.id}
+                //       style={{
+                //         display: 'flex',
+                //         alignItems: 'center'
+                //       }}
+                //     >
+                //       <ListItem>
+                //         <ListItemAvatar>
+                //           <Avatar>
+                //             <Fab
+                //             // onClick={() => {
+                //             //   this.handleDeleteProduct(
+                //             //     book.id,
+                //             //     this.props.cart.id
+                //             //   )
+                //             // }}
+                //             >
+                //               {' '}
+                //               <DeleteForever />{' '}
+                //             </Fab>
+                //           </Avatar>
+                //         </ListItemAvatar>
+                //         <div
+                //           style={{
+                //             display: 'flex',
+                //             flexDirection: 'column',
+                //             width: '20rem'
+                //           }}
+                //         >
+                //           <ListItemText primary={book.title} />
+                //           <EditBtn
+                //             quantity={this.props.userCart[book.id].quantity}
+                //             price={book.price}
+                //             handleEdit={this.handleEditProduct}
+                //             productId={book.id}
+                //             orderId={this.props.cart.id}
+                //           />
+                //         </div>
+                //       </ListItem>
+                //       <Divider variant="inset" component="li" />
+                //     </div>
+                //   )
+                // })}
+                }
               </List>
               <br />
               Total Price of Cart: ${totalPrice}
               <br />
               <Button
                 type="button"
-                onClick={() => {
-                  this.handleCheckoutCart(this.props.cart.id, totalPrice)
-                }}
+                // onClick={() => {
+                //   this.handleCheckoutCart(this.props.cart.id, totalPrice)
+                // }}
                 color="primary"
                 variant="contained"
               >
@@ -134,7 +200,7 @@ class Cart extends React.Component {
           )
         ) : (
           <div>Empty Cart</div>
-        )} */}
+        )}
       </div>
     )
   }
@@ -142,13 +208,16 @@ class Cart extends React.Component {
 
 const mapStateToProps = state => {
   return {
+    bookList: state.bookList,
     userCart: state.userCart
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    getGuestUserCart: () => dispatch(getGuestUserCartThunk())
+    getGuestUserCart: () => dispatch(getGuestUserCartThunk()),
+    populateProductOrders: () => dispatch(populateProductOrdersThunk()),
+    populateBookList: query => dispatch(populateBookListThunk(query))
     // getLoggedInUserCart: () => dispatch(getLoggedInUserCartThunk())
     // deleteProductFromCart: (productId, orderId) =>
     //   dispatch(deleteProductFromCartThunk(productId, orderId)),

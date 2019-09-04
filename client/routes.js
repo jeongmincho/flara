@@ -9,6 +9,10 @@ import Cart from './components/Cart'
 import GuestCart from './components/GuestCart'
 import OrderHistory from './components/OrderHistory'
 import {me} from './store'
+import {
+  getLoggedInUserCartThunk,
+  getGuestUserCartThunk
+} from './store/reducers/userCartReducer'
 
 /**
  * COMPONENT
@@ -16,17 +20,33 @@ import {me} from './store'
 class Routes extends Component {
   componentDidMount() {
     this.props.loadInitialData()
+    this.props.isLoggedIn
+      ? this.props.getLoggedInUserCart()
+      : this.props.getGuestUserCart()
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.userCart !== prevProps.userCart) {
+      console.log('CHANGES', this.props.userCart)
+    }
+    // this.props.loadInitialData()
+    // this.props.isLoggedIn
+    //   ? this.props.getLoggedInUserCart()
+    //   : this.props.getGuestUserCart()
   }
 
   render() {
     const {isLoggedIn} = this.props
-
     return (
       <Switch>
         {/* Routes placed here are available to all visitors */}
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
         <Route path="/cart" component={GuestCart} />
+        <Route
+          path="/cart"
+          render={() => <GuestCart {...this.props.userCart} />}
+        />
         <Route path="/books/:query" component={BookList} />
         <Route path="/singlebook/:query" component={BookSingle} />
         {isLoggedIn && (
@@ -54,7 +74,8 @@ const mapState = state => {
   return {
     // Being 'logged in' for our purposes will be defined has having a state.user that has a truthy id.
     // Otherwise, state.user will be an empty object, and state.userAuth.id will be falsey
-    isLoggedIn: !!state.userAuth.id
+    isLoggedIn: !!state.userAuth.id,
+    userCart: state.userCart
   }
 }
 
@@ -62,7 +83,9 @@ const mapDispatch = dispatch => {
   return {
     loadInitialData() {
       dispatch(me())
-    }
+    },
+    getLoggedInUserCart: () => dispatch(getLoggedInUserCartThunk()),
+    getGuestUserCart: () => dispatch(getGuestUserCartThunk())
   }
 }
 
