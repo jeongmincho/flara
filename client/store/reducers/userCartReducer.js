@@ -15,7 +15,8 @@ const ADD_PRODUCT_TO_GUEST_CART = 'ADD_PRODUCT_TO_GUEST_CART'
 const DELETE_MEAL_FROM_CART = 'DELETE_MEAL_FROM_CART'
 const DELETE_PRODUCT_FROM_GUEST_CART = 'DELETE_PRODUCT_FROM_GUEST_CART'
 const CHECKOUT_CART = 'CHECKOUT_CART'
-const EDIT_MEAL_QUANTITY = 'EDIT_MEAL_QUANTITY'
+const EDIT_PRODUCT_CART = 'EDIT_PRODUCT_CART'
+const EDIT_PRODUCT_GUEST_CART = 'EDIT_PRODUCT_GUEST_CART'
 
 /* ============= ACTION CREATORS ============= */
 
@@ -71,9 +72,16 @@ export const checkoutCart = () => {
 
 export const editProductQuantity = (productId, quantity) => {
   return {
-    type: EDIT_MEAL_QUANTITY,
+    type: EDIT_PRODUCT_CART,
     productId,
     quantity
+  }
+}
+
+export const editProductGuestCart = cartProducts => {
+  return {
+    type: EDIT_PRODUCT_GUEST_CART,
+    cartProducts
   }
 }
 
@@ -206,6 +214,43 @@ export const editProductCartThunk = (userId, productId, orderId, quantity) => {
   }
 }
 
+export const editProductGuestCartThunk = (productId, quantity) => {
+  // return async dispatch => {
+  //   try {
+  //     await axios.put('/api/cart/edit', {
+  //       productId,
+  //       orderId,
+  //       quantity,
+  //       userId
+  //     })
+  //     dispatch(editProductQuantity(productId, quantity))
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
+
+  return async dispatch => {
+    try {
+      const existingCart = localStorage.getItem('cart')
+      const cartProducts = []
+      existingCart && cartProducts.push(...JSON.parse(existingCart))
+      console.log('before filter: ', cartProducts)
+      const newCartProducts = cartProducts.filter(
+        product => product.id !== productId
+      )
+      console.log('after filter: ', newCartProducts)
+      const newProductOrder = {id: productId, quantity}
+      newCartProducts.push(newProductOrder)
+      console.log('after push: ', newCartProducts)
+      localStorage.setItem('cart', JSON.stringify(newCartProducts))
+      dispatch(editProductGuestCart(newCartProducts))
+      // console.log(localStorage.getItem('cart'))
+    } catch (error) {
+      console.log(error)
+    }
+  }
+}
+
 const userCart = {}
 
 // create schema for productList on store
@@ -256,7 +301,7 @@ export default function(state = userCart, action) {
     case CHECKOUT_CART: {
       return null
     }
-    case EDIT_MEAL_QUANTITY: {
+    case EDIT_PRODUCT_CART: {
       const cart = {...state}
       cart.products = [...state.products]
       let productIdx = null
@@ -272,6 +317,12 @@ export default function(state = userCart, action) {
       cart.products[productIdx].productOrder.quantity = action.quantity
       return cart
     }
+
+    case EDIT_PRODUCT_GUEST_CART: {
+      const {entities} = normalize(action.cartProducts, productListSchema)
+      return entities.cartProducts ? entities.cartProducts : {}
+    }
+
     default:
       return state
   }

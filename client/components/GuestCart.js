@@ -7,6 +7,7 @@ import {
   deleteProductFromGuestCartThunk,
   checkoutCartThunk,
   editProductCartThunk,
+  editProductGuestCartThunk,
   getGuestUserCartThunk
 } from '../store/reducers/userCartReducer'
 import {
@@ -26,7 +27,7 @@ import {
   ListItemAvatar,
   Avatar
 } from '@material-ui/core'
-import EditBtn from './EditButton'
+import EditButtonGuest from './EditButtonGuest'
 
 class Cart extends React.Component {
   constructor() {
@@ -65,9 +66,8 @@ class Cart extends React.Component {
     this.props.deleteProductFromGuestCart(bookId)
   }
 
-  handleEditProduct(productId, orderId, quantity) {
-    // expect this function to pass down to EditBtn component as prop
-    this.props.editBtnCart(this.props.user.id, productId, orderId, quantity)
+  handleEditProduct(productId, quantity) {
+    this.props.editProductGuestCart(productId, quantity)
   }
 
   render() {
@@ -124,69 +124,17 @@ class Cart extends React.Component {
                           <ListItemText
                             primary={bookOrder && bookOrder.quantity}
                           />
-                          {/* <EditBtn
-                            quantity={this.props.userCart[book.id].quantity}
-                            price={book.price}
+                          <EditButtonGuest
+                            quantity={bookOrder && bookOrder.quantity}
                             handleEdit={this.handleEditProduct}
                             productId={book.id}
-                            orderId={this.props.cart.id}
-                          /> */}
+                          />
                         </div>
                       </ListItem>
                       <Divider variant="inset" component="li" />
                     </div>
                   )
-                })
-
-                //   this.props.bookList.map(book => {
-                //   totalPrice +=
-                //     book.price * this.props.userCart[book.id].quantity
-                //   return (
-                //     <div
-                //       key={book.id}
-                //       style={{
-                //         display: 'flex',
-                //         alignItems: 'center'
-                //       }}
-                //     >
-                //       <ListItem>
-                //         <ListItemAvatar>
-                //           <Avatar>
-                //             <Fab
-                //             // onClick={() => {
-                //             //   this.handleDeleteProduct(
-                //             //     book.id,
-                //             //     this.props.cart.id
-                //             //   )
-                //             // }}
-                //             >
-                //               {' '}
-                //               <DeleteForever />{' '}
-                //             </Fab>
-                //           </Avatar>
-                //         </ListItemAvatar>
-                //         <div
-                //           style={{
-                //             display: 'flex',
-                //             flexDirection: 'column',
-                //             width: '20rem'
-                //           }}
-                //         >
-                //           <ListItemText primary={book.title} />
-                //           <EditBtn
-                //             quantity={this.props.userCart[book.id].quantity}
-                //             price={book.price}
-                //             handleEdit={this.handleEditProduct}
-                //             productId={book.id}
-                //             orderId={this.props.cart.id}
-                //           />
-                //         </div>
-                //       </ListItem>
-                //       <Divider variant="inset" component="li" />
-                //     </div>
-                //   )
-                // })}
-                }
+                })}
               </List>
               <br />
               Total Price of Cart: ${totalPrice}
@@ -226,11 +174,11 @@ const mapDispatchToProps = dispatch => {
     // getLoggedInUserCart: () => dispatch(getLoggedInUserCartThunk())
     deleteProductFromGuestCart: productId =>
       dispatch(deleteProductFromGuestCartThunk(productId)),
-    clearBookList: () => dispatch(clearBookList())
+    clearBookList: () => dispatch(clearBookList()),
     // checkoutCart: (orderId, totalPrice) =>
     //   dispatch(checkoutCartThunk(orderId, totalPrice)),
-    // editBtnCart: (userId, productId, orderId, quantity) =>
-    //   dispatch(editProductCartThunk(userId, productId, orderId, quantity))
+    editProductGuestCart: (productId, quantity) =>
+      dispatch(editProductGuestCartThunk(productId, quantity))
   }
 }
 

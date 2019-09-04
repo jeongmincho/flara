@@ -1,22 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Button} from '@material-ui/core'
 
-export default class EditBtn extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
+export default class EditButtonGuest extends React.Component {
   render() {
-    const {productId, orderId, quantity} = this.props
+    const {productId, quantity} = this.props
     return (
       <div>
         <label>
           Quantity:
           <select
-            onChange={e =>
-              this.props.handleEdit(productId, orderId, Number(e.target.value))
-            }
+            onChange={e => this.props.handleEdit(productId, e.target.value)}
             value={quantity}
             className="edit-button"
           >
@@ -30,7 +23,6 @@ export default class EditBtn extends React.Component {
                 )
               })}
           </select>
-          Meal Price: $ {this.props.price}
         </label>
       </div>
     )
@@ -40,9 +32,8 @@ export default class EditBtn extends React.Component {
 // expect quantity prop pass down
 // expect handleEdit function prop pass down
 // expect productId and orderId props pass down
-EditBtn.propTypes = {
-  quantity: PropTypes.number,
+EditButtonGuest.propTypes = {
+  quantity: PropTypes.string,
   handleEdit: PropTypes.func,
-  productId: PropTypes.number,
-  orderId: PropTypes.number
+  productId: PropTypes.number
 }
