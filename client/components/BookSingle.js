@@ -6,9 +6,12 @@ import {
 import {
   getLoggedInUserCartThunk,
   addProductToCartThunk,
+  clearUserCart
+} from '../store/reducers/userCartReducer'
+import {
   addProductToGuestCartThunk,
   getGuestUserCartThunk
-} from '../store/reducers/userCartReducer'
+} from '../store/reducers/userGuestCartReducer'
 import {connect} from 'react-redux'
 import {Grid, Paper, Typography, withStyles} from '@material-ui/core'
 
@@ -51,6 +54,7 @@ class singleBook extends React.Component {
 
   componentWillUnmount() {
     this.props.clearBookList()
+    this.props.clearUserCart()
   }
 
   render() {
@@ -77,8 +81,6 @@ class singleBook extends React.Component {
               <Typography gutterBottom variant="subtitle1" style={{width: 500}}>
                 {book.description}
               </Typography>
-              <br />
-              <Typography variant="h6">calories: {book.calories}</Typography>
               <br />
               <Typography>${book.price}</Typography>
 
@@ -137,7 +139,8 @@ const mapDispatchToProps = dispatch => {
       dispatch(addProductToGuestCartThunk(quantity, bookId)),
     populateBookListThunk: query => dispatch(populateBookListThunk(query)),
     clearBookList: () => dispatch(clearBookList()),
-    getGuestUserCart: () => dispatch(getGuestUserCartThunk())
+    getGuestUserCart: () => dispatch(getGuestUserCartThunk()),
+    clearUserCart: () => dispatch(clearUserCart())
   }
 }
 

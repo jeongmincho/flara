@@ -22,21 +22,18 @@ router.get('/', async (req, res, next) => {
   }
 })
 
-// give me my cart
-// router.get('/', async (req, res, next) => {
-//   try {
-//     const userCartID = await Order.findOne({
-//       where: {
-//         userId: req.user.id,
-//         isCart: true
-//       },
-//       attributes: ['id']
-//     })
-//     res.json(userCartID.id)
-//   } catch (err) {
-//     next(err)
-//   }
-// })
+router.post('/create', async (req, res, next) => {
+  try {
+    console.log('reached create cart, req.user.id: ', req.user.id)
+    const userCart = await Order.create({
+      userId: req.user.id,
+      isCart: true
+    })
+    res.json(userCart)
+  } catch (err) {
+    next(err)
+  }
+})
 
 router.post('/', async (req, res, next) => {
   try {

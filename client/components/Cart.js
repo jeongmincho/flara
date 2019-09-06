@@ -4,7 +4,8 @@ import {
   getLoggedInUserCartThunk,
   deleteProductFromCartThunk,
   checkoutCartThunk,
-  editProductCartThunk
+  editProductCartThunk,
+  clearUserCart
 } from '../store/reducers/userCartReducer'
 import {Link} from 'react-router-dom'
 import {DeleteForever} from '@material-ui/icons'
@@ -32,6 +33,10 @@ class Cart extends React.Component {
     this.props.getLoggedInUserCart(this.props.user.id)
   }
 
+  componentWillUnmount() {
+    this.props.clearUserCart()
+  }
+
   handleCheckoutCart(orderId, totalPrice) {
     this.props.checkoutCart(orderId, totalPrice)
   }
@@ -54,9 +59,9 @@ class Cart extends React.Component {
           this.props.cart.products.length === 0 ? (
             <div>
               <div>Your DevBites Cart is empty.</div>
-              <Link to="menu">
+              <Link to="/books/limit=10&offset=0">
                 <Button type="button" variant="contained" color="primary">
-                  Go to Menus
+                  Go to Books
                 </Button>
               </Link>
             </div>
@@ -150,7 +155,8 @@ const mapDispatchToProps = dispatch => {
     checkoutCart: (orderId, totalPrice) =>
       dispatch(checkoutCartThunk(orderId, totalPrice)),
     editBtnCart: (userId, productId, orderId, quantity) =>
-      dispatch(editProductCartThunk(userId, productId, orderId, quantity))
+      dispatch(editProductCartThunk(userId, productId, orderId, quantity)),
+    clearUserCart: () => dispatch(clearUserCart())
   }
 }
 

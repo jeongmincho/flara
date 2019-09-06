@@ -50,6 +50,10 @@ export const signup = newUser => async dispatch => {
   let res
   try {
     res = await axios.post(`/auth/signup`, newUser)
+    const {data} =
+      localStorage.getItem('cart') !== '[]' &&
+      (await axios.post(`/api/cart/create`))
+    console.log(data)
   } catch (authError) {
     return dispatch(getUser({error: authError}))
   }

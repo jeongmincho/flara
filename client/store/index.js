@@ -5,9 +5,10 @@ import {composeWithDevTools} from 'redux-devtools-extension'
 import bookList from './reducers/bookListReducer'
 import bookCount from './reducers/bookCountReducer'
 import userAuth from './reducers/userAuthReducer'
-// import userCartID from './reducers/userCartReducer2'
 // import userOrderList from './reducers/userOrderListReducer'
+// import userCartID from './reducers/userCartReducer2'
 import userCart from './reducers/userCartReducer'
+import userGuestCart from './reducers/userGuestCartReducer'
 import orderHistory from './orderHistoryReducer'
 
 const reducer = combineReducers({
@@ -15,6 +16,7 @@ const reducer = combineReducers({
   bookCount,
   userAuth,
   userCart,
+  userGuestCart,
   orderHistory
   // userOrderList,
   // userCartID

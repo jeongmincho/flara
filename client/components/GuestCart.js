@@ -2,19 +2,14 @@ import React from 'react'
 import {connect} from 'react-redux'
 import history from '../history'
 import {
-  getLoggedInUserCartThunk,
-  deleteProductFromCartThunk,
   deleteProductFromGuestCartThunk,
-  checkoutCartThunk,
-  editProductCartThunk,
   editProductGuestCartThunk,
   getGuestUserCartThunk
-} from '../store/reducers/userCartReducer'
+} from '../store/reducers/userGuestCartReducer'
 import {
   populateBookListThunk,
   clearBookList
 } from '../store/reducers/bookListReducer'
-import {populateProductOrdersThunk} from '../store/reducers/userProductOrdersReducer'
 import {Link} from 'react-router-dom'
 import {DeleteForever} from '@material-ui/icons'
 import {
@@ -38,24 +33,28 @@ class Cart extends React.Component {
   }
 
   componentDidMount() {
-    Object.keys(this.props.userCart).length &&
+    Object.keys(this.props.userGuestCart).length &&
       this.props.populateBookList(
-        Object.keys(this.props.userCart)
+        Object.keys(this.props.userGuestCart)
           .map(id => `id=${id}`)
           .join('&')
       )
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.userCart !== prevProps.userCart) {
-      Object.keys(this.props.userCart).length
+    if (this.props.userGuestCart !== prevProps.userGuestCart) {
+      Object.keys(this.props.userGuestCart).length
         ? this.props.populateBookList(
-            Object.keys(this.props.userCart)
+            Object.keys(this.props.userGuestCart)
               .map(id => `id=${id}`)
               .join('&')
           )
         : this.props.clearBookList()
     }
+  }
+
+  componentWillUnmount() {
+    this.props.clearBookList()
   }
 
   handleCheckoutCart() {
@@ -78,10 +77,10 @@ class Cart extends React.Component {
         {this.props.bookList ? (
           Object.keys(this.props.bookList).length === 0 ? (
             <div>
-              <div>Your DevBites Cart is empty.</div>
-              <Link to="menu">
+              <div>Your DevBites Guest Cart is empty.</div>
+              <Link to="/books/limit=10&offset=0">
                 <Button type="button" variant="contained" color="primary">
-                  Go to Menus
+                  Go to Books
                 </Button>
               </Link>
             </div>
@@ -90,7 +89,7 @@ class Cart extends React.Component {
               <List>
                 {Object.keys(this.props.bookList).map(key => {
                   const book = this.props.bookList[key]
-                  const bookOrder = this.props.userCart[book.id]
+                  const bookOrder = this.props.userGuestCart[book.id]
                   bookOrder && (totalPrice += book.price * bookOrder.quantity)
                   return (
                     <div
@@ -162,21 +161,17 @@ class Cart extends React.Component {
 const mapStateToProps = state => {
   return {
     bookList: state.bookList,
-    userCart: state.userCart
+    userGuestCart: state.userGuestCart
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
     getGuestUserCart: () => dispatch(getGuestUserCartThunk()),
-    populateProductOrders: () => dispatch(populateProductOrdersThunk()),
     populateBookList: query => dispatch(populateBookListThunk(query)),
-    // getLoggedInUserCart: () => dispatch(getLoggedInUserCartThunk())
     deleteProductFromGuestCart: productId =>
       dispatch(deleteProductFromGuestCartThunk(productId)),
     clearBookList: () => dispatch(clearBookList()),
-    // checkoutCart: (orderId, totalPrice) =>
-    //   dispatch(checkoutCartThunk(orderId, totalPrice)),
     editProductGuestCart: (productId, quantity) =>
       dispatch(editProductGuestCartThunk(productId, quantity))
   }

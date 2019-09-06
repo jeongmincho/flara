@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {withRouter, Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
-import {Login, Signup, UserHome} from './components'
+import {Login, SignUpForm, UserHome} from './components'
 import BookList from './components/BookList'
 import BookSingle from './components/BookSingle'
 import Cart from './components/Cart'
@@ -11,8 +11,12 @@ import OrderHistory from './components/OrderHistory'
 import {me} from './store'
 import {
   getLoggedInUserCartThunk,
-  getGuestUserCartThunk
+  addProductToCartThunk
 } from './store/reducers/userCartReducer'
+import {
+  getGuestUserCartThunk,
+  clearGuestCart
+} from './store/reducers/userGuestCartReducer'
 
 /**
  * COMPONENT
@@ -20,19 +24,23 @@ import {
 class Routes extends Component {
   componentDidMount() {
     this.props.loadInitialData()
-    this.props.isLoggedIn
-      ? this.props.getLoggedInUserCart()
-      : this.props.getGuestUserCart()
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.userCart !== prevProps.userCart) {
-      console.log('CHANGES', this.props.userCart)
+    if (
+      this.props.userAuth !== prevProps.userAuth &&
+      localStorage.getItem('cart') !== '[]'
+    ) {
+      this.props.clearGuestCart()
+      const existingCart = JSON.parse(localStorage.getItem('cart'))
+      // basically, these happen at the same time without waiting for one to be finished before the other. as aresult, it creates a cart for each product added
+      // somehow need to create a cart first, then add products to the cart
+      // probably need like a batch add thunk to handle this case for sign up... will be different for login
+      existingCart.forEach(async product => {
+        await this.props.addToCart(product.quantity, product.id)
+      })
+      localStorage.setItem('cart', '[]')
     }
-    // this.props.loadInitialData()
-    // this.props.isLoggedIn
-    //   ? this.props.getLoggedInUserCart()
-    //   : this.props.getGuestUserCart()
   }
 
   render() {
@@ -41,22 +49,21 @@ class Routes extends Component {
       <Switch>
         {/* Routes placed here are available to all visitors */}
         <Route path="/login" component={Login} />
-        <Route path="/signup" component={Signup} />
-        <Route path="/cart" component={GuestCart} />
-        <Route
-          path="/cart"
-          render={() => <GuestCart {...this.props.userCart} />}
-        />
+        <Route path="/signup" component={SignUpForm} />
+        {isLoggedIn ? (
+          <Route path="/cart" component={Cart} />
+        ) : (
+          <Route
+            path="/cart"
+            render={() => <GuestCart {...this.props.userGuestCart} />}
+          />
+        )}
         <Route path="/books/:query" component={BookList} />
         <Route path="/singlebook/:query" component={BookSingle} />
         {isLoggedIn && (
           <Switch>
             {/* Routes placed here are only available after logging in */}
             <Route path="/home" component={UserHome} />
-            <Route path="/cart" component={Cart} />
-
-            <Route path="/books/:query" component={BookList} />
-            <Route path="/singlebook/:query" component={BookSingle} />
             <Route path="/orderHistory" component={OrderHistory} />
           </Switch>
         )}
@@ -75,7 +82,9 @@ const mapState = state => {
     // Being 'logged in' for our purposes will be defined has having a state.user that has a truthy id.
     // Otherwise, state.user will be an empty object, and state.userAuth.id will be falsey
     isLoggedIn: !!state.userAuth.id,
-    userCart: state.userCart
+    userCart: state.userCart,
+    userGuestCart: state.userGuestCart,
+    userAuth: state.userAuth
   }
 }
 
@@ -84,8 +93,11 @@ const mapDispatch = dispatch => {
     loadInitialData() {
       dispatch(me())
     },
+    clearGuestCart: () => dispatch(clearGuestCart()),
     getLoggedInUserCart: () => dispatch(getLoggedInUserCartThunk()),
-    getGuestUserCart: () => dispatch(getGuestUserCartThunk())
+    getGuestUserCart: () => dispatch(getGuestUserCartThunk()),
+    addToCart: (quantity, bookId) =>
+      dispatch(addProductToCartThunk(quantity, bookId))
   }
 }
 

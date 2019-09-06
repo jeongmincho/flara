@@ -3,10 +3,8 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {logout} from '../store'
-import {
-  getLoggedInUserCartThunk,
-  getGuestUserCartThunk
-} from '../store/reducers/userCartReducer'
+import {getLoggedInUserCartThunk} from '../store/reducers/userCartReducer'
+import {getGuestUserCartThunk} from '../store/reducers/userGuestCartReducer'
 import {Breadcrumbs, Button, withStyles, Badge} from '@material-ui/core'
 import {
   Home,
@@ -88,8 +86,8 @@ class Navbar extends React.Component {
                     <Badge
                       badgeContent={
                         this.props.userCart &&
-                        (this.props.userCart.meals &&
-                          this.props.userCart.meals.length)
+                        (this.props.userCart.products &&
+                          this.props.userCart.products.length)
                       }
                       color="primary"
                       className={classes.cart}
@@ -139,8 +137,8 @@ class Navbar extends React.Component {
                   >
                     <Badge
                       badgeContent={
-                        this.props.userCart &&
-                        Object.keys(this.props.userCart).length
+                        this.props.userGuestCart &&
+                        Object.keys(this.props.userGuestCart).length
                       }
                       color="primary"
                       className={classes.cart}
@@ -168,7 +166,8 @@ const mapStateToProps = state => {
   return {
     isLoggedIn: !!state.userAuth.id,
     userId: state.userAuth.id,
-    userCart: state.userCart
+    userCart: state.userCart,
+    userGuestCart: state.userGuestCart
   }
 }
 
