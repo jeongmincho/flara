@@ -63,7 +63,6 @@ export const clearUserCart = () => {
 export const getLoggedInUserCartThunk = () => {
   return async dispatch => {
     try {
-      console.log('fetching logged in user cart')
       const {data} = await axios.get(`/api/cart/`)
       dispatch(getLoggedInUserCart(data))
     } catch (error) {
@@ -79,9 +78,7 @@ export const addProductToCartThunk = (quantity, productId) => {
         quantity,
         productId
       }
-      console.log('NEWPRODUCTORDER: ', newProductOrder)
       const {data} = await axios.post(`/api/cart`, newProductOrder)
-      console.log('DATA OF CREATED CART: ', data)
       dispatch(
         addProductToCart(data.cart, data.addedProduct, data.addedProductOrder)
       )
@@ -148,17 +145,11 @@ export default function(state = userCart, action) {
       return action.cart
 
     case ADD_PRODUCT_TO_CART: {
-      console.log('which')
       const newproduct = {...action.product, productOrder: action.productOrder}
-      console.log('damn')
-      console.log(newproduct)
-      console.log('STATE: ', state)
       if (!state) {
-        console.log('spread')
         const newproducts = [newproduct]
         return {...action.cart, products: newproducts}
       } else {
-        console.log('is it?')
         const newproducts = [...state.products, newproduct]
         return {...state, products: newproducts}
       }
