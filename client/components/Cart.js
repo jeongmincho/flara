@@ -33,10 +33,6 @@ class Cart extends React.Component {
     this.props.getLoggedInUserCart(this.props.user.id)
   }
 
-  componentWillUnmount() {
-    this.props.clearUserCart()
-  }
-
   handleCheckoutCart(orderId, totalPrice) {
     this.props.checkoutCart(orderId, totalPrice)
   }

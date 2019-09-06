@@ -63,6 +63,7 @@ export const clearUserCart = () => {
 export const getLoggedInUserCartThunk = () => {
   return async dispatch => {
     try {
+      console.log('fetching logged in user cart')
       const {data} = await axios.get(`/api/cart/`)
       dispatch(getLoggedInUserCart(data))
     } catch (error) {

@@ -47,14 +47,23 @@ class singleBook extends React.Component {
   componentDidMount() {
     const query = this.props.match.params.query
     this.props.populateBookListThunk(query)
-    this.props.isLoggedIn
-      ? this.props.getLoggedInUserCart()
-      : this.props.getGuestUserCart()
+    // this.props.isLoggedIn
+    //   ? this.props.getLoggedInUserCart()
+    //   : this.props.getGuestUserCart()
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.userAuth !== prevProps.userAuth) {
+      if (this.props.isLoggedIn) {
+        this.props.getLoggedInUserCart()
+      } else {
+        this.props.getGuestUserCart()
+      }
+    }
   }
 
   componentWillUnmount() {
     this.props.clearBookList()
-    this.props.clearUserCart()
   }
 
   render() {
@@ -104,9 +113,9 @@ class singleBook extends React.Component {
                   }}
                   disabled={
                     this.props.userCart &&
-                    (this.props.userCart.books &&
-                      this.props.userCart.books.some(
-                        cartItem => cartItem.id === book.id
+                    (this.props.userCart.products &&
+                      this.props.userCart.products.some(
+                        product => product.id === book.id
                       ))
                   }
                 >
@@ -125,7 +134,7 @@ const mapStateToProps = state => {
   return {
     bookList: state.bookList,
     isLoggedIn: !!state.userAuth.id,
-    userId: state.userAuth.id,
+    userAuth: state.userAuth.id,
     userCart: state.userCart
   }
 }

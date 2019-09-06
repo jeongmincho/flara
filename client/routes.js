@@ -11,7 +11,8 @@ import OrderHistory from './components/OrderHistory'
 import {me} from './store'
 import {
   getLoggedInUserCartThunk,
-  addProductToCartThunk
+  addProductToCartThunk,
+  clearUserCart
 } from './store/reducers/userCartReducer'
 import {
   getGuestUserCartThunk,
@@ -27,6 +28,14 @@ class Routes extends Component {
   }
 
   componentDidUpdate(prevProps) {
+    if (this.props.userAuth !== prevProps.userAuth) {
+      if (!this.props.isLoggedIn) {
+        this.props.clearUserCart()
+      }
+      if (this.props.isLoggedIn) {
+        this.props.getLoggedInUserCart()
+      }
+    }
     if (
       this.props.userAuth !== prevProps.userAuth &&
       localStorage.getItem('cart') !== '[]'
@@ -97,7 +106,8 @@ const mapDispatch = dispatch => {
     getLoggedInUserCart: () => dispatch(getLoggedInUserCartThunk()),
     getGuestUserCart: () => dispatch(getGuestUserCartThunk()),
     addToCart: (quantity, bookId) =>
-      dispatch(addProductToCartThunk(quantity, bookId))
+      dispatch(addProductToCartThunk(quantity, bookId)),
+    clearUserCart: () => dispatch(clearUserCart())
   }
 }
 
