@@ -64,12 +64,9 @@ router.post('/', async (req, res, next) => {
 router.put('/', async (req, res, next) => {
   try {
     const userCart = await Order.findByPk(req.body.orderId)
-    userCart.totalPrice = req.body.totalPrice
-    userCart.isCart = false
-    await userCart.save()
     const productOrders = await ProductOrder.findAll({
       where: {
-        orderId: req.body.orderId
+        orderId: userCart.id
       }
     })
     await Promise.all(
@@ -79,6 +76,13 @@ router.put('/', async (req, res, next) => {
         productOrder.save()
       })
     )
+    let totalPrice = 0
+    productOrders.map(productOrder => {
+      totalPrice += productOrder.price * productOrder.quantity
+    })
+    userCart.totalPrice = totalPrice
+    userCart.isCart = false
+    await userCart.save()
     res.sendStatus(201)
   } catch (err) {
     next(err)

@@ -107,16 +107,14 @@ export const deleteProductFromCartThunk = (productId, orderId) => {
   }
 }
 
-export const checkoutCartThunk = (orderId, totalPrice) => {
+export const checkoutCartThunk = orderId => {
   return async dispatch => {
     try {
-      const updatePrice = {
-        orderId,
-        totalPrice
+      const orderInfo = {
+        orderId
       }
-      await axios.put(`/api/cart`, updatePrice)
+      await axios.put(`/api/cart`, orderInfo)
       dispatch(checkoutCart())
-      // history.push('/orderSubmitted')
     } catch (error) {
       console.log(error)
     }

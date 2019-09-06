@@ -152,8 +152,7 @@ const mapDispatchToProps = dispatch => {
     getLoggedInUserCart: userId => dispatch(getLoggedInUserCartThunk(userId)),
     deleteProductFromCart: (productId, orderId) =>
       dispatch(deleteProductFromCartThunk(productId, orderId)),
-    checkoutCart: (orderId, totalPrice) =>
-      dispatch(checkoutCartThunk(orderId, totalPrice)),
+    checkoutCart: orderId => dispatch(checkoutCartThunk(orderId)),
     editBtnCart: (userId, productId, orderId, quantity) =>
       dispatch(editProductCartThunk(userId, productId, orderId, quantity)),
     clearUserCart: () => dispatch(clearUserCart())
