@@ -47,9 +47,6 @@ class singleBook extends React.Component {
   componentDidMount() {
     const query = this.props.match.params.query
     this.props.populateBookListThunk(query)
-    // this.props.isLoggedIn
-    //   ? this.props.getLoggedInUserCart()
-    //   : this.props.getGuestUserCart()
   }
 
   componentDidUpdate(prevProps) {
@@ -112,11 +109,14 @@ class singleBook extends React.Component {
                     this.handleSubmit(book.id)
                   }}
                   disabled={
-                    this.props.userCart &&
-                    (this.props.userCart.products &&
-                      this.props.userCart.products.some(
-                        product => product.id === book.id
-                      ))
+                    this.props.isLoggedIn
+                      ? this.props.userCart &&
+                        (this.props.userCart.products &&
+                          this.props.userCart.products.some(
+                            product => product.id === book.id
+                          ))
+                      : this.props.userGuestCart &&
+                        this.props.userGuestCart[book.id]
                   }
                 >
                   Add to Cart
@@ -135,7 +135,8 @@ const mapStateToProps = state => {
     bookList: state.bookList,
     isLoggedIn: !!state.userAuth.id,
     userAuth: state.userAuth.id,
-    userCart: state.userCart
+    userCart: state.userCart,
+    userGuestCart: state.userGuestCart
   }
 }
 

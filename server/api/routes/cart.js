@@ -63,7 +63,12 @@ router.post('/', async (req, res, next) => {
 
 router.put('/', async (req, res, next) => {
   try {
-    const userCart = await Order.findByPk(req.body.orderId)
+    const userCart = await Order.findOne({
+      where: {
+        userId: req.user.id,
+        isCart: true
+      }
+    })
     const productOrders = await ProductOrder.findAll({
       where: {
         orderId: userCart.id
@@ -91,10 +96,16 @@ router.put('/', async (req, res, next) => {
 
 router.delete('/', async (req, res, next) => {
   try {
+    const userCart = await Order.findOne({
+      where: {
+        userId: req.user.id,
+        isCart: true
+      }
+    })
     await ProductOrder.destroy({
       where: {
         productId: req.body.productId,
-        orderId: req.body.orderId
+        orderId: userCart.id
       }
     })
     res.sendStatus(204)

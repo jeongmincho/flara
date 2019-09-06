@@ -33,12 +33,12 @@ class Cart extends React.Component {
     this.props.getLoggedInUserCart(this.props.user.id)
   }
 
-  handleCheckoutCart(orderId, totalPrice) {
-    this.props.checkoutCart(orderId, totalPrice)
+  handleCheckoutCart() {
+    this.props.checkoutCart()
   }
 
-  handleDeleteProduct(productId, orderId) {
-    this.props.deleteProductFromCart(productId, orderId)
+  handleDeleteProduct(productId) {
+    this.props.deleteProductFromCart(productId)
   }
 
   handleEditProduct(productId, orderId, quantity) {
@@ -80,10 +80,7 @@ class Cart extends React.Component {
                           <Avatar>
                             <Fab
                               onClick={() => {
-                                this.handleDeleteProduct(
-                                  product.id,
-                                  this.props.cart.id
-                                )
+                                this.handleDeleteProduct(product.id)
                               }}
                             >
                               {' '}
@@ -119,7 +116,7 @@ class Cart extends React.Component {
               <Button
                 type="button"
                 onClick={() => {
-                  this.handleCheckoutCart(this.props.cart.id, totalPrice)
+                  this.handleCheckoutCart()
                 }}
                 color="primary"
                 variant="contained"
@@ -146,9 +143,9 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getLoggedInUserCart: userId => dispatch(getLoggedInUserCartThunk(userId)),
-    deleteProductFromCart: (productId, orderId) =>
-      dispatch(deleteProductFromCartThunk(productId, orderId)),
-    checkoutCart: orderId => dispatch(checkoutCartThunk(orderId)),
+    deleteProductFromCart: productId =>
+      dispatch(deleteProductFromCartThunk(productId)),
+    checkoutCart: () => dispatch(checkoutCartThunk()),
     editBtnCart: (userId, productId, orderId, quantity) =>
       dispatch(editProductCartThunk(userId, productId, orderId, quantity)),
     clearUserCart: () => dispatch(clearUserCart())
