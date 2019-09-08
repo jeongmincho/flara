@@ -6,6 +6,7 @@ import {Login, SignUpForm, UserHome} from './components'
 import BookList from './components/BookList'
 import BookSingle from './components/BookSingle'
 import Cart from './components/Cart'
+import About from './components/About'
 import GuestCart from './components/GuestCart'
 import OrderHistory from './components/OrderHistory'
 import {me} from './store'
@@ -97,6 +98,7 @@ class Routes extends Component {
       <Container className={classes.routesContainer}>
         <Switch>
           {/* Routes placed here are available to all visitors */}
+          <Route path="/about" component={About} />
           <Route path="/login" component={Login} />
           <Route path="/signup" component={SignUpForm} />
           {isLoggedIn ? (

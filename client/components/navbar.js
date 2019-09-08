@@ -10,15 +10,13 @@ import {
   Breadcrumbs,
   Button,
   withStyles,
-  Badge
+  Badge,
+  Typography
 } from '@material-ui/core'
 import {
-  Home,
   ShoppingCart,
   Person,
-  RestaurantBook,
   WbIncandescent,
-  PersonAdd,
   ArrowBack,
   Whatshot
 } from '@material-ui/icons'
@@ -44,16 +42,13 @@ const styles = theme => ({
   navBarBreadcrumbs: {
     margin: '0 auto'
   },
-  icon: {
-    marginRight: 14
-  },
   navBarLink: {
     margin: '0 1rem',
     fontSize: '18px'
+  },
+  navBarLinkText: {
+    marginLeft: '1rem'
   }
-  // cart: {
-  //   marginRight: 10
-  // },
 })
 
 class Navbar extends React.Component {
@@ -82,26 +77,6 @@ class Navbar extends React.Component {
             <Breadcrumbs className={classes.navBarBreadcrumbs}>
               {/* The navbar will show these links after you log in */}
               <Button
-                component={materialRouter}
-                style={linkStyle}
-                to="/home"
-                className={classes.navBarLink}
-              >
-                {' '}
-                <Home className={classes.icon} />
-                Home
-              </Button>
-              <Button
-                component={materialRouter}
-                to="/orderHistory"
-                style={linkStyle}
-                className={classes.navBarLink}
-              >
-                {' '}
-                <Person className={classes.icon} />
-                My Account
-              </Button>
-              <Button
                 href="#"
                 onClick={handleClick}
                 style={linkStyle}
@@ -115,6 +90,7 @@ class Navbar extends React.Component {
                 component={materialRouter}
                 to="/books/limit=12&offset=0"
                 style={linkStyle}
+                className={classes.navBarLink}
               >
                 {' '}
                 <Whatshot className={classes.icon} />
@@ -143,34 +119,16 @@ class Navbar extends React.Component {
             </Breadcrumbs>
           ) : (
             <Breadcrumbs className={classes.navBarBreadcrumbs}>
-              {/* The navbar will show these links before you log in */}
-              {/* <Button
-                  component={materialRouter}
-                  to="/login"
-                  style={linkStyle}
-                >
-                  {' '}
-                  <Person className={classes.icon} />
-                  Login
-                </Button> */}
-              {/* <Button
-                  component={materialRouter}
-                  to="/signup"
-                  style={linkStyle}
-                >
-                  {' '}
-                  <PersonAdd className={classes.icon} />
-                  Sign Up
-                </Button> */}
               <Button
                 component={materialRouter}
                 to="/about"
                 style={linkStyle}
                 className={classes.navBarLink}
               >
-                {' '}
                 <WbIncandescent className={classes.icon} />
-                About Us
+                <Typography className={classes.navBarLinkText}>
+                  About Us
+                </Typography>
               </Button>
               <Button
                 component={materialRouter}
@@ -178,9 +136,8 @@ class Navbar extends React.Component {
                 style={linkStyle}
                 className={classes.navBarLink}
               >
-                {' '}
                 <Whatshot className={classes.icon} />
-                Gems
+                <Typography className={classes.navBarLinkText}>Gems</Typography>
               </Button>
               <Button
                 component={materialRouter}
@@ -196,23 +153,35 @@ class Navbar extends React.Component {
                   color="primary"
                   className={classes.cart}
                 >
-                  {' '}
-                  <ShoppingCart className={classes.icon} />{' '}
-                </Badge>{' '}
-                Cart{' '}
+                  <ShoppingCart className={classes.icon} />
+                </Badge>
+                <Typography className={classes.navBarLinkText}>Cart</Typography>
               </Button>
             </Breadcrumbs>
           )}
-          <Button
-            component={materialRouter}
-            to="/login"
-            style={linkStyle}
-            className={classes.navBarLink}
-          >
-            {' '}
-            <Person className={classes.icon} />
-            {isLoggedIn ? 'My Account' : 'Login'}
-          </Button>
+          {isLoggedIn ? (
+            <Button
+              component={materialRouter}
+              to="/orderhistory"
+              style={linkStyle}
+              className={classes.navBarLink}
+            >
+              {' '}
+              <Person className={classes.icon} />
+              My Account
+            </Button>
+          ) : (
+            <Button
+              component={materialRouter}
+              to="/login"
+              style={linkStyle}
+              className={classes.navBarLink}
+            >
+              {' '}
+              <Person className={classes.icon} />
+              Login
+            </Button>
+          )}
         </Container>
       </Container>
     )
