@@ -41,7 +41,7 @@ const styles = theme => ({
     marginBottom: '1.5rem'
   },
   routesContainer: {
-    marginTop: '5rem',
+    marginTop: '7rem',
     maxWidth: 'none'
   },
   welcomePageBackgroundImage: {

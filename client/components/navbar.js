@@ -84,7 +84,9 @@ class Navbar extends React.Component {
               >
                 {' '}
                 <ArrowBack className={classes.icon} />
-                Logout
+                <Typography className={classes.navBarLinkText}>
+                  Logout
+                </Typography>
               </Button>
               <Button
                 component={materialRouter}
@@ -94,7 +96,7 @@ class Navbar extends React.Component {
               >
                 {' '}
                 <Whatshot className={classes.icon} />
-                Gems
+                <Typography className={classes.navBarLinkText}>Gems</Typography>
               </Button>
               <Button
                 component={materialRouter}
@@ -114,7 +116,7 @@ class Navbar extends React.Component {
                   {' '}
                   <ShoppingCart className={classes.icon} />
                 </Badge>
-                Cart{' '}
+                <Typography className={classes.navBarLinkText}>Cart</Typography>
               </Button>
             </Breadcrumbs>
           ) : (

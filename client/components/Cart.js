@@ -17,9 +17,15 @@ import {
   ListItem,
   ListItemText,
   ListItemAvatar,
-  Avatar
+  Avatar,
+  Container,
+  Typography,
+  ListSubheader
 } from '@material-ui/core'
-import EditBtn from './EditButton'
+import CartItem from './CartItem'
+import CartListLabel from './CartListLabel'
+import CartListTotal from './CartListTotal'
+import CartListCheckout from './CartListCheckout'
 
 class Cart extends React.Component {
   constructor() {
@@ -49,8 +55,8 @@ class Cart extends React.Component {
   render() {
     let totalPrice = 0
     return (
-      <div>
-        <h2>Shopping Cart</h2>
+      <Container>
+        <Typography variant="h4">Your Shopping Cart</Typography>
         {this.props.cart && this.props.cart.products ? (
           this.props.cart.products.length === 0 ? (
             <div>
@@ -62,73 +68,32 @@ class Cart extends React.Component {
               </Link>
             </div>
           ) : (
-            <div>
+            <Container>
               <List>
+                <CartListLabel />
                 {this.props.cart.products.map(product => {
                   const {quantity} = product.productOrder
                   totalPrice += product.price * quantity
                   return (
-                    <div
+                    <CartItem
+                      product={product}
+                      handleDeleteProduct={this.handleDeleteProduct}
+                      handleEditProduct={this.handleEditProduct}
+                      quantity={quantity}
+                      cartId={this.props.cart.id}
                       key={product.id}
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center'
-                      }}
-                    >
-                      <ListItem>
-                        <ListItemAvatar>
-                          <Avatar>
-                            <Fab
-                              onClick={() => {
-                                this.handleDeleteProduct(product.id)
-                              }}
-                            >
-                              {' '}
-                              <DeleteForever />{' '}
-                            </Fab>
-                          </Avatar>
-                        </ListItemAvatar>
-                        <div
-                          style={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            width: '20rem'
-                          }}
-                        >
-                          <ListItemText primary={product.title} />
-                          <EditBtn
-                            quantity={quantity}
-                            price={product.price}
-                            handleEdit={this.handleEditProduct}
-                            productId={product.id}
-                            orderId={this.props.cart.id}
-                          />
-                        </div>
-                      </ListItem>
-                      <Divider variant="inset" component="li" />
-                    </div>
+                    />
                   )
                 })}
               </List>
-              <br />
-              Total Price of Cart: ${totalPrice}
-              <br />
-              <Button
-                type="button"
-                onClick={() => {
-                  this.handleCheckoutCart()
-                }}
-                color="primary"
-                variant="contained"
-              >
-                Checkout
-              </Button>
-            </div>
+              <CartListTotal totalPrice={totalPrice} />
+              <CartListCheckout handleCheckoutCart={this.handleCheckoutCart} />
+            </Container>
           )
         ) : (
           <div>Empty Cart</div>
         )}
-      </div>
+      </Container>
     )
   }
 }
