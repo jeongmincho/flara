@@ -71,10 +71,12 @@ class Navbar extends React.Component {
     ))
     return (
       <Container className={classes.navBarContainer}>
-        <img
-          src="https://i.imgur.com/1MBTfnZ.png"
-          className={classes.navBarLogoImage}
-        />
+        <Link to="/home">
+          <img
+            src="https://i.imgur.com/1MBTfnZ.png"
+            className={classes.navBarLogoImage}
+          />
+        </Link>
         <Container className={classes.navBarLinksContainer}>
           {isLoggedIn ? (
             <Breadcrumbs className={classes.navBarBreadcrumbs}>
@@ -111,7 +113,7 @@ class Navbar extends React.Component {
               </Button>
               <Button
                 component={materialRouter}
-                to="/books/limit=10&offset=0"
+                to="/books/limit=12&offset=0"
                 style={linkStyle}
               >
                 {' '}
@@ -172,7 +174,7 @@ class Navbar extends React.Component {
               </Button>
               <Button
                 component={materialRouter}
-                to="/books/limit=10&offset=0"
+                to="/books/limit=12&offset=0"
                 style={linkStyle}
                 className={classes.navBarLink}
               >
@@ -209,7 +211,7 @@ class Navbar extends React.Component {
           >
             {' '}
             <Person className={classes.icon} />
-            My Account
+            {isLoggedIn ? 'My Account' : 'Login'}
           </Button>
         </Container>
       </Container>

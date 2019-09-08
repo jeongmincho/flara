@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component, Fragment} from 'react'
 import {connect} from 'react-redux'
 import {withRouter, Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
@@ -18,6 +18,45 @@ import {
   getGuestUserCartThunk,
   clearGuestCart
 } from './store/reducers/userGuestCartReducer'
+import {withStyles, Container} from '@material-ui/core'
+
+const styles = theme => ({
+  card: {
+    width: 430,
+    margin: 40,
+    height: 300,
+    boxShadow: '0px 0px 4px 0px #444444'
+  },
+  linkStyle: {
+    textDecoration: 'none',
+    color: 'black'
+  },
+  media: {
+    height: 0,
+    paddingTop: '56.25%',
+    bottom: 0
+  },
+  pageBar: {
+    marginBottom: '1.5rem'
+  },
+  routesContainer: {
+    marginTop: '5rem',
+    maxWidth: 'none'
+  },
+  welcomePageBackgroundImage: {
+    /* Set rules to fill background */
+    minHeight: '800px',
+    minWidth: '1024px',
+    /* Set up proportionate scaling */
+    width: '65%',
+    height: '100%',
+    /* Set up positioning */
+    position: 'fixed',
+    top: 0,
+    right: 0,
+    zIndex: '-200'
+  }
+})
 
 /**
  * COMPONENT
@@ -53,32 +92,38 @@ class Routes extends Component {
   }
 
   render() {
-    const {isLoggedIn} = this.props
+    const {isLoggedIn, classes} = this.props
     return (
-      <Switch>
-        {/* Routes placed here are available to all visitors */}
-        <Route path="/login" component={Login} />
-        <Route path="/signup" component={SignUpForm} />
-        {isLoggedIn ? (
-          <Route path="/cart" component={Cart} />
-        ) : (
-          <Route
-            path="/cart"
-            render={() => <GuestCart {...this.props.userGuestCart} />}
-          />
-        )}
-        <Route path="/books/:query" component={BookList} />
-        <Route path="/singlebook/:query" component={BookSingle} />
-        <Route path="/home" component={UserHome} />
-        {isLoggedIn && (
-          <Switch>
-            {/* Routes placed here are only available after logging in */}
-            <Route path="/orderHistory" component={OrderHistory} />
-          </Switch>
-        )}
-        {/* Displays our Login component as a fallback */}
-        <Route component={Login} />
-      </Switch>
+      <Container className={classes.routesContainer}>
+        <Switch>
+          {/* Routes placed here are available to all visitors */}
+          <Route path="/login" component={Login} />
+          <Route path="/signup" component={SignUpForm} />
+          {isLoggedIn ? (
+            <Route path="/cart" component={Cart} />
+          ) : (
+            <Route
+              path="/cart"
+              render={() => <GuestCart {...this.props.userGuestCart} />}
+            />
+          )}
+          <Route path="/books/:query" component={BookList} />
+          <Route path="/singlebook/:query" component={BookSingle} />
+          <Route path="/home" component={UserHome} />
+          {isLoggedIn && (
+            <Switch>
+              {/* Routes placed here are only available after logging in */}
+              <Route path="/orderHistory" component={OrderHistory} />
+            </Switch>
+          )}
+          {/* Displays our Login component as a fallback */}
+          <Route component={Login} />
+        </Switch>
+        <img
+          src="https://i.imgur.com/Stuok4c.png"
+          className={classes.welcomePageBackgroundImage}
+        />
+      </Container>
     )
   }
 }
@@ -113,8 +158,9 @@ const mapDispatch = dispatch => {
 
 // The `withRouter` wrapper makes sure that updates are not blocked
 // when the url changes
-export default withRouter(connect(mapState, mapDispatch)(Routes))
-
+export default withStyles(styles)(
+  withRouter(connect(mapState, mapDispatch)(Routes))
+)
 /**
  * PROP TYPES
  */

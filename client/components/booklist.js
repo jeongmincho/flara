@@ -7,16 +7,32 @@ import {
 import {countBookListThunk} from '../store/reducers/bookCountReducer'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
-import {Card, CardHeader, withStyles, CardMedia} from '@material-ui/core'
+import {
+  Container,
+  Card,
+  Paper,
+  CardHeader,
+  withStyles,
+  CardMedia
+} from '@material-ui/core'
 import Pagination from 'material-ui-flat-pagination'
 import history from '../history'
 
 const styles = theme => ({
-  card: {
-    width: 430,
+  bookListDisplayContainer: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'center'
+  },
+  bookDisplayCard: {
+    width: '12rem',
+    height: '18rem',
     margin: 40,
-    height: 300,
     boxShadow: '0px 0px 4px 0px #444444'
+  },
+  bookDisplayImage: {
+    width: '12rem',
+    height: '18rem'
   },
   linkStyle: {
     textDecoration: 'none',
@@ -51,7 +67,7 @@ class BookList extends React.Component {
   }
 
   handleNewPage(offset) {
-    const query = `limit=10&offset=${offset}`
+    const query = `limit=12&offset=${offset}`
     history.push(query)
     this.props.populateBookListThunk(query)
   }
@@ -68,33 +84,37 @@ class BookList extends React.Component {
         displayBooks.push(this.props.bookList[bookId])
       )
     return (
-      <div className="all-menu-items">
-        <div className="all-menu-items">
-          {displayBooks.map(book => {
-            return (
-              <div key={book.id}>
-                <Card className={classes.card}>
-                  <Link
-                    className={classes.linkStyle}
-                    to={`/singlebook/id=${book.id}`}
-                  >
-                    <CardHeader
-                      title={book.name}
+      <Container className={classes.bookListDisplayContainer}>
+        {displayBooks.map(book => {
+          return (
+            <div key={book.id}>
+              <Card className={classes.bookDisplayCard}>
+                <Link
+                  className={classes.linkStyle}
+                  to={`/singlebook/id=${book.id}`}
+                >
+                  <Paper>
+                    <img
+                      src={book.imageUrl}
+                      className={classes.bookDisplayImage}
+                    />
+                  </Paper>
+                  {/* <CardMedia
+                    className={classes.media}
+                    image={book.imageUrl}
+                    alt="Book image"
+                  /> */}
+                  {/* <CardHeader
+                      title={book.title}
                       subheader={`$ ${book.price}`}
-                    />
-                    <CardMedia
-                      className={classes.media}
-                      image={book.imageUrl}
-                      alt="Book image"
-                    />
-                  </Link>
-                </Card>
-              </div>
-            )
-          })}
-        </div>
+                    /> */}
+                </Link>
+              </Card>
+            </div>
+          )
+        })}
         <Pagination
-          limit={10}
+          limit={12}
           offset={this.state.offset}
           total={this.props.bookCount}
           onClick={(e, offset) => {
@@ -103,7 +123,7 @@ class BookList extends React.Component {
           }}
           className={classes.pageBar}
         />
-      </div>
+      </Container>
     )
   }
 }

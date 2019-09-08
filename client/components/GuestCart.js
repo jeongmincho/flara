@@ -78,7 +78,7 @@ class Cart extends React.Component {
           Object.keys(this.props.bookList).length === 0 ? (
             <div>
               <div>Your DevBites Guest Cart is empty.</div>
-              <Link to="/books/limit=10&offset=0">
+              <Link to="/books/limit=12&offset=0">
                 <Button type="button" variant="contained" color="primary">
                   Go to Books
                 </Button>

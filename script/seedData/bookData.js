@@ -505,26 +505,6 @@ const books = [
     rating: '4.36',
     description:
       "Psychiatrist Viktor Frankl's memoir has riveted generations of readers with its descriptions of life in Nazi death camps and its lessons for spiritual survival. Based on his own experience and the stories of his patients, Frankl argues that we cannot avoid suffering but we can choose how to cope with it, find meaning in it, and move forward with renewed purpose. At the heaPsychiatrist Viktor Frankl's memoir has riveted generations of readers with its descriptions of life in Nazi death camps and its lessons for spiritual survival. Based on his own experience and the stories of his patients, Frankl argues that we cannot avoid suffering but we can choose how to cope with it, find meaning in it, and move forward with renewed purpose. At the heart of his theory, known as logotherapy, is a conviction that the primary human drive is not pleasure but the pursuit of what we find meaningful. Man's Search for Meaning has become one of the most influential books in America; it continues to inspire us all to find significance in the very act of living."
-  },
-  {
-    title: 'How to Read a Book: The Classic Guide to Intelligent Reading',
-    author: ['Mortimer J. Adler', 'Charles Van Doren'],
-    price: 10,
-    imageUrl:
-      'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1310993739l/567610.jpg',
-    rating: '4.00',
-    description:
-      "How to Read a Book, originally published in 1940, has become a rare phenomenon, a living classic. It is the best and most successful guide to reading comprehension for the general reader. And now it has been completely rewritten and updated.  You are told about the various levels of reading and how to achieve them – from elementary reading, through systematic skimming andHow to Read a Book, originally published in 1940, has become a rare phenomenon, a living classic. It is the best and most successful guide to reading comprehension for the general reader. And now it has been completely rewritten and updated.  You are told about the various levels of reading and how to achieve them – from elementary reading, through systematic skimming and inspectional reading, to speed reading, you learn how to pigeonhole a book, X-ray it, extract the author's message, criticize. You are taught the different reading techniques for reading practical books, imaginative literature, plays, poetry, history, science and mathematics, philosophy and social science.  Finally, the authors offer a recommended reading list and supply reading tests whereby you can measure your own progress in reading skills, comprehension and speed.This a previously-published edition of ISBN 9780671212094"
-  },
-  {
-    title: 'Pragmatic Thinking and Learning: Refactor Your Wetware',
-    author: ['Andy Hunt'],
-    price: 10,
-    imageUrl:
-      'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1390692774l/3063393.jpg',
-    rating: '4.13',
-    description:
-      "Software development happens in your head. Not in an editor, IDE, or design tool. You're well educated on how to work with software and hardware, but what about wetware--our own brains? Learning new skills and new technology is critical to your career, and it's all in your head. In this book by Andy Hunt, you'll learn how our brains are wired, and how to take advantage ofSoftware development happens in your head. Not in an editor, IDE, or design tool. You're well educated on how to work with software and hardware, but what about wetware--our own brains? Learning new skills and new technology is critical to your career, and it's all in your head. In this book by Andy Hunt, you'll learn how our brains are wired, and how to take advantage of your brain's architecture. You'll learn new tricks and tips to learn more, faster, and retain more of what you learn. You need a pragmatic approach to thinking and learning. You need to Refactor Your Wetware. Programmers have to learn constantly; not just the stereotypical new technologies, but also the problem domain of the application, the whims of the user community, the quirks of your teammates, the shifting sands of the industry, and the evolving characteristics of the project itself as it is built. We'll journey together through bits of cognitive and neuroscience, learning and behavioral theory. You'll see some surprising aspects of how our brains work, and how you can take advantage of the system to improve your own learning and thinking skills.In this book you'll learn how to:Use the Dreyfus Model of Skill Acquisition to become more expertLeverage the architecture of the brain to strengthen different thinking modesAvoid common \"known bugs\" in your mindLearn more deliberately and more effectivelyManage knowledge more efficientlyPrinted in full color."
   }
 ]
 

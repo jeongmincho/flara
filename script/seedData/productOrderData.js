@@ -76,11 +76,6 @@ const productOrders = [
   },
   {
     quantity: 3,
-    orderId: 3,
-    productId: 49
-  },
-  {
-    quantity: 3,
     orderId: 28,
     productId: 5
   },
