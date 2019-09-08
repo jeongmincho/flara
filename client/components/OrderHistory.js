@@ -4,14 +4,60 @@ import {connect} from 'react-redux'
 import {logout} from '../store'
 
 import {
+  Container,
   Typography,
   List,
   ListItem,
   Divider,
   Grid,
-  Button
+  Button,
+  withStyles
 } from '@material-ui/core'
 import {ShoppingBasket, ArrowBack} from '@material-ui/icons'
+import CartEmpty from './Cart/CartEmpty'
+
+const styles = theme => ({
+  bookSingleDisplayContainer: {
+    display: 'flex',
+    paddingTop: '2rem'
+  },
+  orderHistoryContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: '0'
+  },
+  singleOrderContainer: {
+    display: 'flex',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    padding: '.5rem'
+  },
+  myAccountContainer: {
+    display: 'flex',
+    height: '100%'
+  },
+  myAccountSubContainerLeft: {
+    display: 'flex',
+    width: '60%',
+    flexDirection: 'column'
+  },
+  myAccountSubContainerTitle: {
+    marginBottom: '2rem'
+  },
+  myAccountSubContainerRight: {
+    display: 'flex',
+    width: '40%',
+    flexDirection: 'column',
+    alignItems: 'center'
+  },
+
+  myAccountLogoutButton: {
+    width: '20rem',
+    marginTop: '1rem'
+  }
+})
 
 class OrderHistory extends React.Component {
   componentDidMount() {
@@ -23,69 +69,62 @@ class OrderHistory extends React.Component {
 
     const userInfo = this.props.userInfo
     return (
-      <div>
-        <Grid container direction="row" justify="space-evenly">
-          <Grid>
-            <Typography variant="h3">Order History</Typography>
-            {this.props.orderHistory.length ? (
-              <div>
-                <div style={{margin: '0.5rem', marginBottom: '1rem'}}>
-                  Ordered by the time order was submitted.
-                </div>
-                {this.props.orderHistory.map(order => {
-                  return (
-                    <div
-                      key={order.id}
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center'
-                      }}
-                    >
-                      <List>
-                        <ListItem>
-                          <ShoppingBasket />
-                          <h3 style={{margin: '0.5rem', marginRight: '2rem'}}>
-                            Order ID: {count++}
-                          </h3>
-                          <div>
-                            Ordered on:{' '}
-                            {new Date(order.createdAt)
-                              .toString()
-                              .replace(/(\d\d:\d\d:\d\d).+/, '')}
-                          </div>
-                          <p style={{margin: '0.5rem', marginRight: '2rem'}}>
-                            Total Price: $ {order.totalPrice}
-                          </p>
-                        </ListItem>
-                        <Divider variant="inset" component="li" />
-                      </List>
-                    </div>
-                  )
-                })}
-              </div>
-            ) : (
-              <div>No Order History</div>
-            )}
-          </Grid>
-          <Grid>
-            <div>
-              <h1>Account Details</h1>
-              <h4>Name: </h4>
-              <p>
-                {userInfo.firstName} {userInfo.lastName}
-              </p>
-              <br />
-              <h4>Current Address:</h4> <p>{userInfo.address}</p>
-              <br />
-              <h4>Email:</h4> <p>{userInfo.email}</p>
-            </div>
-            <Button href="#" onClick={handleClick}>
-              <ArrowBack />
-              <Typography>Logout</Typography>
-            </Button>
-          </Grid>
-        </Grid>
-      </div>
+      <Container className={classes.myAccountContainer}>
+        <Container className={classes.myAccountSubContainerLeft}>
+          <Typography
+            variant="h3"
+            className={classes.myAccountSubContainerTitle}
+          >
+            Order History
+          </Typography>
+          {this.props.orderHistory.length ? (
+            <List className={classes.orderHistoryContainer}>
+              {this.props.orderHistory.map(order => {
+                return (
+                  <ListItem
+                    key={order.id}
+                    className={classes.singleOrderContainer}
+                  >
+                    <ShoppingBasket />
+                    <Typography variant="h6">Order #: {count++}</Typography>
+                    <Typography variant="subtitle1">
+                      Ordered on:{' '}
+                      {new Date(order.createdAt)
+                        .toString()
+                        .replace(/(\d\d:\d\d:\d\d).+/, '')}
+                    </Typography>
+                    <Typography variant="subtitle1">
+                      Total Price: $ {order.totalPrice}
+                    </Typography>
+                  </ListItem>
+                )
+              })}
+            </List>
+          ) : (
+            <CartEmpty />
+          )}
+        </Container>
+        <Container className={classes.myAccountSubContainerRight}>
+          <Typography
+            variant="h3"
+            className={classes.myAccountSubContainerTitle}
+          >
+            Account Details
+          </Typography>
+          <Typography variant="h6">Email: {userInfo.email}</Typography>
+
+          <Button
+            href="#"
+            onClick={handleClick}
+            variant="contained"
+            color="primary"
+            className={classes.myAccountLogoutButton}
+          >
+            <ArrowBack />
+            <Typography>Logout</Typography>
+          </Button>
+        </Container>
+      </Container>
     )
   }
 }
@@ -107,4 +146,6 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(OrderHistory)
+export default withStyles(styles)(
+  connect(mapStateToProps, mapDispatchToProps)(OrderHistory)
+)

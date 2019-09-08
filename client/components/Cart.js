@@ -7,21 +7,8 @@ import {
   editProductCartThunk,
   clearUserCart
 } from '../store/reducers/userCartReducer'
-import {Link} from 'react-router-dom'
-import {DeleteForever} from '@material-ui/icons'
-import {
-  Fab,
-  Divider,
-  Button,
-  List,
-  ListItem,
-  ListItemText,
-  ListItemAvatar,
-  Avatar,
-  Container,
-  Typography,
-  ListSubheader
-} from '@material-ui/core'
+
+import {List, Container, Typography} from '@material-ui/core'
 import CartItem from './Cart/CartItem'
 import CartListLabel from './Cart/CartListLabel'
 import CartListTotal from './Cart/CartListTotal'

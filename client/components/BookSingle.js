@@ -14,20 +14,14 @@ import {
 } from '../store/reducers/userGuestCartReducer'
 import {connect} from 'react-redux'
 import {
-  Paper,
   Typography,
-  withStyles,
-  Collapse,
-  IconButton,
   Container,
   Button,
   FormControl,
-  InputLabel,
   Select,
-  MenuItem
+  MenuItem,
+  withStyles
 } from '@material-ui/core'
-import clsx from 'clsx'
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 
 const styles = theme => ({
   bookSingleDisplayContainer: {
@@ -228,20 +222,6 @@ class singleBook extends React.Component {
               {book.description}
             </Typography>
           </Container>
-          {/* </Collapse> */}
-          {/* <IconButton
-              className={clsx(classes.expand, {
-                [classes.expandOpen]: this.state.expanded
-              })}
-              onClick={() => {
-                this.setExpanded(!this.state.expanded)
-              }}
-              aria-expanded={this.state.expanded}
-              aria-label="show more"
-            >
-              <ExpandMoreIcon />
-            </IconButton> */}
-          {/* </Container> */}
         </Container>
       </Container>
     )
