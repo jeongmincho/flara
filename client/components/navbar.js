@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
-import {logout} from '../store'
 import {getLoggedInUserCartThunk} from '../store/reducers/userCartReducer'
 import {getGuestUserCartThunk} from '../store/reducers/userGuestCartReducer'
 import {
@@ -17,7 +16,6 @@ import {
   ShoppingCart,
   Person,
   WbIncandescent,
-  ArrowBack,
   Whatshot
 } from '@material-ui/icons'
 
@@ -59,7 +57,7 @@ class Navbar extends React.Component {
   }
 
   render() {
-    const {handleClick, isLoggedIn, classes} = this.props
+    const {isLoggedIn, classes} = this.props
     const linkStyle = {textDecoration: 'none', color: 'black'}
     const materialRouter = React.forwardRef((props, ref) => (
       <Link innerRef={ref} {...props} />
@@ -73,117 +71,65 @@ class Navbar extends React.Component {
           />
         </Link>
         <Container className={classes.navBarLinksContainer}>
-          {isLoggedIn ? (
-            <Breadcrumbs className={classes.navBarBreadcrumbs}>
-              {/* The navbar will show these links after you log in */}
-              <Button
-                href="#"
-                onClick={handleClick}
-                style={linkStyle}
-                className={classes.navBarLink}
-              >
-                {' '}
-                <ArrowBack className={classes.icon} />
-                <Typography className={classes.navBarLinkText}>
-                  Logout
-                </Typography>
-              </Button>
-              <Button
-                component={materialRouter}
-                to="/books/limit=12&offset=0"
-                style={linkStyle}
-                className={classes.navBarLink}
-              >
-                {' '}
-                <Whatshot className={classes.icon} />
-                <Typography className={classes.navBarLinkText}>Gems</Typography>
-              </Button>
-              <Button
-                component={materialRouter}
-                to="/cart"
-                style={linkStyle}
-                className={classes.navBarLink}
-              >
-                <Badge
-                  badgeContent={
-                    this.props.userCart &&
-                    (this.props.userCart.products &&
-                      this.props.userCart.products.length)
-                  }
-                  color="primary"
-                  className={classes.cart}
-                >
-                  {' '}
-                  <ShoppingCart className={classes.icon} />
-                </Badge>
-                <Typography className={classes.navBarLinkText}>Cart</Typography>
-              </Button>
-            </Breadcrumbs>
-          ) : (
-            <Breadcrumbs className={classes.navBarBreadcrumbs}>
-              <Button
-                component={materialRouter}
-                to="/about"
-                style={linkStyle}
-                className={classes.navBarLink}
-              >
-                <WbIncandescent className={classes.icon} />
-                <Typography className={classes.navBarLinkText}>
-                  About Us
-                </Typography>
-              </Button>
-              <Button
-                component={materialRouter}
-                to="/books/limit=12&offset=0"
-                style={linkStyle}
-                className={classes.navBarLink}
-              >
-                <Whatshot className={classes.icon} />
-                <Typography className={classes.navBarLinkText}>Gems</Typography>
-              </Button>
-              <Button
-                component={materialRouter}
-                to="/cart"
-                style={linkStyle}
-                className={classes.navBarLink}
-              >
-                <Badge
-                  badgeContent={
-                    this.props.userGuestCart &&
-                    Object.keys(this.props.userGuestCart).length
-                  }
-                  color="primary"
-                  className={classes.cart}
-                >
-                  <ShoppingCart className={classes.icon} />
-                </Badge>
-                <Typography className={classes.navBarLinkText}>Cart</Typography>
-              </Button>
-            </Breadcrumbs>
-          )}
-          {isLoggedIn ? (
+          {/* {isLoggedIn ? ( */}
+          <Breadcrumbs className={classes.navBarBreadcrumbs}>
+            {/* The navbar will show these links after you log in */}
             <Button
               component={materialRouter}
-              to="/orderhistory"
+              to="/about"
+              style={linkStyle}
+              className={classes.navBarLink}
+            >
+              <WbIncandescent className={classes.icon} />
+              <Typography className={classes.navBarLinkText}>
+                About Us
+              </Typography>
+            </Button>
+            <Button
+              component={materialRouter}
+              to="/books/limit=12&offset=0"
               style={linkStyle}
               className={classes.navBarLink}
             >
               {' '}
-              <Person className={classes.icon} />
-              My Account
+              <Whatshot className={classes.icon} />
+              <Typography className={classes.navBarLinkText}>Gems</Typography>
             </Button>
-          ) : (
             <Button
               component={materialRouter}
-              to="/login"
+              to="/cart"
               style={linkStyle}
               className={classes.navBarLink}
             >
-              {' '}
-              <Person className={classes.icon} />
-              Login
+              <Badge
+                badgeContent={
+                  isLoggedIn
+                    ? this.props.userCart &&
+                      (this.props.userCart.products &&
+                        this.props.userCart.products.length)
+                    : this.props.userGuestCart &&
+                      Object.keys(this.props.userGuestCart).length
+                }
+                color="primary"
+                className={classes.cart}
+              >
+                {' '}
+                <ShoppingCart className={classes.icon} />
+              </Badge>
+              <Typography className={classes.navBarLinkText}>Cart</Typography>
             </Button>
-          )}
+          </Breadcrumbs>
+          <Button
+            component={materialRouter}
+            to={isLoggedIn ? '/orderhistory' : '/login'}
+            style={linkStyle}
+            className={classes.navBarLink}
+          >
+            <Person className={classes.icon} />
+            <Typography className={classes.navBarLinkText}>
+              {isLoggedIn ? 'My Account' : 'Login'}
+            </Typography>
+          </Button>
         </Container>
       </Container>
     )
@@ -204,9 +150,6 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    handleClick() {
-      dispatch(logout())
-    },
     getLoggedInUserCart: () => dispatch(getLoggedInUserCartThunk()),
     getGuestUserCart: () => dispatch(getGuestUserCartThunk())
   }
@@ -220,6 +163,5 @@ export default withStyles(styles)(
  * PROP TYPES
  */
 Navbar.propTypes = {
-  handleClick: PropTypes.func.isRequired,
   isLoggedIn: PropTypes.bool.isRequired
 }

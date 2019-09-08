@@ -10,19 +10,12 @@ import {
   populateBookListThunk,
   clearBookList
 } from '../store/reducers/bookListReducer'
-import {Link} from 'react-router-dom'
-import {DeleteForever} from '@material-ui/icons'
-import {
-  Fab,
-  Divider,
-  Button,
-  List,
-  ListItem,
-  ListItemText,
-  ListItemAvatar,
-  Avatar
-} from '@material-ui/core'
-import EditButtonGuest from './EditButtonGuest'
+import {List} from '@material-ui/core'
+import CartItem from './Cart/CartItem'
+import CartEmpty from './Cart/CartEmpty'
+import CartListLabel from './Cart/CartListLabel'
+import CartListTotal from './Cart/CartListTotal'
+import CartListCheckout from './Cart/CartListCheckout'
 
 class Cart extends React.Component {
   constructor() {
@@ -76,82 +69,33 @@ class Cart extends React.Component {
         <h2>Shopping Cart</h2>
         {this.props.bookList ? (
           Object.keys(this.props.bookList).length === 0 ? (
-            <div>
-              <div>Your DevBites Guest Cart is empty.</div>
-              <Link to="/books/limit=12&offset=0">
-                <Button type="button" variant="contained" color="primary">
-                  Go to Books
-                </Button>
-              </Link>
-            </div>
+            <CartEmpty />
           ) : (
             <div>
               <List>
+                <CartListLabel />
                 {Object.keys(this.props.bookList).map(key => {
                   const book = this.props.bookList[key]
                   const bookOrder = this.props.userGuestCart[book.id]
                   bookOrder && (totalPrice += book.price * bookOrder.quantity)
                   return (
-                    <div
+                    <CartItem
+                      product={book}
+                      handleDeleteProduct={this.handleDeleteProduct}
+                      handleEditProduct={this.handleEditProduct}
+                      quantity={bookOrder && bookOrder.quantity}
+                      cartId={null}
                       key={book.id}
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center'
-                      }}
-                    >
-                      <ListItem>
-                        <ListItemAvatar>
-                          <Avatar>
-                            <Fab
-                              onClick={() => {
-                                this.handleDeleteProduct(book.id)
-                              }}
-                            >
-                              {' '}
-                              <DeleteForever />{' '}
-                            </Fab>
-                          </Avatar>
-                        </ListItemAvatar>
-                        <div
-                          style={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            width: '20rem'
-                          }}
-                        >
-                          <ListItemText primary={book.title} />
-                          <ListItemText
-                            primary={bookOrder && bookOrder.quantity}
-                          />
-                          <EditButtonGuest
-                            quantity={bookOrder && bookOrder.quantity}
-                            handleEdit={this.handleEditProduct}
-                            productId={book.id}
-                          />
-                        </div>
-                      </ListItem>
-                      <Divider variant="inset" component="li" />
-                    </div>
+                    />
                   )
                 })}
               </List>
-              <br />
-              Total Price of Cart: ${totalPrice}
-              <br />
-              <Button
-                type="button"
-                onClick={() => {
-                  this.handleCheckoutCart()
-                }}
-                color="primary"
-                variant="contained"
-              >
-                Checkout
-              </Button>
+              <CartListTotal totalPrice={totalPrice} />
+              <CartListCheckout handleCheckoutCart={this.handleCheckoutCart} />
             </div>
           )
         ) : (
-          <div>Empty Cart</div>
+          <CartEmpty />
         )}
       </div>
     )

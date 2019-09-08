@@ -1,8 +1,17 @@
 import React from 'react'
 import {getUserOrdersThunk} from '../store/orderHistoryReducer'
 import {connect} from 'react-redux'
-import {Typography, List, ListItem, Divider, Grid} from '@material-ui/core'
-import {ShoppingBasket} from '@material-ui/icons'
+import {logout} from '../store'
+
+import {
+  Typography,
+  List,
+  ListItem,
+  Divider,
+  Grid,
+  Button
+} from '@material-ui/core'
+import {ShoppingBasket, ArrowBack} from '@material-ui/icons'
 
 class OrderHistory extends React.Component {
   componentDidMount() {
@@ -10,6 +19,8 @@ class OrderHistory extends React.Component {
   }
   render() {
     let count = 1
+    const {handleClick, classes} = this.props
+
     const userInfo = this.props.userInfo
     return (
       <div>
@@ -59,9 +70,8 @@ class OrderHistory extends React.Component {
           <Grid>
             <div>
               <h1>Account Details</h1>
-              <h4>Name: </h4>{' '}
+              <h4>Name: </h4>
               <p>
-                {' '}
                 {userInfo.firstName} {userInfo.lastName}
               </p>
               <br />
@@ -69,6 +79,10 @@ class OrderHistory extends React.Component {
               <br />
               <h4>Email:</h4> <p>{userInfo.email}</p>
             </div>
+            <Button href="#" onClick={handleClick}>
+              <ArrowBack />
+              <Typography>Logout</Typography>
+            </Button>
           </Grid>
         </Grid>
       </div>
@@ -86,7 +100,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getUserOrders: () => dispatch(getUserOrdersThunk())
+    getUserOrders: () => dispatch(getUserOrdersThunk()),
+    handleClick() {
+      dispatch(logout())
+    }
   }
 }
 

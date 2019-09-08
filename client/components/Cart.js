@@ -22,10 +22,11 @@ import {
   Typography,
   ListSubheader
 } from '@material-ui/core'
-import CartItem from './CartItem'
-import CartListLabel from './CartListLabel'
-import CartListTotal from './CartListTotal'
-import CartListCheckout from './CartListCheckout'
+import CartItem from './Cart/CartItem'
+import CartListLabel from './Cart/CartListLabel'
+import CartListTotal from './Cart/CartListTotal'
+import CartListCheckout from './Cart/CartListCheckout'
+import CartEmpty from './Cart/CartEmpty'
 
 class Cart extends React.Component {
   constructor() {
@@ -59,14 +60,7 @@ class Cart extends React.Component {
         <Typography variant="h4">Your Shopping Cart</Typography>
         {this.props.cart && this.props.cart.products ? (
           this.props.cart.products.length === 0 ? (
-            <div>
-              <div>Your DevBites Cart is empty.</div>
-              <Link to="/books/limit=12&offset=0">
-                <Button type="button" variant="contained" color="primary">
-                  Go to Books
-                </Button>
-              </Link>
-            </div>
+            <CartEmpty />
           ) : (
             <Container>
               <List>
@@ -91,7 +85,7 @@ class Cart extends React.Component {
             </Container>
           )
         ) : (
-          <div>Empty Cart</div>
+          <CartEmpty />
         )}
       </Container>
     )

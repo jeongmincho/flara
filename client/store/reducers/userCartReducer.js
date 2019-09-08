@@ -1,5 +1,6 @@
 import axios from 'axios'
 import {normalize, schema} from 'normalizr'
+import history from '../../history'
 
 /* ============= CART REDUCER ============= */
 
@@ -109,6 +110,7 @@ export const checkoutCartThunk = () => {
     try {
       await axios.put(`/api/cart`)
       dispatch(checkoutCart())
+      history.push('/orderConfirmation')
     } catch (error) {
       console.log(error)
     }

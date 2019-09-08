@@ -61,9 +61,11 @@ const CartItem = ({
         <FormControl>
           <Select
             value={quantity}
-            onChange={e =>
-              handleEditProduct(product.id, cartId, Number(e.target.value))
-            }
+            onChange={e => {
+              cartId
+                ? handleEditProduct(product.id, cartId, Number(e.target.value))
+                : handleEditProduct(product.id, Number(e.target.value))
+            }}
             inputProps={{
               name: 'quantity',
               id: 'quantity'

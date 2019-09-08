@@ -17,14 +17,16 @@ const useStyles = makeStyles(theme => ({
     top: 0
   },
   welcomePageTitleContainer: {
-    width: '36rem',
-    marginLeft: '5%',
+    width: '50rem',
+    marginLeft: '0',
+    paddingLeft: '20px',
     display: 'flex',
     flexWrap: 'wrap'
   },
   welcomePageTitlePrimary: {
     fontWeight: 'bold',
-    color: theme.palette.primary.main
+    color: theme.palette.primary.main,
+    marginBottom: '1rem'
   },
   welcomePageTitleSecondary: {
     fontWeight: 'bold',
@@ -32,7 +34,8 @@ const useStyles = makeStyles(theme => ({
     marginBottom: '1rem'
   },
   welcomePageSubtitle: {
-    marginTop: '1rem',
+    width: '35rem',
+    margin: '1rem 0',
     color: '#606060',
     fontSize: '1.2rem'
   },
@@ -45,7 +48,6 @@ const useStyles = makeStyles(theme => ({
     minHeight: '800px',
     minWidth: '1024px',
     /* Set up proportionate scaling */
-    width: '65%',
     height: '100%',
     /* Set up positioning */
     position: 'fixed',
@@ -63,31 +65,44 @@ export const UserHome = props => {
     <Container className={classes.welcomePageContainer}>
       <Container className={classes.welcomePageTitleContainer}>
         <Typography variant="h2" className={classes.welcomePageTitlePrimary}>
-          Spark the&nbsp;
-        </Typography>
-        <Typography variant="h2" className={classes.welcomePageTitleSecondary}>
-          flare
+          Constant tinkering&nbsp;
         </Typography>
         <Typography variant="h2" className={classes.welcomePageTitlePrimary}>
-          in your learning
+          with&nbsp;
+        </Typography>
+        <Typography variant="h2" className={classes.welcomePageTitleSecondary}>
+          alchemy&nbsp;
+        </Typography>
+        <Typography variant="h2" className={classes.welcomePageTitlePrimary}>
+          to&nbsp;
+        </Typography>
+        <Typography variant="h2" className={classes.welcomePageTitlePrimary}>
+          empower learning
         </Typography>
         <Typography variant="subtitle1" className={classes.welcomePageSubtitle}>
-          Great ebook deals, handpicked recommendations, and updates from your
-          favorite authors.
+          We at Flara believe that the ability to learn is the greatest untold
+          superpower in this world. We have spent the past year curating the
+          right ingredients to deliver to our fellow alchemists around the
+          world. Join our team!
         </Typography>
-        <Link to="signup" className={classes.welcomePageTitleButton}>
+        <a
+          href="https://www.linkedin.com/in/jeongmin-c/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={classes.welcomePageTitleButton}
+        >
           <Button variant="contained" color="secondary">
             <Typography
               variant="subtitle1"
               className={classes.welcomePageTitleButtonText}
             >
-              Start Your Journey
+              Meet the Team
             </Typography>
           </Button>
-        </Link>
+        </a>
       </Container>
       <img
-        src="https://i.imgur.com/G2iQH8B.png"
+        src="https://i.imgur.com/TmNHDUq.png"
         className={classes.welcomePageBackgroundImage}
       />
     </Container>

@@ -9,6 +9,7 @@ import Cart from './components/Cart'
 import About from './components/About'
 import GuestCart from './components/GuestCart'
 import OrderHistory from './components/OrderHistory'
+import OrderConfirmation from './components/OrderConfirmation'
 import {me} from './store'
 import {
   getLoggedInUserCartThunk,
@@ -116,6 +117,7 @@ class Routes extends Component {
             <Switch>
               {/* Routes placed here are only available after logging in */}
               <Route path="/orderHistory" component={OrderHistory} />
+              <Route path="/orderConfirmation" component={OrderConfirmation} />
             </Switch>
           )}
           {/* Displays our Login component as a fallback */}

@@ -54,6 +54,7 @@ const useStyles = makeStyles(theme => ({
     zIndex: '-100'
   }
 }))
+
 export const UserHome = props => {
   const classes = useStyles()
 
@@ -75,7 +76,10 @@ export const UserHome = props => {
           Great ebook deals, handpicked recommendations, and updates from your
           favorite authors.
         </Typography>
-        <Link to="signup" className={classes.welcomePageTitleButton}>
+        <Link
+          to={props.isLoggedIn ? '/books/limit=12&offset=0' : 'signup'}
+          className={classes.welcomePageTitleButton}
+        >
           <Button variant="contained" color="secondary">
             <Typography
               variant="subtitle1"
@@ -99,7 +103,8 @@ export const UserHome = props => {
  */
 const mapState = state => {
   return {
-    email: state.userAuth.email
+    email: state.userAuth.email,
+    isLoggedIn: !!state.userAuth.id
   }
 }
 
