@@ -69,10 +69,10 @@ class Routes extends Component {
         )}
         <Route path="/books/:query" component={BookList} />
         <Route path="/singlebook/:query" component={BookSingle} />
+        <Route path="/home" component={UserHome} />
         {isLoggedIn && (
           <Switch>
             {/* Routes placed here are only available after logging in */}
-            <Route path="/home" component={UserHome} />
             <Route path="/orderHistory" component={OrderHistory} />
           </Switch>
         )}

@@ -5,23 +5,55 @@ import {Link} from 'react-router-dom'
 import {logout} from '../store'
 import {getLoggedInUserCartThunk} from '../store/reducers/userCartReducer'
 import {getGuestUserCartThunk} from '../store/reducers/userGuestCartReducer'
-import {Breadcrumbs, Button, withStyles, Badge} from '@material-ui/core'
+import {
+  Container,
+  Breadcrumbs,
+  Button,
+  withStyles,
+  Badge
+} from '@material-ui/core'
 import {
   Home,
   ShoppingCart,
   Person,
-  RestaurantMenu,
+  RestaurantBook,
+  WbIncandescent,
   PersonAdd,
-  ArrowBack
+  ArrowBack,
+  Whatshot
 } from '@material-ui/icons'
 
 const styles = theme => ({
-  icon: {
-    marginRight: 10
+  navBarContainer: {
+    display: 'flex',
+    maxWidth: 'none',
+    position: 'absolute',
+    top: 0,
+    zIndex: 100,
+    paddingTop: '1.5rem',
+    paddingLeft: '3rem'
   },
-  cart: {
-    marginRight: 15
+  navBarLogoImage: {
+    width: '8rem',
+    height: '2.7rem'
+  },
+  navBarLinksContainer: {
+    display: 'flex',
+    alignItems: 'center'
+  },
+  navBarBreadcrumbs: {
+    margin: '0 auto'
+  },
+  icon: {
+    marginRight: 14
+  },
+  navBarLink: {
+    margin: '0 1rem',
+    fontSize: '18px'
   }
+  // cart: {
+  //   marginRight: 10
+  // },
 })
 
 class Navbar extends React.Component {
@@ -38,123 +70,149 @@ class Navbar extends React.Component {
       <Link innerRef={ref} {...props} />
     ))
     return (
-      <div>
-        <div className="title-header">
-          <h1>FLARA</h1>
-          <nav className="nav-bar">
-            {isLoggedIn ? (
-              <div className="nav-div">
-                <Breadcrumbs>
-                  {/* The navbar will show these links after you log in */}
-                  <Button
-                    component={materialRouter}
-                    style={linkStyle}
-                    to="/home"
-                  >
-                    {' '}
-                    <Home className={classes.icon} />
-                    Home
-                  </Button>
-                  <Button
-                    component={materialRouter}
-                    to="/orderHistory"
-                    style={linkStyle}
-                  >
-                    {' '}
-                    <Person className={classes.icon} />
-                    My Account
-                  </Button>
-                  <Button href="#" onClick={handleClick} style={linkStyle}>
-                    {' '}
-                    <ArrowBack className={classes.icon} />
-                    Logout
-                  </Button>
-                  <Button
-                    component={materialRouter}
-                    to="/books/limit=10&offset=0"
-                    style={linkStyle}
-                  >
-                    {' '}
-                    <RestaurantMenu className={classes.icon} />
-                    Books
-                  </Button>
-                  <Button
-                    component={materialRouter}
-                    to="/cart"
-                    style={linkStyle}
-                  >
-                    <Badge
-                      badgeContent={
-                        this.props.userCart &&
-                        (this.props.userCart.products &&
-                          this.props.userCart.products.length)
-                      }
-                      color="primary"
-                      className={classes.cart}
-                    >
-                      {' '}
-                      <ShoppingCart className={classes.icon} />{' '}
-                    </Badge>{' '}
-                    Cart{' '}
-                  </Button>
-                </Breadcrumbs>
-              </div>
-            ) : (
-              <div className="nav-div">
-                <Breadcrumbs>
-                  {/* The navbar will show these links before you log in */}
-                  <Button
-                    component={materialRouter}
-                    to="/login"
-                    style={linkStyle}
-                  >
-                    {' '}
-                    <Person className={classes.icon} />
-                    Login
-                  </Button>
-                  <Button
-                    component={materialRouter}
-                    to="/signup"
-                    style={linkStyle}
-                  >
-                    {' '}
-                    <PersonAdd className={classes.icon} />
-                    Sign Up
-                  </Button>
-                  <Button
-                    component={materialRouter}
-                    to="/books/limit=10&offset=0"
-                    style={linkStyle}
-                  >
-                    {' '}
-                    <RestaurantMenu className={classes.icon} />
-                    Books
-                  </Button>
-                  <Button
-                    component={materialRouter}
-                    to="/cart"
-                    style={linkStyle}
-                  >
-                    <Badge
-                      badgeContent={
-                        this.props.userGuestCart &&
-                        Object.keys(this.props.userGuestCart).length
-                      }
-                      color="primary"
-                      className={classes.cart}
-                    >
-                      {' '}
-                      <ShoppingCart className={classes.icon} />{' '}
-                    </Badge>{' '}
-                    Cart{' '}
-                  </Button>
-                </Breadcrumbs>
-              </div>
-            )}
-          </nav>
-        </div>
-        <hr />
-      </div>
+      <Container className={classes.navBarContainer}>
+        <img
+          src="https://i.imgur.com/1MBTfnZ.png"
+          className={classes.navBarLogoImage}
+        />
+        <Container className={classes.navBarLinksContainer}>
+          {isLoggedIn ? (
+            <Breadcrumbs className={classes.navBarBreadcrumbs}>
+              {/* The navbar will show these links after you log in */}
+              <Button
+                component={materialRouter}
+                style={linkStyle}
+                to="/home"
+                className={classes.navBarLink}
+              >
+                {' '}
+                <Home className={classes.icon} />
+                Home
+              </Button>
+              <Button
+                component={materialRouter}
+                to="/orderHistory"
+                style={linkStyle}
+                className={classes.navBarLink}
+              >
+                {' '}
+                <Person className={classes.icon} />
+                My Account
+              </Button>
+              <Button
+                href="#"
+                onClick={handleClick}
+                style={linkStyle}
+                className={classes.navBarLink}
+              >
+                {' '}
+                <ArrowBack className={classes.icon} />
+                Logout
+              </Button>
+              <Button
+                component={materialRouter}
+                to="/books/limit=10&offset=0"
+                style={linkStyle}
+              >
+                {' '}
+                <Whatshot className={classes.icon} />
+                Gems
+              </Button>
+              <Button
+                component={materialRouter}
+                to="/cart"
+                style={linkStyle}
+                className={classes.navBarLink}
+              >
+                <Badge
+                  badgeContent={
+                    this.props.userCart &&
+                    (this.props.userCart.products &&
+                      this.props.userCart.products.length)
+                  }
+                  color="primary"
+                  className={classes.cart}
+                >
+                  {' '}
+                  <ShoppingCart className={classes.icon} />
+                </Badge>
+                Cart{' '}
+              </Button>
+            </Breadcrumbs>
+          ) : (
+            <Breadcrumbs className={classes.navBarBreadcrumbs}>
+              {/* The navbar will show these links before you log in */}
+              {/* <Button
+                  component={materialRouter}
+                  to="/login"
+                  style={linkStyle}
+                >
+                  {' '}
+                  <Person className={classes.icon} />
+                  Login
+                </Button> */}
+              {/* <Button
+                  component={materialRouter}
+                  to="/signup"
+                  style={linkStyle}
+                >
+                  {' '}
+                  <PersonAdd className={classes.icon} />
+                  Sign Up
+                </Button> */}
+              <Button
+                component={materialRouter}
+                to="/about"
+                style={linkStyle}
+                className={classes.navBarLink}
+              >
+                {' '}
+                <WbIncandescent className={classes.icon} />
+                About Us
+              </Button>
+              <Button
+                component={materialRouter}
+                to="/books/limit=10&offset=0"
+                style={linkStyle}
+                className={classes.navBarLink}
+              >
+                {' '}
+                <Whatshot className={classes.icon} />
+                Gems
+              </Button>
+              <Button
+                component={materialRouter}
+                to="/cart"
+                style={linkStyle}
+                className={classes.navBarLink}
+              >
+                <Badge
+                  badgeContent={
+                    this.props.userGuestCart &&
+                    Object.keys(this.props.userGuestCart).length
+                  }
+                  color="primary"
+                  className={classes.cart}
+                >
+                  {' '}
+                  <ShoppingCart className={classes.icon} />{' '}
+                </Badge>{' '}
+                Cart{' '}
+              </Button>
+            </Breadcrumbs>
+          )}
+          <Button
+            component={materialRouter}
+            to="/login"
+            style={linkStyle}
+            className={classes.navBarLink}
+          >
+            {' '}
+            <Person className={classes.icon} />
+            My Account
+          </Button>
+        </Container>
+      </Container>
     )
   }
 }
