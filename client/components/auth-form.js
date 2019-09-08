@@ -2,57 +2,135 @@ import React from 'react'
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
 import {auth} from '../store'
+import {
+  Container,
+  TextField,
+  Typography,
+  Button,
+  Paper
+} from '@material-ui/core'
+import {makeStyles} from '@material-ui/styles'
+import {BrightnessHigh} from '@material-ui/icons'
 
 /**
  * COMPONENT
  */
+const useStyles = makeStyles(theme => ({
+  loginFormContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
+    height: '100%',
+    maxWidth: 'none',
+    position: 'absolute',
+    top: 0
+  },
+  loginFormPaper: {
+    padding: '3rem',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+  },
+  loginFormTitleContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: '1.2rem 0'
+  },
+  loginForm: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+  },
+  loginFormTextField: {
+    width: '20rem'
+  },
+  loginFormSubmitButton: {
+    marginTop: '1rem'
+  },
+  loginFormIcon: {
+    width: '3rem',
+    height: 'auto'
+  }
+}))
+
 const AuthForm = props => {
   const {name, displayName, handleSubmit, error} = props
+  const classes = useStyles()
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} name={name}>
-        <div>
-          <label htmlFor="email">
-            <small>Email</small>
-          </label>
-          <input name="email" type="text" />
-        </div>
-        <div>
-          <label htmlFor="password">
-            <small>Password</small>
-          </label>
-          <input name="password" type="password" />
-        </div>
-        <div>
-          <button type="submit">{displayName}</button>
-        </div>
-        {error && error.response && <div> {error.response.data} </div>}
-      </form>
-      <a href="/auth/google">{displayName} with Google</a>
-    </div>
+    <Container className={classes.loginFormContainer}>
+      <Paper className={classes.loginFormPaper}>
+        <BrightnessHigh className={classes.loginFormIcon} color="primary" />
+        <Container className={classes.loginFormTitleContainer}>
+          <Typography variant="h4">Hello alchemist,</Typography>
+          <Typography variant="subtitle1">
+            Welcome back for more magic.
+          </Typography>
+        </Container>
+        <form onSubmit={handleSubmit} name={name} className={classes.loginForm}>
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            id="email"
+            label="Email"
+            name="email"
+            autoComplete="email"
+            autoFocus
+            className={classes.loginFormTextField}
+            InputProps={{
+              style: {
+                backgroundColor: 'white',
+                borderRadius: '5px'
+              }
+            }}
+          />
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            name="password"
+            label="Password"
+            type="password"
+            id="password"
+            autoComplete="current-password"
+            className={classes.loginFormTextField}
+            InputProps={{
+              style: {
+                backgroundColor: 'white',
+                borderRadius: '5px'
+              }
+            }}
+          />
+          <Button
+            variant="contained"
+            color="secondary"
+            type="submit"
+            className={classes.loginFormSubmitButton}
+          >
+            <Typography
+              variant="subtitle1"
+              className={classes.loginFormSubmitButtonText}
+            >
+              {displayName}
+            </Typography>
+          </Button>
+          {error && error.response && <div> {error.response.data} </div>}
+        </form>
+      </Paper>
+      {/* <a href="/auth/google">{displayName} with Google</a> */}
+    </Container>
   )
 }
 
-/**
- * CONTAINER
- *   Note that we have two different sets of 'mapStateToProps' functions -
- *   one for Login, and one for Signup. However, they share the same 'mapDispatchToProps'
- *   function, and share the same Component. This is a good example of how we
- *   can stay DRY with interfaces that are very similar to each other!
- */
 const mapLogin = state => {
   return {
     name: 'login',
     displayName: 'Login',
-    error: state.userAuth.error
-  }
-}
-
-const mapSignup = state => {
-  return {
-    name: 'signup',
-    displayName: 'Sign Up',
     error: state.userAuth.error
   }
 }
@@ -70,7 +148,6 @@ const mapDispatch = dispatch => {
 }
 
 export const Login = connect(mapLogin, mapDispatch)(AuthForm)
-export const Signup = connect(mapSignup, mapDispatch)(AuthForm)
 
 /**
  * PROP TYPES

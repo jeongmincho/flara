@@ -1,51 +1,132 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
+import {auth} from '../store'
 import {signup} from '../store'
 import {addProductToCartThunk} from '../store/reducers/userCartReducer'
+import {
+  Container,
+  TextField,
+  Typography,
+  Button,
+  Paper
+} from '@material-ui/core'
+import {makeStyles} from '@material-ui/styles'
+import {BrightnessHigh} from '@material-ui/icons'
 
-class Signup extends React.Component {
-  constructor() {
-    super()
-    // this.handleGuestSignUpWithCart = this.handleGuestSignUpWithCart.bind(this)
+/**
+ * COMPONENT
+ */
+const useStyles = makeStyles(theme => ({
+  loginFormContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
+    height: '100%',
+    maxWidth: 'none',
+    position: 'absolute',
+    top: 0
+  },
+  loginFormPaper: {
+    padding: '3rem',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+  },
+  loginFormTitleContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: '1.2rem 0'
+  },
+  loginForm: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+  },
+  loginFormTextField: {
+    width: '20rem'
+  },
+  loginFormSubmitButton: {
+    marginTop: '1rem'
+  },
+  loginFormIcon: {
+    width: '3rem',
+    height: 'auto'
   }
+}))
 
-  // async handleGuestSignUpWithCart(evt) {
-  //   await this.props.handleSignup(evt)
-  //   const existingCart = JSON.parse(localStorage.getItem('cart'))
-  //   existingCart.forEach(product => {
-  //     this.props.addToCart(product.id, product.quantity)
-  //   })
-  //   localStorage.setItem('cart', '[]')
-  // }
+const Signup = props => {
+  const {name, displayName, handleSignup, error} = props
+  const classes = useStyles()
 
-  render() {
-    const {name, displayName, handleSignup, error} = this.props
+  return (
+    <Container className={classes.loginFormContainer}>
+      <Paper className={classes.loginFormPaper}>
+        <BrightnessHigh className={classes.loginFormIcon} color="primary" />
+        <Container className={classes.loginFormTitleContainer}>
+          <Typography variant="h4">Hello adventurer,</Typography>
+          <Typography variant="subtitle1">
+            Welcome to the world of alchemy.
+          </Typography>
+        </Container>
+        <form onSubmit={handleSignup} name={name} className={classes.loginForm}>
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            id="email"
+            label="Email"
+            name="email"
+            autoComplete="email"
+            autoFocus
+            className={classes.loginFormTextField}
+            InputProps={{
+              style: {
+                backgroundColor: 'white',
+                borderRadius: '5px'
+              }
+            }}
+          />
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            name="password"
+            label="Password"
+            type="password"
+            id="password"
+            autoComplete="current-password"
+            className={classes.loginFormTextField}
+            InputProps={{
+              style: {
+                backgroundColor: 'white',
+                borderRadius: '5px'
+              }
+            }}
+          />
+          <Button
+            variant="contained"
+            color="secondary"
+            type="submit"
+            className={classes.loginFormSubmitButton}
+          >
+            <Typography
+              variant="subtitle1"
+              className={classes.loginFormSubmitButtonText}
+            >
+              {displayName}
+            </Typography>
+          </Button>
+          {error && error.response && <div> {error.response.data} </div>}
+        </form>
+      </Paper>
 
-    return (
-      <div>
-        <form
-          onSubmit={
-            // !localStorage.getItem('cart')
-            //   ? handleSignup
-            //   : this.handleGuestSignUpWithCart
-            handleSignup
-          }
-          name={name}
-        >
-          <div>
-            <label>
-              <small>Email</small>
-            </label>
-            <input name="email" type="text" />
-          </div>
-          <div>
-            <label>
-              <small>Password</small>
-            </label>
-            <input name="password" type="password" />
-          </div>
-          {/* <div>
+      {/* <a href="/auth/google">{displayName} with Google</a> */}
+      {/* <div>
             <label>
               <small>First Name</small>
             </label>
@@ -63,15 +144,8 @@ class Signup extends React.Component {
             </label>
             <input name="address" type="address" />
           </div> */}
-          <div>
-            <button type="submit">{displayName}</button>
-          </div>
-          {error && error.response && <div> {error.response.data} </div>}
-        </form>
-        <a href="/auth/google">{displayName} with Google</a>
-      </div>
-    )
-  }
+    </Container>
+  )
 }
 
 const mapStateToProps = state => {

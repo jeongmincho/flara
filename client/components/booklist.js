@@ -7,14 +7,7 @@ import {
 import {countBookListThunk} from '../store/reducers/bookCountReducer'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
-import {
-  Container,
-  Card,
-  Paper,
-  CardHeader,
-  withStyles,
-  CardMedia
-} from '@material-ui/core'
+import {Container, Card, Paper, withStyles} from '@material-ui/core'
 import Pagination from 'material-ui-flat-pagination'
 import history from '../history'
 
