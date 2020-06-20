@@ -12,7 +12,6 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'center',
     width: '100vw',
     height: '100vh',
-    maxWidth: 'none',
     position: 'absolute',
     top: 0
   },
@@ -73,8 +72,8 @@ export const UserHome = props => {
           in your learning
         </Typography>
         <Typography variant="subtitle1" className={classes.welcomePageSubtitle}>
-          Great ebook deals, handpicked recommendations, and updates from your
-          favorite authors.
+          Pursue growth by collecting carefully curated gems from your all-time
+          favorite alchemists.
         </Typography>
         <Link
           to={props.isLoggedIn ? '/books/limit=12&offset=0' : 'signup'}

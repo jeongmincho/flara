@@ -10,7 +10,7 @@ import {
   populateBookListThunk,
   clearBookList
 } from '../store/reducers/bookListReducer'
-import {List} from '@material-ui/core'
+import {Container, List, Typography} from '@material-ui/core'
 import CartItem from './Cart/CartItem'
 import CartEmpty from './Cart/CartEmpty'
 import CartListLabel from './Cart/CartListLabel'
@@ -65,13 +65,13 @@ class Cart extends React.Component {
   render() {
     let totalPrice = 0
     return (
-      <div>
-        <h2>Shopping Cart</h2>
+      <Container>
+        <Typography variant="h4">Your Alchemy Cart</Typography>{' '}
         {this.props.bookList ? (
           Object.keys(this.props.bookList).length === 0 ? (
             <CartEmpty />
           ) : (
-            <div>
+            <Container>
               <List>
                 <CartListLabel />
                 {Object.keys(this.props.bookList).map(key => {
@@ -92,12 +92,12 @@ class Cart extends React.Component {
               </List>
               <CartListTotal totalPrice={totalPrice} />
               <CartListCheckout handleCheckoutCart={this.handleCheckoutCart} />
-            </div>
+            </Container>
           )
         ) : (
           <CartEmpty />
         )}
-      </div>
+      </Container>
     )
   }
 }

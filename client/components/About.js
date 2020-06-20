@@ -12,7 +12,6 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'center',
     width: '100vw',
     height: '100vh',
-    maxWidth: 'none',
     position: 'absolute',
     top: 0
   },

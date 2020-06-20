@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
 import {auth} from '../store'
+import {Link} from 'react-router-dom'
 import {
   Container,
   TextField,
@@ -54,6 +55,16 @@ const useStyles = makeStyles(theme => ({
   loginFormIcon: {
     width: '3rem',
     height: 'auto'
+  },
+  signupContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: '2rem'
+  },
+  signupLink: {
+    textDecoration: 'none',
+    color: theme.palette.secondary.main
   }
 }))
 
@@ -121,6 +132,12 @@ const AuthForm = props => {
           </Button>
           {error && error.response && <div> {error.response.data} </div>}
         </form>
+        <Container className={classes.signupContainer}>
+          <Typography variant="subtitle1">New to the Quest?&nbsp;</Typography>
+          <Link to="/signup" className={classes.signupLink}>
+            <Typography variant="subtitle1">Sign Up!</Typography>
+          </Link>
+        </Container>
       </Paper>
       {/* <a href="/auth/google">{displayName} with Google</a> */}
     </Container>

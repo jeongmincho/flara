@@ -120,8 +120,8 @@ class Routes extends Component {
               <Route path="/orderConfirmation" component={OrderConfirmation} />
             </Switch>
           )}
-          {/* Displays our Login component as a fallback */}
-          <Route component={Login} />
+          {/* Displays our UserHome component as a fallback */}
+          <Route component={UserHome} />
         </Switch>
         <img
           src="https://i.imgur.com/Stuok4c.png"

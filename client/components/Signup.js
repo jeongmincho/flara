@@ -13,6 +13,7 @@ import {
 } from '@material-ui/core'
 import {makeStyles} from '@material-ui/styles'
 import {BrightnessHigh} from '@material-ui/icons'
+import {Link} from 'react-router-dom'
 
 /**
  * COMPONENT
@@ -56,6 +57,16 @@ const useStyles = makeStyles(theme => ({
   loginFormIcon: {
     width: '3rem',
     height: 'auto'
+  },
+  signupContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: '2rem'
+  },
+  signupLink: {
+    textDecoration: 'none',
+    color: theme.palette.secondary.main
   }
 }))
 
@@ -123,6 +134,14 @@ const Signup = props => {
           </Button>
           {error && error.response && <div> {error.response.data} </div>}
         </form>
+        <Container className={classes.signupContainer}>
+          <Typography variant="subtitle1">
+            Already an alchemist at Flara?&nbsp;
+          </Typography>
+          <Link to="/login" className={classes.signupLink}>
+            <Typography variant="subtitle1">Login!</Typography>
+          </Link>
+        </Container>
       </Paper>
 
       {/* <a href="/auth/google">{displayName} with Google</a> */}

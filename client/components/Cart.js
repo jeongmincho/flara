@@ -44,7 +44,7 @@ class Cart extends React.Component {
     let totalPrice = 0
     return (
       <Container>
-        <Typography variant="h4">Your Shopping Cart</Typography>
+        <Typography variant="h4">Your Alchemy Cart</Typography>
         {this.props.cart && this.props.cart.products ? (
           this.props.cart.products.length === 0 ? (
             <CartEmpty />
