@@ -55,7 +55,7 @@ export const getGuestUserCartThunk = () => {
   return async dispatch => {
     try {
       const existingCart = JSON.parse(localStorage.getItem('cart'))
-      // console.log(existingCart)
+      console.log('HELLO', existingCart)
       dispatch(getGuestUserCart(existingCart))
     } catch (error) {
       console.log(error)

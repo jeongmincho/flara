@@ -86,9 +86,12 @@ class Routes extends Component {
       // basically, these happen at the same time without waiting for one to be finished before the other. as aresult, it creates a cart for each product added
       // somehow need to create a cart first, then add products to the cart
       // probably need like a batch add thunk to handle this case for sign up... will be different for login
-      existingCart.forEach(async product => {
-        await this.props.addToCart(product.quantity, product.id)
-      })
+      console.log('PRINT', existingCart)
+      if (existingCart) {
+        existingCart.forEach(async product => {
+          await this.props.addToCart(product.quantity, product.id)
+        })
+      }
       localStorage.setItem('cart', '[]')
     }
   }
